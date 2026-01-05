@@ -10,28 +10,33 @@ const cardnews5 = "/pages/landing-pages/hottest-news/card-cici-news-5.webp";
 const newsCards = [
   {
     image: cardnews5,
-    alt: "card1",
-    link: "/article/dialek-terancam-punah",
+    alt: "card5",
+    link: "/article/mandarin-naik-tahta-dialek-terancam-punah",
+    isNew: true,
   },
   {
     image: cardnews4,
-    alt: "card2",
+    alt: "card4",
     link: "/article/jalan-jalan-ke-masa-depan",
+    isNew: false,
   },
   {
     image: cardnews3,
     alt: "card3",
     link: "/article/bukan-cuma-tren",
+    isNew: false,
   },
   {
     image: cardnews2,
-    alt: "card4",
-    link: "/article/di-balik-tembok-kampus-tiongkok"
+    alt: "card2",
+    link: "/article/di-balik-tembok-kampus-tiongkok",
+    isNew: false,
   },
   {
     image: cardnews1,
-    alt: "card5",
+    alt: "card1",
     link: "/article/80-tahun-kemenangan-perang-dunia-II",
+    isNew: false,
   },
 ];
 
@@ -153,7 +158,7 @@ export default function HottestNews() {
                 {newsCards.map((card, index) => (
                   <div
                     key={index}
-                    className={`shrink-0 w-[280px] snap-center transition-all duration-300 ease-out cursor-pointer`}
+                    className={`shrink-0 w-[280px] snap-center transition-all duration-300 ease-out cursor-pointer relative`}
                     style={{
                       transform: activeCardMobile === index ? "scale(1)" : "scale(0.85)",
                       opacity: activeCardMobile === index ? 1 : 0.6,
@@ -166,6 +171,11 @@ export default function HottestNews() {
                     }}
                   >
                     <img src={card.image} alt={card.alt} className="w-full h-auto rounded-lg shadow-lg" />
+                    {card.isNew && (
+                      <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">
+                        NEW
+                      </div>
+                    )}
                   </div>
                 ))}
                 {/* Spacer for the last item to center */}
@@ -218,7 +228,7 @@ export default function HottestNews() {
             <div ref={webScrollContainerRef} className="overflow-hidden scrollbar-hide">
               <div className="flex gap-4 pb-4">
                 {newsCards.map((card, index) => (
-                  <div key={index} className="shrink-0 w-[275px]">
+                  <div key={index} className="shrink-0 w-[275px] relative">
                     <img
                       src={card.image}
                       alt={card.alt}
@@ -227,6 +237,11 @@ export default function HottestNews() {
                         window.location.href = card.link;
                       }}
                     />
+                    {card.isNew && (
+                      <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">
+                        NEW
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

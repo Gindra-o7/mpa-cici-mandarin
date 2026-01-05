@@ -1,0 +1,464 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+// --- Aset dari pola asli Anda ---
+const Background =
+  "/pages/landing-pages/hottest-news/article/article-background.webp";
+const CoverArticle =
+  "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-5.webp";
+
+// --- Objek artikel diperbarui untuk konten baru ---
+const article = {
+  topic: "CICIUNBOXCHINA #5",
+  title: "Mandarin Naik Tahta, Dialek Terancam Punah ?",
+  publishDate: "5 Januari 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  {/* --- MOBILE VERSION --- */}
+  <main
+    class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
+    style={`background-image: url(${Background})`}
+  >
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span
+            class="inline-block bg-red-700 text-white font-bold text-xs px-3 py-1 rounded-full"
+          >
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div
+          class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
+        >
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img
+            src={CoverArticle}
+            alt="Cover Article"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">
+            "你好! We're back with more China updates from Cici!"
+          </p>
+        </div>
+
+        {/* Paragraf Pembuka */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Bahasa Mandarin, atau secara resmi disebut Putonghua, telah lama
+            ditetapkan sebagai bahasa nasional Tiongkok. Namun, kenyataan
+            linguistik di Negeri Tirai Bambu jauh lebih kompleks dari sekadar
+            satu bahasa tunggal. Tiongkok adalah rumah bagi puluhan dialek dan
+            bahasa daerah yang sangat beragam, seperti Kanton (Yue), Hokkien
+            (Min Nan), Hakka, Shanghainese (Wu), hingga bahasa-bahasa minoritas
+            seperti Uighur dan Tibet. Dalam dinamika sosial, politik, dan
+            ekonomi saat ini, muncul sebuah pertanyaan penting, yaitu bagaimana
+            eksistensi dialek-dialek ini bertahan di tengah dominasi Bahasa
+            Mandarin?
+          </p>
+        </div>
+
+        {/* SUB judul Mandarin: Bahasa Resmi yang Serbaguna */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Mandarin: Bahasa Resmi yang Serbaguna</span>
+            <br /> Bahasa Mandarin merupakan bahasa resmi nasional sejak berdirinya
+            Republik Rakyat Tiongkok pada tahun 1949. Bahkan, dalam Konstitusi Republik
+            Rakyat Tiongkok, dikatakan bahwa "the state shall promote the common use
+            of Putonghua throughout the country" (Zhao Yang, 2024). Bahasa ini digunakan
+            dalam sistem pendidikan, pemerintahan, media nasional, dan komunikasi
+            formal. Tidak hanya itu, tetapi Bahasa Mandarin juga merupakan salah satu
+            dari enam bahasa resmi Perserikatan Bangsa-Bangsa (PBB), menjadikannya
+            bahasa strategis di panggung internasional (United Nations).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Popularitas Bahasa Mandarin juga meningkat di luar negeri. Terdapat
+            5 negara di dunia yang menetapkan bahasa Mandarin sebagai bahasa
+            resmi negara mereka, yaitu Tiongkok, Taiwan, Hong Kong, Singapura,
+            dan Makau (World Data Info). Wakil Menteri Pendidikan Tiongkok, Tian
+            Xuejun mengatakan bahwa sudah terdapat lebih dari 70 negara yang
+            secara resmi memasukkan pengajaran bahasa Mandarin ke dalam sistem
+            pendidikan nasional mereka, termasuk Inggris, Rusia, Afrika Selatan,
+            Jepang, Korea Selatan, dan Australia (Bolong, 2020). Dengan
+            demikian, sejauh ini bahasa Mandarin digunakan oleh kurang lebih 1,3
+            miliar orang di seluruh dunia (Day Translation, 2022). Namun,
+            kemajuan ini tidak serta-merta menjamin kelestarian keragaman
+            linguistik dalam negeri.
+          </p>
+        </div>
+
+        {/* Kontestasi Eksistensi: Ancaman atau Adaptasi? */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold"
+              >Kontestasi Eksistensi: Ancaman atau Adaptasi?</span
+            >
+            <br /> Meskipun menghadapi tekanan kuat, beberapa dialek berhasil mempertahankan
+            eksistensinya, khususnya di wilayah dengan identitas budaya yang kuat
+            atau komunitas diaspora yang solid. Dialek Kanton, misalnya, masih sangat
+            hidup di Hong Kong, Makau, dan sebagian besar komunitas Tionghoa di luar
+            negeri. Hokkien juga bertahan di Taiwan dan kawasan Asia Tenggara seperti
+            Singapura, Malaysia, dan Indonesia.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Di Tiongkok sendiri, muncul upaya dari komunitas lokal untuk
+            mendokumentasikan dan menghidupkan kembali dialek-dialek yang hampir
+            punah, melalui media sosial, program radio daring, hingga pelatihan
+            informal. Sebagai contoh, terdapat ajang pencarian bakat "the Voice
+            of China" yang diselenggarakan dalam dialek Hokkien dan Hakka.
+            Sementara itu, dalam acara the Voice of Hong Kong dan Makau juga
+            menggunakan dialek Kanton. Pemerintah pun mulai mendukung
+            pelestarian bahasa minoritas dalam konteks budaya melalui proyek
+            yang bernama "the Chinese Language Resources and Environment
+            Project" yang bertujuan untuk melakukan riset terhadap dialek-dialek
+            Tiongkok yang pernah digunakan. Lalu, hasil tersebut dikumpulkan ke
+            dalam "the Chinese Language Resource Bank", yang mana secara data
+            terdapat lebih dari 10 juta dialek Tiongkok yang pernah menjadi
+            bagian dari sejarah Tiongkok dan terdokumentasikan (Bingbing Jiang,
+            2023).
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div
+          class="mt-8 p-4 bg-red-50 border-l-4 border-red-700 rounded-r-lg"
+        >
+          <p class="text-gray-800 text-sm font-medium">
+            Stay curious, stay kind, and see you in the next chapter of
+            #CiciUnboxChina!
+          </p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              Bolong.id. (2020). "Lebih dari 70 Negara Masukan Bahasa Mandarin dalam Sistem Pendidikan Nasional."
+              <a
+                href="https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Day Translations. (2022). "Chinese Languages: How Many Languages are Spoken in China?"
+              <a
+                href="https://www.daytranslations.com/blog/chinese-languages/"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.daytranslations.com/blog/chinese-languages/
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              GoEast. (2025). "Will Chinese Dialect Disappear? The Uncertain Future of Chinese Dialects."
+              <a
+                href="https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Jiang, Bing Bing. (2023). "The Preservation and Inheritance of Chinese Dialects: Reflections on the Phenomenon of Chinese Dialect Loss in the New Era." <em>Athena Publishing</em>. Hlm. 14 & 16.
+            </p>
+            <p class="pl-4 -indent-4">
+              Ministry of Education of the People's Republic of China. (2023). "26th National Putonghua Promotion Week opens in Qinghai Province."
+              <a
+                href="http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              United Nations. "What are the official languages of the United Nations?"
+              <a
+                href="https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              WorldData.info. "Spread of the Chinese Language."
+              <a
+                href="https://www.worlddata.info/languages/chinese.php"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.worlddata.info/languages/chinese.php
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Yang, Zhao. (2024). <em>The World Humanities Report: Promoting Mandarin for China's Economic and Social Development</em>. Hlm. 2.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {/* --- DESKTOP VERSION --- */}
+  <main
+    class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]"
+    style={`background-image: url(${Background})`}
+  >
+    {/* HERO SECTION DESKTOP */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span
+            class="inline-block bg-red-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
+          >
+            {article.topic}
+          </span>
+        </div>
+        <h1
+          class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
+        >
+          {article.title}
+        </h1>
+        <div
+          class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
+        >
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT DESKTOP */}
+    <div class="mx-auto px-15">
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">
+            "你好! We're back with more China updates from Cici!"
+          </p>
+        </div>
+
+        {/* Paragraf Pembuka */}
+        <div class="mb-8">
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+          >
+            Bahasa Mandarin, atau secara resmi disebut Putonghua, telah lama
+            ditetapkan sebagai bahasa nasional Tiongkok. Namun, kenyataan
+            linguistik di Negeri Tirai Bambu jauh lebih kompleks dari sekadar
+            satu bahasa tunggal. Tiongkok adalah rumah bagi puluhan dialek dan
+            bahasa daerah yang sangat beragam, seperti Kanton (Yue), Hokkien
+            (Min Nan), Hakka, Shanghainese (Wu), hingga bahasa-bahasa minoritas
+            seperti Uighur dan Tibet. Dalam dinamika sosial, politik, dan
+            ekonomi saat ini, muncul sebuah pertanyaan penting, yaitu bagaimana
+            eksistensi dialek-dialek ini bertahan di tengah dominasi Bahasa
+            Mandarin?
+          </p>
+        </div>
+
+        <!-- SUB judul  Mandarin: Bahasa Resmi yang Serbaguna -->
+        <div class="mb-8">
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+          >
+            <span class="font-bold">Mandarin: Bahasa Resmi yang Serbaguna</span>
+            <br /> Bahasa Mandarin merupakan bahasa resmi nasional sejak berdirinya
+            Republik Rakyat Tiongkok pada tahun 1949. Bahkan, dalam Konstitusi Republik
+            Rakyat Tiongkok, dikatakan bahwa “the state shall promote the common use
+            of Putonghua throughout the country” (Zhao Yang, 2024). Bahasa ini digunakan
+            dalam sistem pendidikan, pemerintahan, media nasional, dan komunikasi
+            formal. Tidak hanya itu, tetapi Bahasa Mandarin juga merupakan salah satu
+            dari enam bahasa resmi Perserikatan Bangsa-Bangsa (PBB), menjadikannya
+            bahasa strategis di panggung internasional (United Nations).
+          </p>
+          <br />
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+          >
+            Popularitas Bahasa Mandarin juga meningkat di luar negeri. Terdapat
+            5 negara di dunia yang menetapkan bahasa Mandarin sebagai bahasa
+            resmi negara mereka, yaitu Tiongkok, Taiwan, Hong Kong, Singapura,
+            dan Makau (World Data Info). Wakil Menteri Pendidikan Tiongkok, Tian
+            Xuejun mengatakan bahwa sudah terdapat lebih dari 70 negara yang
+            secara resmi memasukkan pengajaran bahasa Mandarin ke dalam sistem
+            pendidikan nasional mereka, termasuk Inggris, Rusia, Afrika Selatan,
+            Jepang, Korea Selatan, dan Australia (Bolong, 2020). Dengan
+            demikian, sejauh ini bahasa Mandarin digunakan oleh kurang lebih 1,3
+            miliar orang di seluruh dunia (Day Translation, 2022). Namun,
+            kemajuan ini tidak serta-merta menjamin kelestarian keragaman
+            linguistik dalam negeri.
+          </p>
+        </div>
+
+        <!-- Kontestasi Eksistensi: Ancaman atau Adaptasi? -->
+        <div class="mb-8">
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+          >
+            <span class="font-bold"
+              >Kontestasi Eksistensi: Ancaman atau Adaptasi?</span
+            >
+            <br /> Meskipun menghadapi tekanan kuat, beberapa dialek berhasil mempertahankan
+            eksistensinya, khususnya di wilayah dengan identitas budaya yang kuat
+            atau komunitas diaspora yang solid. Dialek Kanton, misalnya, masih sangat
+            hidup di Hong Kong, Makau, dan sebagian besar komunitas Tionghoa di luar
+            negeri. Hokkien juga bertahan di Taiwan dan kawasan Asia Tenggara seperti
+            Singapura, Malaysia, dan Indonesia.
+          </p>
+          <br />
+          <p
+            class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+          >
+            Di Tiongkok sendiri, muncul upaya dari komunitas lokal untuk
+            mendokumentasikan dan menghidupkan kembali dialek-dialek yang hampir
+            punah, melalui media sosial, program radio daring, hingga pelatihan
+            informal. Sebagai contoh, terdapat ajang pencarian bakat “the Voice
+            of China” yang diselenggarakan dalam dialek Hokkien dan Hakka.
+            Sementara itu, dalam acara the Voice of Hong Kong dan Makau juga
+            menggunakan dialek Kanton. Pemerintah pun mulai mendukung
+            pelestarian bahasa minoritas dalam konteks budaya melalui proyek
+            yang bernama “the Chinese Language Resources and Environment
+            Project” yang bertujuan untuk melakukan riset terhadap dialek-dialek
+            Tiongkok yang pernah digunakan. Lalu, hasil tersebut dikumpulkan ke
+            dalam “the Chinese Language Resource Bank”, yang mana secara data
+            terdapat lebih dari 10 juta dialek Tiongkok yang pernah menjadi
+            bagian dari sejarah Tiongkok dan terdokumentasikan (Bingbing Jiang,
+            2023).
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div
+          class="mt-12 p-6 bg-red-50 border-l-4 border-red-700 rounded-r-lg"
+        >
+          <p class="text-gray-800 text-base md:text-lg font-medium">
+            Stay curious, stay kind, and see you in the next chapter of
+            #CiciUnboxChina!
+          </p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">
+            Referensi
+          </h3>
+          <div
+            class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
+          >
+            <p class="pl-6 -indent-6">
+              Bolong.id. (2020). "Lebih dari 70 Negara Masukan Bahasa Mandarin dalam Sistem Pendidikan Nasional."
+              <a
+                href="https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Day Translations. (2022). "Chinese Languages: How Many Languages are Spoken in China?"
+              <a
+                href="https://www.daytranslations.com/blog/chinese-languages/"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.daytranslations.com/blog/chinese-languages/
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              GoEast. (2025). "Will Chinese Dialect Disappear? The Uncertain Future of Chinese Dialects."
+              <a
+                href="https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Jiang, Bing Bing. (2023). "The Preservation and Inheritance of Chinese Dialects: Reflections on the Phenomenon of Chinese Dialect Loss in the New Era." <em>Athena Publishing</em>. Hlm. 14 & 16.
+            </p>
+            <p class="pl-6 -indent-6">
+              Ministry of Education of the People's Republic of China. (2023). "26th National Putonghua Promotion Week opens in Qinghai Province."
+              <a
+                href="http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              United Nations. "What are the official languages of the United Nations?"
+              <a
+                href="https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              WorldData.info. "Spread of the Chinese Language."
+              <a
+                href="https://www.worlddata.info/languages/chinese.php"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.worlddata.info/languages/chinese.php
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Yang, Zhao. (2024). <em>The World Humanities Report: Promoting Mandarin for China's Economic and Social Development</em>. Hlm. 2.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
