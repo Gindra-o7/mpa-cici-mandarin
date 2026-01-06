@@ -6,8 +6,15 @@ const cardnews2 = "/pages/landing-pages/hottest-news/card-cici-news-2.webp";
 const cardnews3 = "/pages/landing-pages/hottest-news/card-cici-news-3.webp";
 const cardnews4 = "/pages/landing-pages/hottest-news/card-cici-news-4.webp";
 const cardnews5 = "/pages/landing-pages/hottest-news/card-cici-news-5.webp";
+const cardnews6 = "/pages/landing-pages/hottest-news/card-cici-news-6.webp";
 
 const newsCards = [
+  {
+    image: cardnews6,
+    alt: "card6",
+    link: "/article/pesta-api-suku-yi",
+    isNew: true,
+  },
   {
     image: cardnews5,
     alt: "card5",
