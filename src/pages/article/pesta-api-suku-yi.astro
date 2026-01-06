@@ -1,0 +1,332 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+// --- Aset dari pola asli Anda ---
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-6.webp";
+
+// --- Gambar konten artikel ---
+const gambar1 = "/pages/landing-pages/hottest-news/article/torch-festival.png";
+const gambar2 = "/pages/landing-pages/hottest-news/article/road-torch-festival.png";
+
+// --- Objek artikel diperbarui untuk konten baru ---
+const article = {
+  topic: "CICIUNBOXCHINA #6",
+  title: "PESTA API SUKU YI: SERUNYA TORCH FESTIVAL 火把节!",
+  publishDate: "7 Januari 2026",
+  author: "Celia Vanessa Hakim",
+};
+
+const gambar = [
+  {
+    src: gambar1,
+    alt: "Torch Festival",
+    source: "Sumber: https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition ",
+  },
+  {
+    src: gambar2,
+    alt: "Road Torch Festival",
+    source: "Sumber: https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition ",
+  },
+];
+---
+
+<Layout title={article.title}>
+  {/* --- MOBILE VERSION --- */}
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-red-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraf Pembuka */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            China dikenal sebagai negeri yang kaya akan kebudayaan yang luar biasa. Salah satu perayaan tradisional yang paling menarik adalah Torch Festival (火把节 / Huǒbǎ Jié), atau Pesta Obor. Pesta Obor dirayakan oleh suku Yi dan
+            beberapa etnis minoritas lainnya seperti suku Bai, Naxi, Jino, dan Lahu. Pesta Obor dirayakan setiap tanggal 24 hingga 26 bulan keenam kalender. Pesta ini melambangkan semangat, persatuan, dan penghormatan terhadap alam serta
+            leluhur (Lu Song, et.al., 2022).
+          </p>
+        </div>
+
+        {/* Gambar 1 */}
+        <div class="mb-6 mx-auto max-w-md">
+          <img src={gambar[0].src} alt={gambar[0].alt} class="w-full h-auto rounded-lg" />
+          <p class="text-xs text-gray-600 italic mt-2">{gambar[0].source}</p>
+        </div>
+
+        {/* Asal Usul Festival Obor */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Asal Usul Festival Obor</span>
+            <br /> Pesta Obor berasal dari kepercayaan dan cerita rakyat kuno yang dirayakan oleh beberapa kelompok etnis di Tiongkok Barat Daya, terutama di provinsi Yunnan, Sichuan, dan Guizhou (China Vistas, 2025). Dari berbagai suku yang
+            turut merayakan festival ini, suku Yi adalah kelompok yang paling menonjol jika berbicara mengenai festival ini. Bagi suku Yi, api adalah simbol keberanian, kemakmuran, dan perlindungan dari roh jahat. Legenda menyebutkan bahwa seorang
+            pahlawan menyalakan obor untuk mengusir roh jahat yang merusak tanaman. Sejak saat itu, festival ini menjadi bentuk syukur atas panen yang melimpah dan harapan akan musim pertanian yang baik. Meskipun dirayakan oleh beberapa suku,
+            esensi dari festival ini tetap sama, yaitu pertunjukan api, musik, tarian, dan kegembiraan yang megah (China Vistas, 2025).
+          </p>
+        </div>
+
+        {/* Aktivitas dan Tradisi */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Rangkaian Acara: Dari Adat Hingga Liburan Spektakuler</span>
+            <br /> Perayaan Torch Festival selalu penuh warna dan semangat. Puncak acaranya adalah prosesi arak-arakan obor raksasa yang dibuat dari batang pinus dan rumput kering. Obor ini diarak ke seluruh desa pada malam hari, menciptakan
+            pemandangan yang sangat memukau-lautan api yang menari dalam kegelapan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <br /> Biasanya terdapat beberapa jenis obor yang digunakan dalam festival ini. Terdapat obor raksasa yang terbuat dari kayu pinus kering dan kayu ringan yang diikat dipasang di desa-desa. Obor yang kecil ditempatkan di depan pintu
+            setiap rumah. Obor-obor tersebut dinyalakan pada malam hari, membuat desa-desa tampak terang benderang seperti di siang hari. Orang-orang berjalan mengelilingi ladang dan rumah-rumah sambil membawa obor, dan meletakkan obor di sudut-sudut
+            ladang (Nihao China).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Selain arak-arakan, berbagai kegiatan adat juga digelar, seperti tarian dan nyanyian tradisional Yi yang diiringi dengan alat musik khas seperti hulusi dan gendang. Kemudian, terdapat pertandingan olahraga tradisional seperti
+            gulat dan balap kuda. Lalu, terdapat pertunjukan seni bela diri dan atraksi api yang memukau, serta pasar malam dan festival kuliner yang menyediakan masakan khas etnis Yi (Ecore Tours, 2019).
+          </p>
+        </div>
+
+        {/* Makna Mendalam */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Makna Mendalam: Api Sebagai Simbol Harapan</span>
+            <br /> Bagi masyarakat suku Yi, obor bukan hanya sekadar hiasan atau atraksi visual, tetapi juga melambangkan pembersihan spiritual, membakar hal-hal buruk dalam kehidupan, serta menjadi media komunikasi dengan leluhur. Obor dipercaya
+            mampu membawa berkah, menolak bala, dan menjaga keharmonisan antara manusia dan alam. Selain itu, obor juga melambangkan kemenangan cahaya atas kegelapan. Maka tidaklah mengherankan jika selama festival, para orang tua akan mengayunkan
+            obor kecil di sekitar rumah dan ladang sebagai bentuk doa dan perlindungan untuk keluarga mereka (Nihao China).
+          </p>
+        </div>
+
+        {/* Festival yang Terbuka untuk Dunia */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Festival yang Terbuka untuk Dunia</span>
+            <br /> Di era modern saat ini, Pesta Obor tidak hanya menjadi perayaan lokal, tetapi juga menjadi daya tarik wisata budaya. Di daerah seperti Chuxiong dan Liangshan (Provinsi Yunnan dan Sichuan), pemerintah lokal turut mengadakan
+            karnaval budaya, parade obor skala besar, dan pertunjukan musik etnik yang mengundang ribuan pengunjung lokal dan internasional. Bahkan, pesta obor yang diadakan di ibu kota Prefektur Otonomi Sichuan Liangshan Yi, Kota Xichang, dihadiri
+            oleh sekitar 757.000 pengunjung dan lebih dari 300.000 pengunjung berpartisipasi dalam karnaval obor (The People's Government of Liangshan Yi Autonomous Prefecture, 2024). Bagi para wisatawan, festival ini adalah kesempatan yang langka
+            untuk menyaksikan langsung warisan budaya yang otentik dan hidup.
+          </p>
+          <div class="mb-6 mx-auto max-w-md">
+            <img src={gambar[1].src} alt={gambar[1].alt} class="w-full h-auto rounded-lg" />
+            <p class="text-xs text-gray-600 italic mt-2">{gambar[1].source}</p>
+          </div>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Torch Festival 火把节 atau pesta obor bukan hanya sekadar pesta, tetapi juga simbol perlawanan terhadap lupa, penanda identitas etnis, dan perayaan kehidupan. Kalau kamu berencana untuk pergi ke China di musim panas, pastikan
+            Torch Festival ada di daftar tujuanmu karena tak ada yang lebih seru dari malam penuh api, tawa, tarian, dan tradisi!
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-red-50 border-l-4 border-red-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              China Vistas. (2025). "Southwest China's Torch Festival: A Fiery Celebration of Culture and Tradition."
+              <a href="https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition" class="text-red-700 hover:text-red-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Eaton, Kaitlynn. (2019). "Musical Celebrations Around the World–Chinese Torch Festival."
+              <a href="https://www.encoretours.com/blog/musical-celebrations-around-the-world-chinese-torch-festival/?utm_source" class="text-red-700 hover:text-red-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://www.encoretours.com/blog/musical-celebrations-around-the-world-chinese-torch-festival/?utm_source
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Song, Lu. et.al. (2022). "Sliding Window Detection and Analysis Method of Night-Time Light Remote Sensing Time Series–A Case Study of the Torch Festival in Yunnan Province, China." Remote Sens. Hlm. 3.
+            </p>
+            <p class="pl-4 -indent-4">
+              The People's Government of Liangshan Yi Autonomous Procedure. "Prefecture and Cultural Tourism Series are in Full Swing."
+              <a
+                href="https://www.globenewswire.com/en/news-release/2024/08/06/2924751/0/en/The-2024-Torch-Festival-in-Liangshan-Yi-Autonomous-Prefecture-and-Cultural-Tourism-Series-are-in-Full-Swing.html?utm_source"
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.globenewswire.com/en/news-release/2024/08/06/2924751/0/en/The-2024-Torch-Festival-in-Liangshan-Yi-Autonomous-Prefecture-and-Cultural-Tourism-Series-are-in-Full-Swing.html?utm_source
+              </a>.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {/* --- DESKTOP VERSION --- */}
+  <main class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION DESKTOP */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-red-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT DESKTOP */}
+    <div class="mx-auto px-15">
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraf Pembuka */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            China dikenal sebagai negeri yang kaya akan kebudayaan yang luar biasa. Salah satu perayaan tradisional yang paling menarik adalah Torch Festival (火把节 / Huǒbǎ Jié), atau Pesta Obor. Pesta Obor dirayakan oleh suku Yi dan
+            beberapa etnis minoritas lainnya seperti suku Bai, Naxi, Jino, dan Lahu. Pesta Obor dirayakan setiap tanggal 24 hingga 26 bulan keenam kalender. Pesta ini melambangkan semangat, persatuan, dan penghormatan terhadap alam serta
+            leluhur (Lu Song, et.al., 2022).
+          </p>
+        </div>
+        {/* Gambar 1 */}
+        <div class="mb-8 mx-auto max-w-3xl">
+          <img src={gambar[0].src} alt={gambar[0].alt} class="w-full h-auto rounded-lg" />
+          <p class="text-sm text-gray-600 italic mt-2">{gambar[0].source}</p>
+        </div>
+        <!-- Asal Usul Festival Obor -->
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Asal Usul Festival Obor</span>
+            <br /> Pesta Obor berasal dari kepercayaan dan cerita rakyat kuno yang dirayakan oleh beberapa kelompok etnis di Tiongkok Barat Daya, terutama di provinsi Yunnan, Sichuan, dan Guizhou (China Vistas, 2025). Dari berbagai suku yang
+            turut merayakan festival ini, suku Yi adalah kelompok yang paling menonjol jika berbicara mengenai festival ini. Bagi suku Yi, api adalah simbol keberanian, kemakmuran, dan perlindungan dari roh jahat. Legenda menyebutkan bahwa seorang
+            pahlawan menyalakan obor untuk mengusir roh jahat yang merusak tanaman. Sejak saat itu, festival ini menjadi bentuk syukur atas panen yang melimpah dan harapan akan musim pertanian yang baik. Meskipun dirayakan oleh beberapa suku,
+            esensi dari festival ini tetap sama, yaitu pertunjukan api, musik, tarian, dan kegembiraan yang megah (China Vistas, 2025).
+          </p>
+        </div>
+
+        <!-- Rangkaian Acara -->
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Rangkaian Acara: Dari Adat Hingga Liburan Spektakuler</span>
+            <br /> Perayaan Torch Festival selalu penuh warna dan semangat. Puncak acaranya adalah prosesi arak-arakan obor raksasa yang dibuat dari batang pinus dan rumput kering. Obor ini diarak ke seluruh desa pada malam hari, menciptakan
+            pemandangan yang sangat memukau–lautan api yang menari dalam kegelapan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Biasanya terdapat beberapa jenis obor yang digunakan dalam festival ini. Terdapat obor raksasa yang terbuat dari kayu pinus kering dan kayu ringan yang diikat dipasang di desa-desa. Obor yang kecil ditempatkan di depan pintu
+            setiap rumah. Obor-obor tersebut dinyalakan pada malam hari, membuat desa-desa tampak terang benderang seperti di siang hari. Orang-orang berjalan mengelilingi ladang dan rumah-rumah sambil membawa obor, dan meletakkan obor di
+            sudut-sudut ladang (Nihao China).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Selain arak-arakan, berbagai kegiatan adat juga digelar, seperti tarian dan nyanyian tradisional Yi yang diiringi dengan alat musik khas seperti hulusi dan gendang. Kemudian, terdapat pertandingan olahraga tradisional seperti
+            gulat dan balap kuda. Lalu, terdapat pertunjukan seni bela diri dan atraksi api yang memukau, serta pasar malam dan festival kuliner yang menyediakan masakan khas etnis Yi (Ecore Tours, 2019).
+          </p>
+        </div>
+
+        <!-- Makna Mendalam -->
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Makna Mendalam: Api Sebagai Simbol Harapan</span>
+            <br /> Bagi masyarakat suku Yi, obor bukan hanya sekadar hiasan atau atraksi visual, tetapi juga melambangkan pembersihan spiritual, membakar hal-hal buruk dalam kehidupan, serta menjadi media komunikasi dengan leluhur. Obor dipercaya
+            mampu membawa berkah, menolak bala, dan menjaga keharmonisan antara manusia dan alam. Selain itu, obor juga melambangkan kemenangan cahaya atas kegelapan. Maka tidaklah mengherankan jika selama festival, para orang tua akan mengayunkan
+            obor kecil di sekitar rumah dan ladang sebagai bentuk doa dan perlindungan untuk keluarga mereka (Nihao China).
+          </p>
+        </div>
+
+        <!-- Festival yang Terbuka untuk Dunia -->
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Festival yang Terbuka untuk Dunia</span>
+            <br /> Di era modern saat ini, Pesta Obor tidak hanya menjadi perayaan lokal, tetapi juga menjadi daya tarik wisata budaya. Di daerah seperti Chuxiong dan Liangshan (Provinsi Yunnan dan Sichuan), pemerintah lokal turut mengadakan
+            karnaval budaya, parade obor skala besar, dan pertunjukan musik etnik yang mengundang ribuan pengunjung lokal dan internasional. Bahkan, pesta obor yang diadakan di ibu kota Prefektur Otonomi Sichuan Liangshan Yi, Kota Xichang, dihadiri
+            oleh sekitar 757.000 pengunjung dan lebih dari 300.000 pengunjung berpartisipasi dalam karnaval obor (The People's Government of Liangshan Yi Autonomous Prefecture, 2024). Bagi para wisatawan, festival ini adalah kesempatan yang langka
+            untuk menyaksikan langsung warisan budaya yang otentik dan hidup.
+          </p>
+          {/* Gambar 2 */}
+          <div class="mb-8 mx-auto max-w-3xl">
+            <img src={gambar[1].src} alt={gambar[1].alt} class="w-full h-auto rounded-lg" />
+            <p class="text-sm text-gray-600 italic mt-2">{gambar[1].source}</p>
+          </div>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Torch Festival 火把节 atau pesta obor bukan hanya sekadar pesta, tetapi juga simbol perlawanan terhadap lupa, penanda identitas etnis, dan perayaan kehidupan. Kalau kamu berencana untuk pergi ke China di musim panas, pastikan
+            Torch Festival ada di daftar tujuanmu karena tak ada yang lebih seru dari malam penuh api, tawa, tarian, dan tradisi!
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-red-50 border-l-4 border-red-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              China Vistas. (2025). “Southwest China’s Torch Festival: A Fiery Celebration of Culture and Tradition.”
+              <a href="https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition" class="text-red-700 hover:text-red-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://www.chinavistas.com/post/southwest-china-s-torch-festival-a-fiery-celebration-of-culture-and-tradition
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Eaton, Kaitlynn. (2019). “Musical Celebrations Around the World-Chinese Torch Festival."
+              <a href="https://www.encoretours.com/blog/musical-celebrations-around-the-world-chinese-torch-festival/?utm_source." class="text-red-700 hover:text-red-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://www.encoretours.com/blog/musical-celebrations-around-the-world-chinese-torch-festival/?utm_source.
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Song, Lu. et.al. (2022). “Sliding Window Detection and Analysis Method of Night-Time Light Remote Sensing Time Series-A Case Study of the Torch Festival in Yunnan Province, China.” Remote Sens. Hlm. 3.
+            </p>
+            <p class="pl-6 -indent-6">
+              The People's Government of Liangshan Yi Autonomous Procedure. “Prefecture and Cultural Tourism Series are in Full Swing.”
+              <a
+                href="https://www.globenewswire.com/en/news-release/2024/08/06/2924751/0/en/The-2024-Torch-Festival-in-Liangshan-Yi-Autonomous-Prefecture-and-Cultural-Tourism-Series-are-in-Full-Swing.html?utm_source."
+                class="text-red-700 hover:text-red-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.globenewswire.com/en/news-release/2024/08/06/2924751/0/en/The-2024-Torch-Festival-in-Liangshan-Yi-Autonomous-Prefecture-and-Cultural-Tourism-Series-are-in-Full-Swing.html?utm_source.
+              </a>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
