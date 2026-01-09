@@ -1,0 +1,322 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-16.webp";
+
+const gambar = "/pages/landing-pages/hottest-news/article/pasar-pernikahan.png";
+
+const article = {
+  topic: "CICIUNBOXCHINA #16",
+  title: "KETIKA ORANG TUA MENCARIKAN JODOH: FENOMENA PASAR PERNIKAHAN DI CHINA",
+  publishDate: "30 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Di tengah modernisasi dan globalisasi yang mempermudah kita untuk mencari jodoh melalui dating apps atau sosial media, hal ini tentu berbeda dengan Cina yang menjalankan budaya 白发相亲 (baifaxiangqin) atau "pasar pernikahan".
+            Kata 相亲 (xiangqin) dapat diartikan sebagai pertemuan atau kencan antara dua individu (biasanya berjenis kelamin berbeda) atas rekomendasi orang lain, seperti orang tua, tetangga, rekan kerja, atau mak comblang, dengan tujuan
+            pernikahan.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Dalam konteks pasar pernikahan, para orang tua berkumpul untuk "memasarkan" anak-anak mereka demi menemukan pasangan yang dianggap sesuai. Para orang tua akan memberikan informasi mengenai anak-anak mereka yang belum menikah
+            pada kertas warna-warni. Informasi tersebut mencakup usia, tinggi badan, pekerjaan, pendapatan, pendidikan, nilai-nilai keluarga, atau bahkan foto anak-anak mereka. Bahkan, sebagian besar orang tua juga mencantumkan persyaratan
+            minimum untuk 'mendaftar' bagi anak-anak mereka. Adapun kriteria yang paling umum adalah kondisi keuangan, kepemilikan properti, nilai-nilai keluarga, usia, dan tingkat pendidikan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Fenomena ini sudah berlangsung sejak tahun 2004 dan umumnya dilakukan di Beijing, Shanghai, Shenzhen, dan Wuhan (Wei Mei Wong, 2016). Namun, Shanghai menjadi kota dengan pelaksanaan pasar pernikahan terbanyak dibandingkan
+            kota-kota lain di China. Hal ini dikarenakan Shanghai merupakan kota metropolitan, sehingga memiliki standar kehidupan dan kesempatan karir yang lebih tinggi. Dengan demikian, hal ini menguntungkan bagi para orang tua untuk
+            menjodohkan seseorang yang sudah memiliki properti di Shanghai dengan anaknya (Nishiv, 2025).
+          </p>
+        </div>
+
+        <div class="mb-6 mx-auto max-w-md">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Fenomena pasar pernikahan di China sejatinya berawal dari kebijakan One Child Policy pada tahun 1979. Kebijakan ini memiliki tujuan untuk mengurangi laju pertumbuhan penduduk China. Hasilnya, sekitar 400 juta angka kelahiran
+            dicegah sebagai akibat dari kebijakan ini. Namun, pemerintah sadar bahwa jika kebijakan ini berlangsung lama, maka seperempat populasi China akan berusia di atas 65 tahun pada tahun 2050 mendatang. Oleh sebab itu, kebijakan One
+            Child Policy resmi berakhir dan warga negara China diperbolehkan untuk memiliki dua anak (BBC News, 2015).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Namun, penghapusan kebijakan tersebut tidak membuat jumlah populasi China meningkat secara drastis. Hal ini dikarenakan adanya kekhawatiran bagi para pasangan untuk membiayai anak, kurangnya layanan penitipan anak, dan
+            implikasinya terhadap karir mereka. Kebijakan One Child Policy yang berlangsung lama juga menyebabkan para pasangan berpandangan bahwa memiliki satu anak memang lebih baik (Britannica, 2025). Tidak hanya itu, tetapi pandangan
+            tersebut juga membuat semakin banyak individu yang memilih untuk tidak menikah karena adanya tuntutan hidup dan finansial yang tinggi (CEIBS, 2025).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Hal tersebut membuat angka pernikahan di China juga menurun sangat drastis. Bahkan, angka pernikahan di China anjlok 20% pada tahun 2024. Angka tersebut merupakan angka terendah sepanjang sejarah China. Dengan demikian, maka
+            tidaklah mengherankan bahwa budaya pasar pernikahan ini juga menjadi marak di China saat ini.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Lantas, apakah pasar pernikahan ini efektif untuk mencari jodoh dan meningkatkan angka pernikahan dan anak di China? Jawabannya, tidak. Hal ini dibuktikan dari fakta bahwa angka pernikahan di China justru menurun 8% dari tahun
+            sebelumnya sebagaimana data yang dikemukakan oleh Kementerian Urusan Sipil (Luna Sun, 2025). Adapun penyebabnya adalah adanya 'marriage squeeze', yaitu kelangkaan relatif pria dibandingkan dengan wanita di pasar pernikahan.
+            Kemudian, ketidaksesuaian tipe dan biaya untuk menikah yang cenderung tinggi juga menjadi faktor penghambat dari kesuksesan pasar pernikahan (Pauline Rossi dan Yun Xiao, 2024).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">Dengan demikian, bagaimana pendapatmu mengenai budaya pasar pernikahan ini? Apakah Anda tertarik untuk mencari jodoh disini?</p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              BBC News. (2015). "Explainer: What was China's one-child policy?" <a
+                href="https://www.bbc.com/news/world-asia-china-34667551"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.bbc.com/news/world-asia-china-34667551</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Kwan, Ho Kwong. (2025). "Why aren't young people in China getting married?" <a
+                href="https://www.ceibs.edu/new-papers-columns/27260"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.ceibs.edu/new-papers-columns/27260</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Nishi. (2025). "The Shanghai Marriage Market: A Fascinating Experience." <a
+                href="https://www.nishiv.com/the-shanghai-marriage-market/#:~:text=Located%20right%20in%20the%20heart,house%20in%20this%20sprawling%20city"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.nishiv.com/the-shanghai-marriage-market/</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Pletcher, Kenneth. (2025). "Consequences of China's one-child policy." <a
+                href="https://www.britannica.com/topic/one-child-policy/Consequences-of-Chinas-one-child-policy"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.britannica.com/topic/one-child-policy/Consequences-of-Chinas-one-child-policy</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Rossi, Pauline and Yun Xiao. (2024). Left over or opting out? Squeeze, mismatch and surplus in Chinese marriage markets. <em>HAL Open Science</em>. Hlm. 4-5.
+            </p>
+            <p class="pl-4 -indent-4">
+              Sun, Luna. "More Chinese leave the knot untied as marriage registrations drop." <a
+                href="https://www.scmp.com/economy/china-economy/article/3308173/more-chinese-leave-knot-untied-marriage-registrations-drop"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.scmp.com/economy/china-economy/article/3308173/more-chinese-leave-knot-untied-marriage-registrations-drop</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">Wong, Wei Mei. Past Matchmaking Norms and their Influence on Contemporary Marriage Markets in China. Hlm. 371-372.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Di tengah modernisasi dan globalisasi yang mempermudah kita untuk mencari jodoh melalui dating apps atau sosial media, hal ini tentu berbeda dengan Cina yang menjalankan budaya 白发相亲 (baifaxiangqin) atau "pasar pernikahan".
+            Kata 相亲 (xiangqin) dapat diartikan sebagai pertemuan atau kencan antara dua individu (biasanya berjenis kelamin berbeda) atas rekomendasi orang lain, seperti orang tua, tetangga, rekan kerja, atau mak comblang, dengan tujuan
+            pernikahan.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam konteks pasar pernikahan, para orang tua berkumpul untuk "memasarkan" anak-anak mereka demi menemukan pasangan yang dianggap sesuai. Para orang tua akan memberikan informasi mengenai anak-anak mereka yang belum menikah
+            pada kertas warna-warni. Informasi tersebut mencakup usia, tinggi badan, pekerjaan, pendapatan, pendidikan, nilai-nilai keluarga, atau bahkan foto anak-anak mereka. Bahkan, sebagian besar orang tua juga mencantumkan persyaratan
+            minimum untuk 'mendaftar' bagi anak-anak mereka. Adapun kriteria yang paling umum adalah kondisi keuangan, kepemilikan properti, nilai-nilai keluarga, usia, dan tingkat pendidikan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Fenomena ini sudah berlangsung sejak tahun 2004 dan umumnya dilakukan di Beijing, Shanghai, Shenzhen, dan Wuhan (Wei Mei Wong, 2016). Namun, Shanghai menjadi kota dengan pelaksanaan pasar pernikahan terbanyak dibandingkan
+            kota-kota lain di China. Hal ini dikarenakan Shanghai merupakan kota metropolitan, sehingga memiliki standar kehidupan dan kesempatan karir yang lebih tinggi. Dengan demikian, hal ini menguntungkan bagi para orang tua untuk
+            menjodohkan seseorang yang sudah memiliki properti di Shanghai dengan anaknya (Nishiv, 2025).
+          </p>
+        </div>
+
+        <div class="mb-8 mx-auto max-w-3xl">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Struktur Sistem Pendidikan Tinggi di Tiongkok</span>
+            <br /> Struktur sistem pendidikan tinggi di Tiongkok disusun secara jelas dan sistematis. Pada tingkat paling atas, terdapat universitas riset unggulan yang tergabung dalam “Project 985”, yaitu inisiatif dari Presiden Jiang Zemin
+            pada tahun 1998 untuk menciptakan universitas kelas dunia. Di bawahnya, terdapat institusi dalam kelompok “Project 211” yang dibuat pada tahun 1995 untuk memperkuat sekitar 100 universitas dan program studi unggulan. Tingkat ketiga
+            mencakup universitas regional yang fokus pada pengajaran, serta tingkat paling bawah adalah perguruan tinggi vokasional dan politeknik. Untuk mencapai pendidikan yang berstandar global, pemerintah Tiongkok mengalokasikan dana yang
+            sangat besar untuk Project 985 dan Project 211 (Yuzhuo Cai & Fengqiao Yan, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam Project 985, terdapat 39 universitas, yang beberapa diantaranya adalah Tsinghua University, Peking University, Zhejiang University, Fudan University, Nanjing University, dan lainnya. Sementara itu, terdapat 112 universitas
+            yang termasuk dalam Project 211, yang diantaranya adalah Xinjiang University, Shaanxi Normal University, Guizhou University, serta 5 universitas yang sudah disebutkan dalam Project 985. Pemerintah Tiongkok mengalokasikan dana
+            sebesar 7,97 miliar USD untuk Project 985 dan 2,7 miliar USD untuk Project 211 (Yannan Cao & Rui Yang, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020)</span>
+            <br /> Untuk meningkatkan kualitas pendidikan tinggi, pemerintah Tiongkok meluncurkan China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020). Kebijakan ini menganut konsep Lifelong Learning atau
+            pembelajaran seumur hidup, yang artinya semua orang harus diajari apa yang ingin mereka pelajari unggul dalam apa yang mereka pelajari, dan menerapkan apa yang telah mereka pelajari (UNESCO, 2023). Rencana ini menekankan pada peningkatan
+            kualitas, pemerataan akses, dan inovasi dalam pendidikan. Salah satu aspek terpenting dalam rencana ini adalah proses internasionalisasi yang diupayakan melalui kolaborasi-kolaborasi internasional yang dilakukan oleh universitas lokal
+            di Tiongkok, baik dalam bentuk double degree, pertukaran dosen, hingga riset kolaboratif. Pemerintah Tiongkok juga melakukan pengembangan kurikulum internasional dan penggunaan bahasa Inggris sebagai bahasa pengantar dalam pengajaran
+            di berbagai program studi. Bahkan, dalam rencana ini, dinyatakan bahwa institusi pendidikan Tiongkok didorong untuk membuka cabang di luar negeri. Hal ini dilakukan untuk mendukung pengajaran bahasa Mandarin sebagai bahasa asing di
+            negara lain. Maka, tidak mengherankan bahwa saat ini terdapat beberapa universitas Tiongkok yang membuka cabang di negara lain, salah satunya adalah Xiamen University di Malaysia.
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Lantas, apakah pasar pernikahan ini efektif untuk mencari jodoh dan meningkatkan angka pernikahan dan anak di China? Jawabannya, tidak. Hal ini dibuktikan dari fakta bahwa angka pernikahan di China justru menurun 8% dari tahun
+            sebelumnya sebagaimana data yang dikemukakan oleh Kementerian Urusan Sipil (Luna Sun, 2025). Adapun penyebabnya adalah adanya 'marriage squeeze', yaitu kelangkaan relatif pria dibandingkan dengan wanita di pasar pernikahan.
+            Kemudian, ketidaksesuaian tipe dan biaya untuk menikah yang cenderung tinggi juga menjadi faktor penghambat dari kesuksesan pasar pernikahan (Pauline Rossi dan Yun Xiao, 2024).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">Dengan demikian, bagaimana pendapatmu mengenai budaya pasar pernikahan ini? Apakah Anda tertarik untuk mencari jodoh disini?</p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              BBC News. (2015). "Explainer: What was China's one-child policy?" <a
+                href="https://www.bbc.com/news/world-asia-china-34667551"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.bbc.com/news/world-asia-china-34667551</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Kwan, Ho Kwong. (2025). "Why aren't young people in China getting married?" <a
+                href="https://www.ceibs.edu/new-papers-columns/27260"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.ceibs.edu/new-papers-columns/27260</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Nishi. (2025). "The Shanghai Marriage Market: A Fascinating Experience." <a
+                href="https://www.nishiv.com/the-shanghai-marriage-market/#:~:text=Located%20right%20in%20the%20heart,house%20in%20this%20sprawling%20city"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.nishiv.com/the-shanghai-marriage-market/</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Pletcher, Kenneth. (2025). "Consequences of China's one-child policy." <a
+                href="https://www.britannica.com/topic/one-child-policy/Consequences-of-Chinas-one-child-policy"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.britannica.com/topic/one-child-policy/Consequences-of-Chinas-one-child-policy</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Rossi, Pauline and Yun Xiao. (2024). Left over or opting out? Squeeze, mismatch and surplus in Chinese marriage markets. <em>HAL Open Science</em>. Hlm. 4-5.
+            </p>
+            <p class="pl-6 -indent-6">
+              Sun, Luna. "More Chinese leave the knot untied as marriage registrations drop." <a
+                href="https://www.scmp.com/economy/china-economy/article/3308173/more-chinese-leave-knot-untied-marriage-registrations-drop"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.scmp.com/economy/china-economy/article/3308173/more-chinese-leave-knot-untied-marriage-registrations-drop</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">Wong, Wei Mei. Past Matchmaking Norms and their Influence on Contemporary Marriage Markets in China. Hlm. 371-372.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>

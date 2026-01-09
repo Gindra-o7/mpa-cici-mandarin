@@ -1,0 +1,320 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-14.webp";
+
+const gambar = "/pages/landing-pages/hottest-news/article/xi-jinping.png";
+
+const article = {
+  topic: "CICIUNBOXCHINA #14",
+  title: "FIFTEENTH FIVE-YEAR PLAN (2026-2030): ARAH STRATEGIS PEMBANGUNAN TIONGKOK MENUJU MODERNISASI 2025",
+  publishDate: "26 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Di Tiongkok, sistem five-year plan (Rencana Lima Tahun) sejak lama merupakan alat utama pengaturan pembangunan ekonomi dan sosial sejak pertama kali dibuat pada tahun 1953. Rencana terbaru yang sedang disusun adalah Fifteenth
+            Five-Year Plan (2026-2030) yang akan menjadi jembatan penting menuju target modernisasi nasional hingga tahun 2035 (Yasiru Ranaraja, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Konteks dan Signifikansi</span>
+            <br /> Rencana Lima Tahun ini dirumuskan setelah periode dari Fourteenth Five-Year Plan (2021-2025). Fokusnya bukan hanya lima tahun, tetapi juga sebagai satu tahap menuju pencapaian modernisasi menyeluruh di Tiongkok tahun 2035.
+            Dalam dokumen pengantar dirinya, ketua Xi Jinping menekankan bahwa periode 2026-2030 adalah "jendela peluang" penting untuk memperkuat fondasi pembangunan, menghapus bottleneck, dan mengambil inisiatif strategis di tengah persaingan
+            global. Rencana ini akan menjadi prioritas strategis yang telah diidentifikasi dalam Sesi Pleno Ke-4 Komite Sentral ke-20 Communist Party of China (CPC) menjelang implementasi.
+          </p>
+        </div>
+
+        <div class="mb-6 mx-auto max-w-md">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Prioritas Utama Rencana</span>
+            <br /> Fifteen Five-Year Plan memuat empat pilar yang menjadi fokus utama. Pertama, penguatan "ekonomi nyata" dan sistem industri modern dengan menempatkan sektor manufaktur, konstruksi, pertanian, jasa sebagai "bahu" ekonomi Tiongkok.
+            Kedua, inovasi dan kemandirian teknologi frontier seperti kecerdasan buatan (AI), semikonduktor, komputasi kuantum, bioteknologi dianggap sebagai kunci untuk menghadapi pembatasan teknologi eksternal. Ketiga, menekankan pembangunan
+            berkelanjutan dan lingkungan hidup dengan cara mengurangi intensitas karbon, peningkatan porsi energi non-fosil, dan pembangunan "Beautiful China". Tidak hanya itu, tetapi China juga mempunyai target ambisius, yaitu mencapai puncak
+            emisi sebelum 2030 dan netralitas karbon pada 2060. Keempat, pembangunan yang berpusat pada manusia dan pemerataan atau "People-centered development" sebagai slogan untuk memperbaiki layanan publik, mengurangi disparitas daerah, meningkatkan
+            konsumsi domestik untuk mendukung pertumbuhan ekonomi (FDI China, 2025).
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Tantangan Utama</span>
+            <br /> Rencana ambisius ini menghadapi beberapa tantangan signifikan. Salah satunya adalah demografi dan struktur usia, yang mana Tiongkok menghadapi populasi yang menua dan tingkat kelahiran yang rendah, yang bisa membebani sistem
+            pensiun dan tenaga kerja. Kemudian, ketidakpastian global seperti geopolitik, perang dagang, dan perubahan rantai pasokan global menimbulkan resiko. Tantangan yang ketiga adalah untuk menggeser orientasi ekonomi, dari ekspor/investasi
+            besar ke konsumsi domestik dan layanan membutuhkan restrukturisasi dan perubahan perilaku yang tidak mudah (Caixin Global, 2025).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Implikasi Five Year Plan Terhadap Asia Tenggara</span>
+            <br /> Fifteen Five-Year Plan yang diadopsi dalam Sidang Pleno ke-4 Komite Sentral ke-20 Partai Komunis Tiongkok tidak hanya menjadi cetak biru pembangunan domestik, tetapi juga memiliki implikasi strategis yang signifikan bagi Asia
+            Tenggara. Arah kebijakan utama, mulai dari inovasi teknologi, transisi hijau, hingga keterbukaan ekonomi berkualitas tinggi, akan berdampak langsung pada kawasan yang memiliki keterkaitan ekonomi dan strategis yang erat dengan Tiongkok.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Sebagaimana yang dikatakan oleh Presiden Xi Jinping dalam kunjungan kenegaraan ke Vietnam, Malaysia, dan Kamboja, ASEAN menempati posisi sentral dalam strategi regional Tiongkok. Dalam Fifteen Five-Year Plan ini, Tiongkok
+            menargetkan pendalaman kerjasama berkualitas tinggi dengan ASEAN, khususnya dalam integrasi ekonomi dan konektivitas berkelanjutan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Namun, meningkatnya kepentingan strategis Asia Tenggara juga memperuncing persaingan pengaruh antara Tiongkok dan Amerika Serikat. Pendekatan tradisional negara-negara ASEAN yang mengandalkan AS dalam bidang keamanan dan
+            Tiongkok dalam bidang ekonomi semakin sulit dipertahankan. Negara-negara ASEAN dituntut untuk merumuskan strategi yang lebih tersegmentasi dalam bidang keamanan, teknologi, dan tata kelola ekonomi.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Rencana ini menempatkan pengembangan "kekuatan produktif berkualitas baru" yang cerdas, hijau, dan terintegrasi sebagai fondasi ekonomi masa depan Tiongkok. Hal ini mencakup industri energi baru, material hijau, dirgantara,
+            hingga sektor-sektor mutakhir seperti teknologi kuantum, hidrogen, kecerdasan buatan, dan komunikasi 6G. Peningkatan CAFTA ke versi 3.0, dengan fokus kuat pada ekonomi digital, mencerminkan upaya integrasi teknologi dan regulasi
+            antara Tiongkok dan ASEAN (Fudan University, 2025).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Kesimpulan</span>
+            <br /> Fifteenth Five-Year Plan (2026-2030) menegaskan peran Rencana Lima Tahun sebagai instrumen strategis utama pembangunan Tiongkok sekaligus jembatan menuju target modernisasi nasional tahun 2035, dengan menitikberatkan pada penguatan
+            ekonomi riil, kemandirian teknologi, pembangunan berkelanjutan, dan pembangunan yang berpusat pada manusia. Meskipun rencana ini dirancang untuk menjawab tantangan struktural domestik seperti penuaan penduduk, ketidakpastian global,
+            dan kebutuhan transformasi model pertumbuhan ekonomi, implementasinya juga memiliki implikasi terhadap kawasan Asia Tenggara.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              Caixin Global. (2025). "Key Challenges China's Next Five-Year Plan needs to tackle." <a
+                href="https://www.thinkchina.sg/economy/key-challenges-chinas-next-five-year-plan-needs-tackle?utm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.thinkchina.sg/economy/key-challenges-chinas-next-five-year-plan-needs-tackle?utm</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Fudan University. (2025). "Xue Song, 'New plan will recast Sino-ASEAN ties.'" <a
+                href="https://iis.fudan.edu.cn/en/93/6e/c16611a758638/page.htm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://iis.fudan.edu.cn/en/93/6e/c16611a758638/page.htm</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              FDI China. (2025). "Major Growth Engine: China 15th Five-Year Plan 2026-2030 – Innovation, Finance & Future Industries." <a
+                href="https://fdichina.com/blog/china-15th-five-year-plan-future-industry/"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://fdichina.com/blog/china-15th-five-year-plan-future-industry/</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Ranaraja, Yasiru. (2025). "China's 15 Five-Year Plan to target innovation, green growth." <a
+                href="https://en.chinadiplomacy.org.cn/2025-10/30/content_118150053.shtml"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://en.chinadiplomacy.org.cn/2025-10/30/content_118150053.shtml</a
+              >
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Di Tiongkok, sistem five-year plan (Rencana Lima Tahun) sejak lama merupakan alat utama pengaturan pembangunan ekonomi dan sosial sejak pertama kali dibuat pada tahun 1953. Rencana terbaru yang sedang disusun adalah Fifteenth
+            Five-Year Plan (2026-2030) yang akan menjadi jembatan penting menuju target modernisasi nasional hingga tahun 2035 (Yasiru Ranaraja, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Konteks dan Signifikansi</span>
+            <br /> Rencana Lima Tahun ini dirumuskan setelah periode dari Fourteenth Five-Year Plan (2021-2025). Fokusnya bukan hanya lima tahun, tetapi juga sebagai satu tahap menuju pencapaian modernisasi menyeluruh di Tiongkok tahun 2035.
+            Dalam dokumen pengantar dirinya, ketua Xi Jinping menekankan bahwa periode 2026-2030 adalah "jendela peluang" penting untuk memperkuat fondasi pembangunan, menghapus bottleneck, dan mengambil inisiatif strategis di tengah persaingan
+            global. Rencana ini akan menjadi prioritas strategis yang telah diidentifikasi dalam Sesi Pleno Ke-4 Komite Sentral ke-20 Communist Party of China (CPC) menjelang implementasi.
+          </p>
+        </div>
+
+        <div class="mb-8 mx-auto max-w-3xl">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Prioritas Utama Rencana</span>
+            <br /> Fifteen Five-Year Plan memuat empat pilar yang menjadi fokus utama. Pertama, penguatan “ekonomi nyata” dan sistem industri modern dengan menempatkan sektor manufaktur, konstruksi, pertanian, jasa sebagai “bahu” ekonomi Tiongkok.
+            Kedua, inovasi dan kemandirian teknologi frontier seperti kecerdasan buatan (AI), semikonduktor, komputasi kuantum, bioteknologi dianggap sebagai kunci untuk menghadapi pembatasan teknologi eksternal. Ketiga, menekankan pembangunan
+            berkelanjutan dan lingkungan hidup dengan cara mengurangi intensitas karbon, peningkatan porsi energi non-fosil, dan pembangunan “Beautiful China”. Tidak hanya itu, tetapi China juga mempunyai target ambisius, yaitu mencapai puncak
+            emisi sebelum 2030 dan netralitas karbon pada 2060. Keempat, pembangunan yang berpusat pada manusia dan pemerataan atau “People-centered development” sebagai slogan untuk memperbaiki layanan publik, mengurangi disparitas daerah, meningkatkan
+            konsumsi domestik untuk mendukung pertumbuhan ekonomi (FDI China, 2025).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Tantangan Utama</span>
+            <br /> Rencana ambisius ini menghadapi beberapa tantangan signifikan. Salah satunya adalah demografi dan struktur usia, yang mana Tiongkok menghadapi populasi yang menua dan tingkat kelahiran yang rendah, yang bisa membebani sistem
+            pensiun dan tenaga kerja. Kemudian, ketidakpastian global seperti geopolitik, perang dagang, dan perubahan rantai pasokan global menimbulkan resiko. Tantangan yang ketiga adalah untuk menggeser orientasi ekonomi, dari ekspor/investasi
+            besar ke konsumsi domestik dan layanan membutuhkan restrukturisasi dan perubahan perilaku yang tidak mudah (Caixin Global, 2025).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Implikasi Five Year Plan Terhadap Asia Tenggara</span>
+            <br /> Fifteen Five-Year Plan yang diadopsi dalam Sidang Pleno ke-4 Komite Sentral ke-20 Partai Komunis Tiongkok tidak hanya menjadi cetak biru pembangunan domestik, tetapi juga memiliki implikasi strategis yang signifikan bagi Asia
+            Tenggara. Arah kebijakan utama, mulai dari inovasi teknologi, transisi hijau, hingga keterbukaan ekonomi berkualitas tinggi, akan berdampak langsung pada kawasan yang memiliki keterkaitan ekonomi dan strategis yang erat dengan Tiongkok.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Sebagaimana yang dikatakan oleh Presiden Xi Jinping dalam kunjungan kenegaraan ke Vietnam, Malaysia, dan Kamboja, ASEAN menempati posisi sentral dalam strategi regional Tiongkok. Dalam Fifteen Five-Year Plan ini, Tiongkok
+            menargetkan pendalaman kerjasama berkualitas tinggi dengan ASEAN, khususnya dalam integrasi ekonomi dan konektivitas berkelanjutan.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Namun, meningkatnya kepentingan strategis Asia Tenggara juga memperuncing persaingan pengaruh antara Tiongkok dan Amerika Serikat. Pendekatan tradisional negara-negara ASEAN yang mengandalkan AS dalam bidang keamanan dan
+            Tiongkok dalam bidang ekonomi semakin sulit dipertahankan. Negara-negara ASEAN dituntut untuk merumuskan strategi yang lebih tersegmentasi dalam bidang keamanan, teknologi, dan tata kelola ekonomi.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Rencana ini menempatkan pengembangan "kekuatan produktif berkualitas baru" yang cerdas, hijau, dan terintegrasi sebagai fondasi ekonomi masa depan Tiongkok. Hal ini mencakup industri energi baru, material hijau, dirgantara,
+            hingga sektor-sektor mutakhir seperti teknologi kuantum, hidrogen, kecerdasan buatan, dan komunikasi 6G. Peningkatan CAFTA ke versi 3.0, dengan fokus kuat pada ekonomi digital, mencerminkan upaya integrasi teknologi dan regulasi
+            antara Tiongkok dan ASEAN (Fudan University, 2025).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Kesimpulan</span>
+            <br /> Fifteenth Five-Year Plan (2026-2030) menegaskan peran Rencana Lima Tahun sebagai instrumen strategis utama pembangunan Tiongkok sekaligus jembatan menuju target modernisasi nasional tahun 2035, dengan menitikberatkan pada penguatan
+            ekonomi riil, kemandirian teknologi, pembangunan berkelanjutan, dan pembangunan yang berpusat pada manusia. Meskipun rencana ini dirancang untuk menjawab tantangan struktural domestik seperti penuaan penduduk, ketidakpastian global,
+            dan kebutuhan transformasi model pertumbuhan ekonomi, implementasinya juga memiliki implikasi terhadap kawasan Asia Tenggara.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              Caixin Global. (2025). "Key Challenges China's Next Five-Year Plan needs to tackle." <a
+                href="https://www.thinkchina.sg/economy/key-challenges-chinas-next-five-year-plan-needs-tackle?utm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.thinkchina.sg/economy/key-challenges-chinas-next-five-year-plan-needs-tackle?utm</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Fudan University. (2025). "Xue Song, 'New plan will recast Sino-ASEAN ties.'" <a
+                href="https://iis.fudan.edu.cn/en/93/6e/c16611a758638/page.htm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://iis.fudan.edu.cn/en/93/6e/c16611a758638/page.htm</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              FDI China. (2025). "Major Growth Engine: China 15th Five-Year Plan 2026-2030 – Innovation, Finance & Future Industries." <a
+                href="https://fdichina.com/blog/china-15th-five-year-plan-future-industry/"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://fdichina.com/blog/china-15th-five-year-plan-future-industry/</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Ranaraja, Yasiru. (2025). "China's 15 Five-Year Plan to target innovation, green growth." <a
+                href="https://en.chinadiplomacy.org.cn/2025-10/30/content_118150053.shtml"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://en.chinadiplomacy.org.cn/2025-10/30/content_118150053.shtml</a
+              >
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,361 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-10.webp";
+
+const article = {
+  topic: "CICIUNBOXCHINA #10",
+  title: "CHINESE GOVERNMENT SCHOLARSHIP SUDAH DIBUKA!",
+  publishDate: "16 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">Bagi kalian yang mau study ke China tapi khawatir soal biaya, kalian tenang saja karena beasiswa Chinese Government Scholarship (CGS) 2026/2027 sudah dibuka loh!</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            CGS adalah beasiswa penuh yang diberikan oleh Pemerintah Tiongkok kepada mahasiswa internasional untuk menempuh studi S1, S2, maupun S3 di berbagai universitas di Tiongkok. Beasiswa ini dikelola oleh China Scholarship Council
+            (CSC) di bawah Kementerian Pendidikan Tiongkok.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Beasiswa CGS mencakup biaya kuliah penuh, akomodasi, asuransi kesehatan, dan tunjangan hidup bulanan, sehingga sangat diminati oleh pelajar dari seluruh dunia, termasuk Indonesia.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Jenis Jalur Pendaftaran CGS</span>
+            <br /> Sebelum mendaftar, penting untuk memahami bahwa terdapat jalur untuk mendapatkan CGS dan kamu bisa mendaftar semuanya sekaligus!
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Bilateral Program (Type A)</span>
+            <br /> Jalur ini diajukan melalui Kedutaan Besar Tiongkok di Indonesia dengan nomor agensi 3602. Jalur ini cocok bagi kalian yang belum memiliki Letter of Acceptance (LoA) dari universitas. Namun, jika kamu sudah memiliki LoA akan
+            lebih bagus untuk memperbesar peluang kamu untuk keterima.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">University Program (Type B)</span>
+            <br /> Jalur ini diajukan langsung ke universitas di Tiongkok yang menerima CGS. Biasanya pelamar sudah mendaftar dan sudah diterima oleh universitas tersebut, lalu diarahkan untuk mendaftar CGS Type B ini.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Other Programs (Type C)</span>
+            <br /> Jalur khusus melalui lembaga/lembaga kerja sama tertentu, seperti organisasi internasional atau provinsi. Type C ini biasanya memberikan beasiswa secara partial funding.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Persyaratan Umum</span>
+            <br /> Berikut persyaratan dasar untuk mendaftar CGS:
+          </p>
+          <br />
+          <ul class="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-2">
+            <li>Warga negara selain Republik Rakyat Tiongkok, serta berada dalam kondisi sehat baik secara mental maupun fisik;</li>
+            <li>Lulusan Sekolah Menengah Atas (SMA/sederajat) dan berusia di bawah 25 tahun saat mendaftar program Sarjana;</li>
+            <li>Pemegang gelar Sarjana (S1) dan berusia di bawah 35 tahun saat mendaftar program Magister;</li>
+            <li>Pemegang gelar Magister (S2) dan berusia di bawah 40 tahun saat mendaftar program Doktoral;</li>
+            <li>Lulusan SMA (minimal) dan berusia di bawah 45 tahun saat mendaftar program general scholar;</li>
+            <li>Pemegang gelar Magister atau Associate Professor (atau di atasnya) dan berusia di bawah 50 tahun saat mendaftar program senior scholar;</li>
+            <li>
+              Mengikuti China Scholastic Competency Assessment (CSCA) dan mengunggah laporan skor yang valid saat mendaftar program sarjana (Laporan skor CSCA akan menjadi salah satu dokumen wajib untuk peninjauan penerimaan oleh
+              universitas. Untuk informasi lebih lanjut mengenai CSCA, silakan kunjungi <a href="https://www.csca.cn" target="_blank" class="underline"> www.csca.cn </a>
+            </li>
+            <li>Memiliki kemampuan bahasa Mandarin setara HSK Level 3 saat mendaftar program general scholar yang diajarkan dalam bahasa Mandarin (kecuali untuk program studi Bahasa Mandarin);</li>
+            <li>Memiliki kemampuan bahasa Mandarin setara HSK Level 3 saat mendaftar program senior scholar yang diajarkan dalam bahasa Mandarin;</li>
+            <li>Memiliki kemampuan bahasa Mandarin setara HSK Level 4 saat mendaftar program Magister (S2) atau Doktoral (S3) yang diajarkan dalam bahasa Mandarin;</li>
+            <li>Pelamar yang telah memperoleh gelar dari universitas di Tiongkok dengan bahasa pengantar Mandarin tidak perlu menyerahkan sertifikat kemampuan bahasa lagi;</li>
+            <li>Memenuhi persyaratan penerimaan universitas tujuan, baik dari segi kemampuan akademik, kemampuan bahasa, maupun kriteria lain yang relevan.</li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Dokumen yang Diperlukan</span>
+            <br /> Berikut adalah dokumen yang harus kalian persiapkan (dalam bahasa Inggris atau Mandarin):
+          </p>
+          <br />
+          <ul class="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-2">
+            <li>Formulir Aplikasi CGS (diisi secara online di situs CSC)</li>
+            <li>Paspor yang masih berlaku (minimal 6 bulan sebelum masa studi dimulai)</li>
+            <li>Ijazah dan transkrip akademik terakhir</li>
+            <li>Rencana studi atau proposal penelitian</li>
+            <li>Dua surat rekomendasi dari Professor atau Associate Professor</li>
+            <li>Sertifikat kemampuan bahasa (TOEFL/IELTS untuk program berbahasa Inggris, atau HSK untuk berbahasa Mandarin)</li>
+            <li>Physical Examination Form</li>
+            <li>Dokumen tambahan seperti LoA (jika ada), sertifikat penghargaan, atau publikasi ilmiah</li>
+          </ul>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Langkah-langkah Pendaftaran</span>
+            <br /> Berikut tahapan umum untuk apply CGS:
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">1. Tentukan Jalur Pendaftaran</span>
+            <br /> Tentukan apakah kamu akan mendaftar lewat Embassy (Type A) atau langsung ke universitas (Type B).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">2. Cari Universitas dan Program Studi</span>
+            <br /> Kunjungi situs resmi universitas di Tiongkok yang kamu minati, pastikan mereka menerima CGS dan lihat kode agency masing-masing universitas. Untuk jurusan dan universitas yang menerima beasiswa CGS dapat dilihat dari link ini.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">3. Isi Formulir Online di Situs CSC</span>
+            <br /> Masuk ke portal resmi https://studyinchina.csc.edu.cn, buat akun baru, pilih "Type A" atau "Type B" sesuai jalur, masukkan Agency Number, isi data pribadi dan unggah dokumen yang diminta, submit aplikasi dan unduh formulirnya.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">4. Kirim Dokumen ke Pihak Terkait</span>
+            <br /> Untuk Type A, kirim berkas ke Kedutaan Besar Tiongkok di Jakarta. Untuk Type B, kirim ke universitas tujuan (biasanya melalui sistem online universitas).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">5. Tunggu Hasil Seleksi</span>
+            <br /> Pengumuman biasanya keluar antara Juni-Agustus. Jika lolos, kamu akan menerima Admission Notice dan Visa Application Form (JW201).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Timeline Pendaftaran CGS</span>
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Sekarang - 8 Februari 2026</span>
+            <br /> Kamu dapat mengunjungi situs web <a href="https://www.campuschina.org" target="_blank" class="underline"> www.campuschina.org</a> untuk memperoleh informasi mengenai universitas dan program beasiswa di Tiongkok, menghubungi
+            universitas Tiongkok yang diminati untuk mendapatkan dokumen pra-penerimaan (Pre-Admission Documents), serta mengirimkan aplikasi secara daring (Nomor Agensi Indonesia adalah 3602).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">9 Februari 2026 - 5 Maret 2026</span>
+            <br /> Kedutaan Besar akan mengirimkan semua aplikasi yang direkomendasikan ke China Scholarship Council (CSC) untuk dilakukan peninjauan akhir.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Juli - Agustus 2026</span>
+            <br /> Pelamar dapat memeriksa hasil penerimaan secara mandiri melalui sistem. Kedutaan akan memberi tahu penerima beasiswa untuk mengunduh surat penerimaan (Admission Notice) dan formulir visa JW201 dari sistem.
+          </p>
+        </div>
+
+        {/* Conclusion */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Mendaftar beasiswa Chinese Government Scholarship memang membutuhkan ketelitian dan kesabaran, tetapi peluang yang ditawarkan sebanding dengan usaha yang dilakukan. Selama calon pendaftar memahami alur pendaftaran, menyiapkan
+            dokumen dengan baik, serta mengikuti setiap tahapan sesuai ketentuan, proses pendaftaran CGS dapat dilalui dengan lebih percaya diri. Jangan ragu untuk mulai mempersiapkan diri sejak dini, karena perencanaan yang matang dapat
+            menjadi langkah awal menuju kesempatan studi di Tiongkok melalui beasiswa CGS.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Bagi kalian yang mau study ke China tapi khawatir soal biaya, kalian tenang saja karena beasiswa Chinese Government Scholarship (CGS) 2026/2027 sudah dibuka loh!
+          </p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            CGS adalah beasiswa penuh yang diberikan oleh Pemerintah Tiongkok kepada mahasiswa internasional untuk menempuh studi S1, S2, maupun S3 di berbagai universitas di Tiongkok. Beasiswa ini dikelola oleh China Scholarship Council
+            (CSC) di bawah Kementerian Pendidikan Tiongkok.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Beasiswa CGS mencakup biaya kuliah penuh, akomodasi, asuransi kesehatan, dan tunjangan hidup bulanan, sehingga sangat diminati oleh pelajar dari seluruh dunia, termasuk Indonesia.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Jenis Jalur Pendaftaran CGS</span>
+            <br /> Sebelum mendaftar, penting untuk memahami bahwa terdapat jalur untuk mendapatkan CGS dan kamu bisa mendaftar semuanya sekaligus!
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Bilateral Program (Type A)</span>
+            <br /> Jalur ini diajukan melalui Kedutaan Besar Tiongkok di Indonesia dengan nomor agensi 3602. Jalur ini cocok bagi kalian yang belum memiliki Letter of Acceptance (LoA) dari universitas. Namun, jika kamu sudah memiliki LoA akan
+            lebih bagus untuk memperbesar peluang kamu untuk keterima.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">University Program (Type B)</span>
+            <br /> Jalur ini diajukan langsung ke universitas di Tiongkok yang menerima CGS. Biasanya pelamar sudah mendaftar dan sudah diterima oleh universitas tersebut, lalu diarahkan untuk mendaftar CGS Type B ini.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Other Programs (Type C)</span>
+            <br /> Jalur khusus melalui lembaga/lembaga kerja sama tertentu, seperti organisasi internasional atau provinsi. Type C ini biasanya memberikan beasiswa secara partial funding.
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Struktur Sistem Pendidikan Tinggi di Tiongkok</span>
+            <br /> Struktur sistem pendidikan tinggi di Tiongkok disusun secara jelas dan sistematis. Pada tingkat paling atas, terdapat universitas riset unggulan yang tergabung dalam “Project 985”, yaitu inisiatif dari Presiden Jiang Zemin
+            pada tahun 1998 untuk menciptakan universitas kelas dunia. Di bawahnya, terdapat institusi dalam kelompok “Project 211” yang dibuat pada tahun 1995 untuk memperkuat sekitar 100 universitas dan program studi unggulan. Tingkat ketiga
+            mencakup universitas regional yang fokus pada pengajaran, serta tingkat paling bawah adalah perguruan tinggi vokasional dan politeknik. Untuk mencapai pendidikan yang berstandar global, pemerintah Tiongkok mengalokasikan dana yang
+            sangat besar untuk Project 985 dan Project 211 (Yuzhuo Cai & Fengqiao Yan, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam Project 985, terdapat 39 universitas, yang beberapa diantaranya adalah Tsinghua University, Peking University, Zhejiang University, Fudan University, Nanjing University, dan lainnya. Sementara itu, terdapat 112 universitas
+            yang termasuk dalam Project 211, yang diantaranya adalah Xinjiang University, Shaanxi Normal University, Guizhou University, serta 5 universitas yang sudah disebutkan dalam Project 985. Pemerintah Tiongkok mengalokasikan dana
+            sebesar 7,97 miliar USD untuk Project 985 dan 2,7 miliar USD untuk Project 211 (Yannan Cao & Rui Yang, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020)</span>
+            <br /> Untuk meningkatkan kualitas pendidikan tinggi, pemerintah Tiongkok meluncurkan China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020). Kebijakan ini menganut konsep Lifelong Learning atau
+            pembelajaran seumur hidup, yang artinya semua orang harus diajari apa yang ingin mereka pelajari unggul dalam apa yang mereka pelajari, dan menerapkan apa yang telah mereka pelajari (UNESCO, 2023). Rencana ini menekankan pada peningkatan
+            kualitas, pemerataan akses, dan inovasi dalam pendidikan. Salah satu aspek terpenting dalam rencana ini adalah proses internasionalisasi yang diupayakan melalui kolaborasi-kolaborasi internasional yang dilakukan oleh universitas lokal
+            di Tiongkok, baik dalam bentuk double degree, pertukaran dosen, hingga riset kolaboratif. Pemerintah Tiongkok juga melakukan pengembangan kurikulum internasional dan penggunaan bahasa Inggris sebagai bahasa pengantar dalam pengajaran
+            di berbagai program studi. Bahkan, dalam rencana ini, dinyatakan bahwa institusi pendidikan Tiongkok didorong untuk membuka cabang di luar negeri. Hal ini dilakukan untuk mendukung pengajaran bahasa Mandarin sebagai bahasa asing di
+            negara lain. Maka, tidak mengherankan bahwa saat ini terdapat beberapa universitas Tiongkok yang membuka cabang di negara lain, salah satunya adalah Xiamen University di Malaysia.
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Langkah-langkah Pendaftaran</span>
+            <br /> Berikut tahapan umum untuk apply CGS:
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">1. Tentukan Jalur Pendaftaran</span>
+            <br /> Tentukan apakah kamu akan mendaftar lewat Embassy (Type A) atau langsung ke universitas (Type B).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">2. Cari Universitas dan Program Studi</span>
+            <br /> Kunjungi situs resmi universitas di Tiongkok yang kamu minati, pastikan mereka menerima CGS dan lihat kode agency masing-masing universitas. Untuk jurusan dan universitas yang menerima beasiswa CGS dapat dilihat dari link ini.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">3. Isi Formulir Online di Situs CSC</span>
+            <br /> Masuk ke portal resmi https://studyinchina.csc.edu.cn, buat akun baru, pilih "Type A" atau "Type B" sesuai jalur, masukkan Agency Number, isi data pribadi dan unggah dokumen yang diminta, submit aplikasi dan unduh formulirnya.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">4. Kirim Dokumen ke Pihak Terkait</span>
+            <br /> Untuk Type A, kirim berkas ke Kedutaan Besar Tiongkok di Jakarta. Untuk Type B, kirim ke universitas tujuan (biasanya melalui sistem online universitas).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">5. Tunggu Hasil Seleksi</span>
+            <br /> Pengumuman biasanya keluar antara Juni-Agustus. Jika lolos, kamu akan menerima Admission Notice dan Visa Application Form (JW201).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Timeline Pendaftaran CGS</span>
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">Sekarang - 8 Februari 2026</span>
+            <br /> Kamu dapat mengunjungi situs web <a href="https://www.campuschina.org" target="_blank" class="underline">www.campuschina.org</a> untuk memperoleh informasi mengenai universitas dan program beasiswa di Tiongkok, menghubungi
+            universitas Tiongkok yang diminati untuk mendapatkan dokumen pra-penerimaan (Pre-Admission Documents), serta mengirimkan aplikasi secara daring (Nomor Agensi Indonesia adalah 3602).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">9 Februari 2026 - 5 Maret 2026</span>
+            <br /> Kedutaan Besar akan mengirimkan semua aplikasi yang direkomendasikan ke China Scholarship Council (CSC) untuk dilakukan peninjauan akhir.
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-semibold">Juli - Agustus 2026</span>
+            <br /> Pelamar dapat memeriksa hasil penerimaan secara mandiri melalui sistem. Kedutaan akan memberi tahu penerima beasiswa untuk mengunduh surat penerimaan (Admission Notice) dan formulir visa JW201 dari sistem.
+          </p>
+        </div>
+
+        {/* Conclusion */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Mendaftar beasiswa Chinese Government Scholarship memang membutuhkan ketelitian dan kesabaran, tetapi peluang yang ditawarkan sebanding dengan usaha yang dilakukan. Selama calon pendaftar memahami alur pendaftaran, menyiapkan
+            dokumen dengan baik, serta mengikuti setiap tahapan sesuai ketentuan, proses pendaftaran CGS dapat dilalui dengan lebih percaya diri. Jangan ragu untuk mulai mempersiapkan diri sejak dini, karena perencanaan yang matang dapat
+            menjadi langkah awal menuju kesempatan studi di Tiongkok melalui beasiswa CGS.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>

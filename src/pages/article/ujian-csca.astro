@@ -1,0 +1,288 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-15.webp";
+
+const article = {
+  topic: "CICIUNBOXCHINA #15",
+  title: "PANDUAN LENGKAP UJIAN CSCA UNTUK CALON MAHASISWA INTERNASIONAL",
+  publishDate: "28 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Dalam beberapa tahun terakhir, minat pelajar Indonesia untuk melanjutkan pendidikan S1 di Tiongkok meningkat pesat. Selain kualitas pendidikan yang diakui dunia dan fasilitas kampus yang modern, Tiongkok juga menawarkan banyak
+            beasiswa yang kompetitif. Salah satu komponen yang mulai dikenal dalam proses seleksi adalah Ujian CSCA atau China Scholastic Competency Assessment. CSCA merupakan ujian standar yang digunakan oleh sejumlah universitas atau
+            lembaga mitra untuk menilai kesiapan akademik calon mahasiswa asing.
+          </p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Apa itu Ujian CSCA?</span>
+            <br /> CSCA adalah ujian penilaian akademik yang bertujuan untuk mengukur kemampuan dasar calon mahasiswa internasional sebelum mendaftar ke universitas Tiongkok atau mengajukan beasiswa, terutama beasiswa yang bekerja sama dengan
+            lembaga pendidikan Tiongkok. Walaupun tidak semua perguruan tinggi mensyaratkan CSCA, ujian ini semakin digunakan sebagai tes kesiapan akademik bagi calon mahasiswa S1, seleksi tambahan untuk beasiswa, dan alternatif bagi ujian HSK
+            bagi jurusan non-bahasa jika program tidak mensyaratkan kemampuan bahasa Mandarin. Pada intinya, CSCA ini mirip dengan "placement test" yang menilai apakah seorang calon mahasiswa mampu mengikuti perkuliahan universitas di Tiongkok,
+            baik dalam program berbahasa Inggris maupun Mandarin.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Siapa yang Wajib Mengikuti Ujian CSCA?</span>
+            <br /> Tidak semua universitas atau jurusan mensyaratkan CSCA, tetapi jika kamu memiliki nilai CSCA, maka bisa meningkatkan peluang kamu untuk diterima. Ujian ini pada umumnya perlu diambil bagi:
+          </p>
+          <br />
+          <ul class="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-2">
+            <li>Pelamar program S1 di China melalui jalur agency atau education consultant yang bekerja sama dengan universitas tertentu.</li>
+            <li>Pelamar beasiswa universitas (university scholarship), terutama non-CSC.</li>
+            <li>Pelamar yang belum memiliki HSK, tetapi tetap ingin masuk jurusan berbahasa Inggris atau program internasional.</li>
+            <li>Pelamar jurusan sains, bisnis, atau teknik yang membutuhkan penilaian kemampuan dasar matematika dan logika.</li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Apa Saja Materi yang Diuji dalam CSCA?</span>
+            <br /> Materi ujian CSCA umumnya bersifat dasar dan universal, yaitu meliputi:
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Matematika Dasar</span> seperti aljabar, aritmatika, persamaan linear dan fungsi, logika numerik, dan analisis kuantitatif sederhana.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Bahasa Inggris</span> seperti grammar, reading comprehension, vocabulary, dan short essays.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Pengetahuan umum akademik</span> seperti logika, penalaran analitis, dan pemahaman konsep sains dasar.
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-semibold">Bahasa Mandarin</span> seperti kosakata dasar, pemahaman kalimat, dan percakapan sederhana.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Waktu dan Tempat Pelaksanaan Ujian</span>
+            <br /> Mulai 2026, pelaksanaan ujian CSCA diadakan lima tahun sekali, yaitu pada bulan Januari, Maret, April, Juni, dan Desember. Untuk tanggal pastinya, ujian CSCA akan diadakan pada tanggal 25 Januari 2026 (periode registrasi 23
+            Desember 2025 - 10 Januari 2026) dan 15 Maret 2026. Adapun ujian ini dapat dilakukan secara offline maupun online, tergantung negara. Untuk negara-negara besar seperti India, Korea Selatan, Jepang, Malaysia, dan Kazakhstan, maka ujian
+            akan dilaksanakan dengan offline. Untuk informasi lebih lanjut, kamu bisa periksa website <a href="https://www.csca.cn" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline">www.csca.cn</a
+            >.
+          </p>
+        </div>
+        {/* Conclusion */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Kesimpulan</span>
+            <br /> Ujian CSCA merupakan salah satu jalur penilaian akademik yang semakin populer dalam proses penerimaan mahasiswa internasional untuk program S1 di China. Meskipun tidak wajib di semua universitas, ujian ini bisa menjadi nilai
+            tambah yang signifikan, terutama bagi pelamar beasiswa atau jurusan kompetitif.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              CUCAS. (2026). "China CSCA: The Complete Exam & Test Guide For 2026 Applicants." <a href="https://www.cucas.cn/csca" class="text-blue-700 hover:text-blue-900 underline break-all" target="_blank" rel="noopener noreferrer"
+                >https://www.cucas.cn/csca</a
+              >.
+            </p>
+            <p class="pl-4 -indent-4">
+              Guangdong University of Foreign Studies. (2025). "An Introduction to China Scholastic Competency Assessment (CSCA)" <a
+                href="https://iie-en.gdufs.edu.cn/info/1167/2621.htm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://iie-en.gdufs.edu.cn/info/1167/2621.htm</a
+              >
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam beberapa tahun terakhir, minat pelajar Indonesia untuk melanjutkan pendidikan S1 di Tiongkok meningkat pesat. Selain kualitas pendidikan yang diakui dunia dan fasilitas kampus yang modern, Tiongkok juga menawarkan banyak
+            beasiswa yang kompetitif. Salah satu komponen yang mulai dikenal dalam proses seleksi adalah Ujian CSCA atau China Scholastic Competency Assessment. CSCA merupakan ujian standar yang digunakan oleh sejumlah universitas atau
+            lembaga mitra untuk menilai kesiapan akademik calon mahasiswa asing.
+          </p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Apa itu Ujian CSCA?</span>
+            <br /> CSCA adalah ujian penilaian akademik yang bertujuan untuk mengukur kemampuan dasar calon mahasiswa internasional sebelum mendaftar ke universitas Tiongkok atau mengajukan beasiswa, terutama beasiswa yang bekerja sama dengan
+            lembaga pendidikan Tiongkok. Walaupun tidak semua perguruan tinggi mensyaratkan CSCA, ujian ini semakin digunakan sebagai tes kesiapan akademik bagi calon mahasiswa S1, seleksi tambahan untuk beasiswa, dan alternatif bagi ujian HSK
+            bagi jurusan non-bahasa jika program tidak mensyaratkan kemampuan bahasa Mandarin. Pada intinya, CSCA ini mirip dengan "placement test" yang menilai apakah seorang calon mahasiswa mampu mengikuti perkuliahan universitas di Tiongkok,
+            baik dalam program berbahasa Inggris maupun Mandarin.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Siapa yang Wajib Mengikuti Ujian CSCA?</span>
+            <br /> Tidak semua universitas atau jurusan mensyaratkan CSCA, tetapi jika kamu memiliki nilai CSCA, maka bisa meningkatkan peluang kamu untuk diterima. Ujian ini pada umumnya perlu diambil bagi:
+          </p>
+          <br />
+          <ul class="list-disc list-inside text-gray-700 text-base md:text-lg leading-relaxed space-y-2">
+            <li>Pelamar program S1 di China melalui jalur agency atau education consultant yang bekerja sama dengan universitas tertentu.</li>
+            <li>Pelamar beasiswa universitas (university scholarship), terutama non-CSC.</li>
+            <li>Pelamar yang belum memiliki HSK, tetapi tetap ingin masuk jurusan berbahasa Inggris atau program internasional.</li>
+            <li>Pelamar jurusan sains, bisnis, atau teknik yang membutuhkan penilaian kemampuan dasar matematika dan logika.</li>
+          </ul>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Struktur Sistem Pendidikan Tinggi di Tiongkok</span>
+            <br /> Struktur sistem pendidikan tinggi di Tiongkok disusun secara jelas dan sistematis. Pada tingkat paling atas, terdapat universitas riset unggulan yang tergabung dalam “Project 985”, yaitu inisiatif dari Presiden Jiang Zemin
+            pada tahun 1998 untuk menciptakan universitas kelas dunia. Di bawahnya, terdapat institusi dalam kelompok “Project 211” yang dibuat pada tahun 1995 untuk memperkuat sekitar 100 universitas dan program studi unggulan. Tingkat ketiga
+            mencakup universitas regional yang fokus pada pengajaran, serta tingkat paling bawah adalah perguruan tinggi vokasional dan politeknik. Untuk mencapai pendidikan yang berstandar global, pemerintah Tiongkok mengalokasikan dana yang
+            sangat besar untuk Project 985 dan Project 211 (Yuzhuo Cai & Fengqiao Yan, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam Project 985, terdapat 39 universitas, yang beberapa diantaranya adalah Tsinghua University, Peking University, Zhejiang University, Fudan University, Nanjing University, dan lainnya. Sementara itu, terdapat 112 universitas
+            yang termasuk dalam Project 211, yang diantaranya adalah Xinjiang University, Shaanxi Normal University, Guizhou University, serta 5 universitas yang sudah disebutkan dalam Project 985. Pemerintah Tiongkok mengalokasikan dana
+            sebesar 7,97 miliar USD untuk Project 985 dan 2,7 miliar USD untuk Project 211 (Yannan Cao & Rui Yang, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020)</span>
+            <br /> Untuk meningkatkan kualitas pendidikan tinggi, pemerintah Tiongkok meluncurkan China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020). Kebijakan ini menganut konsep Lifelong Learning atau
+            pembelajaran seumur hidup, yang artinya semua orang harus diajari apa yang ingin mereka pelajari unggul dalam apa yang mereka pelajari, dan menerapkan apa yang telah mereka pelajari (UNESCO, 2023). Rencana ini menekankan pada peningkatan
+            kualitas, pemerataan akses, dan inovasi dalam pendidikan. Salah satu aspek terpenting dalam rencana ini adalah proses internasionalisasi yang diupayakan melalui kolaborasi-kolaborasi internasional yang dilakukan oleh universitas lokal
+            di Tiongkok, baik dalam bentuk double degree, pertukaran dosen, hingga riset kolaboratif. Pemerintah Tiongkok juga melakukan pengembangan kurikulum internasional dan penggunaan bahasa Inggris sebagai bahasa pengantar dalam pengajaran
+            di berbagai program studi. Bahkan, dalam rencana ini, dinyatakan bahwa institusi pendidikan Tiongkok didorong untuk membuka cabang di luar negeri. Hal ini dilakukan untuk mendukung pengajaran bahasa Mandarin sebagai bahasa asing di
+            negara lain. Maka, tidak mengherankan bahwa saat ini terdapat beberapa universitas Tiongkok yang membuka cabang di negara lain, salah satunya adalah Xiamen University di Malaysia.
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Waktu dan Tempat Pelaksanaan Ujian</span>
+            <br /> Mulai 2026, pelaksanaan ujian CSCA diadakan lima tahun sekali, yaitu pada bulan Januari, Maret, April, Juni, dan Desember. Untuk tanggal pastinya, ujian CSCA akan diadakan pada tanggal 25 Januari 2026 (periode registrasi 23
+            Desember 2025 - 10 Januari 2026) dan 15 Maret 2026. Adapun ujian ini dapat dilakukan secara offline maupun online, tergantung negara. Untuk negara-negara besar seperti India, Korea Selatan, Jepang, Malaysia, dan Kazakhstan, maka ujian
+            akan dilaksanakan dengan offline. Untuk informasi lebih lanjut, kamu bisa periksa website <a href="https://www.csca.cn" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline">www.csca.cn</a
+            >.
+          </p>
+        </div>
+        {/* Conclusion */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Kesimpulan</span>
+            <br /> Ujian CSCA merupakan salah satu jalur penilaian akademik yang semakin populer dalam proses penerimaan mahasiswa internasional untuk program S1 di China. Meskipun tidak wajib di semua universitas, ujian ini bisa menjadi nilai
+            tambah yang signifikan, terutama bagi pelamar beasiswa atau jurusan kompetitif.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              CUCAS. (2026). "China CSCA: The Complete Exam & Test Guide For 2026 Applicants." <a href="https://www.cucas.cn/csca" class="text-blue-700 hover:text-blue-900 underline break-all" target="_blank" rel="noopener noreferrer"
+                >https://www.cucas.cn/csca</a
+              >.
+            </p>
+            <p class="pl-6 -indent-6">
+              Guangdong University of Foreign Studies. (2025). "An Introduction to China Scholastic Competency Assessment (CSCA)" <a
+                href="https://iie-en.gdufs.edu.cn/info/1167/2621.htm"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://iie-en.gdufs.edu.cn/info/1167/2621.htm</a
+              >
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>

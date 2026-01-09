@@ -1,0 +1,253 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-12.webp";
+
+const article = {
+  topic: "CICIUNBOXCHINA #12",
+  title: "BAHASA MANDARIN SEBAGAI SOFT POWER: BAGAIMANA KONFUSIUS 'DIKIRIM' KE SELURUH DUNIA?",
+  publishDate: "21 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Ketika mendengar kata soft power, pikiran kita mungkin langsung tertuju pada budaya pop Korea, Hollywood, atau diplomasi kuliner Jepang. Namun, ada satu kekuatan lain yang tengah mengalir pelan tapi pasti ke seluruh penjuru
+            dunia, yaitu Bahasa Mandarin. Di baliknya, berdiri sebuah figur ikonik dari Tiongkok kuno, yaitu Konfusius, yang namanya kini tidak hanya dikenang dalam buku filsafat, tetapi juga tertera di ratusan pusat pembelajaran di
+            berbagai negara.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Bahasa Sebagai Instrumen Politik Halus</span>
+            <br /> Bahasa bukan hanya merupakan suatu alat komunikasi, tetapi juga merepresentasikan budaya, nilai, dan cara pandang. Pemerintah China mulai menyadari hal tersebut ketika globalisasi dan kebangkitan ekonomi membuat dunia memandang
+            China sebagai mitra dagang utama pada tahun 2000-an. Jika ingin pengaruhnya semakin luas, maka China tidak hanya mengandalkan kekuatan ekonomi dan militernya saja, tetapi juga soft power. Bahasa Mandarin menjadi pilihan logis karena
+            selain sebagai bahasa ibu bagi lebih dari satu miliar orang, Bahasa Mandarin juga menjadi kunci untuk memahami akses ke literatur, teknologi, hingga jejaring bisnis. Hal ini pun dikemukakan oleh para pemimpin Tiongkok, seperti Jiang
+            Zemin dan Hu Jintao yang menyatakan bahwa budaya memiliki peran untuk meningkatkan kemampuan negara untuk bersaing di arena internasional (Joe Tin-yau dan Suyan Pan, 2016).
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Konfusius Menjelajahi Dunia</span>
+            <br /> Pemikiran tersebut menjadi cikal bakal dari lahirnya Confucius Institute pada tahun 2004. Confucius Institute merupakan lembaga pendidikan nirlaba yang dikelola oleh Confucius Institute Headquarters ("Hanban") yang terafiliasi
+            dengan Kementerian Pendidikan China. Confucius Institute didirikan untuk memenuhi kebutuhan orang-orang dari berbagai negara dan wilayah di dunia yang ingin mempelajari Bahasa Mandarin untuk memperkuat kerjasama di bidang pendidikan
+            dan budaya (Therese L. Lueck, Val S. Pipps, dan Yang Lin, 2014).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Confucius Institute pertama kali didirikan pada tahun 2004 di Seoul, Korea Selatan. Kemudian, pada akhir tahun 2010, terdapat 322 Confucius Institute yang tersebar di lebih dari 96 negara. Di Amerika Serikat, Confucius Institute
+            pertama kali didirikan di University of Maryland pada tahun 2004 (Therese L. Lueck, Val S. Pipps, dan Yang Lin, 2014). Pada tahun 2017, jumlah Confucius Institute secara global sudah mencapai 525 yang tersebar di perguruan
+            tinggi dan universitas, serta 1.113 ruang kelas Konfusius di sekolah dasar dan menengah di 146 negara. 173 dari institut tersebut berlokasi di Eropa dan 110 di Amerika Serikat (GONGOs Academic Groups, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Di Indonesia, sudah terdapat 7 Confucius Institute, yaitu di Jakarta Bina Terampil Insan Persada) Kongzi Institute, Pusat Bahasa Mandarin di Universitas Hasanuddin, Pusat Mandarin di Universitas Negeri Malang, Pusat Bahasa
+            Mandarin di Universitas Kristen Maranatha, Pusat Bahasa Mandarin Universitas Tanjungpura, Pusat Bahasa Mandarin di Universitas Al Azhar, dan Pusat Bahasa Mandarin Universitas Negeri Surabaya (Thung Ju Lan, 2017).
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            <span class="font-bold">Kegiatan-kegiatan Confucius Institute</span>
+            <br /> Lantas, apa aja sih kegiatan-kegiatan yang dilakukan oleh Confucius Institute? Pertama, sudah pasti Confucius Institute menyelenggarakan kelas Bahasa Mandarin dan memberikan sertifikasi HSK (Hanyu Shuiping Kaoshi). Tidak jarang
+            pula, Confucius Institute mengadakan workshop kaligrafi, seni potong kertas (paper-cutting), musik tradisional, tarian, dan seni bela diri seperti tai chi atau kungfu. Selain itu, melalui Confucius Institute, kamu juga bisa mendapatkan
+            informasi mengenai beasiswa studi di China, seperti Confucius Institute Scholarship (khusus bagi kalian yang tertarik untuk menjadi guru Bahasa Mandarin) dan Chinese Government Scholarship.
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Pada akhirnya, penyebaran Bahasa Mandarin melalui Confucius Institute merupakan cerminan dari soft power yang cerdas dalam membangun pengaruh China ke seluruh dunia. Dengan adanya Confucius Institute, pertanyaan yang muncul
+            bukan lagi apakah dunia akan belajar Bahasa Mandarin, tetapi sejauh mana bahasa ini akan membentuk cara kita memahami China di masa depan.
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              Lan, Thung Ju. (2017). Confucius Institute at Universitas Al Azhar, Jakarta; The unseen power of China. <em>Wacana, Journal of the Humanities of Indonesia</em>, Vol. 8, No. 1, Hlm. 149.
+            </p>
+            <p class="pl-4 -indent-4">
+              Lo, Joe Tin-yau Lo and Suyan Pan. (2016). Confucius Institutes and China's soft power: practices and paradoxes. <em>Compare</em>. Hlm. 512.
+            </p>
+            <p class="pl-4 -indent-4">
+              Lueck, Therese L., Val S. Pipps, and Yang Lin. (2014). China's Soft Power: A New York Times Introduction of the Confucius Institute. <em>Howard Journal of Communications</em>. Hlm. 324.
+            </p>
+            <p class="pl-4 -indent-4">
+              People's Republic of China. Confucius Institutes. <em>China: Academic Groups</em>.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Ketika mendengar kata soft power, pikiran kita mungkin langsung tertuju pada budaya pop Korea, Hollywood, atau diplomasi kuliner Jepang. Namun, ada satu kekuatan lain yang tengah mengalir pelan tapi pasti ke seluruh penjuru
+            dunia, yaitu Bahasa Mandarin. Di baliknya, berdiri sebuah figur ikonik dari Tiongkok kuno, yaitu Konfusius, yang namanya kini tidak hanya dikenang dalam buku filsafat, tetapi juga tertera di ratusan pusat pembelajaran di
+            berbagai negara.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Bahasa Sebagai Instrumen Politik Halus</span>
+            <br /> Bahasa bukan hanya merupakan suatu alat komunikasi, tetapi juga merepresentasikan budaya, nilai, dan cara pandang. Pemerintah China mulai menyadari hal tersebut ketika globalisasi dan kebangkitan ekonomi membuat dunia memandang
+            China sebagai mitra dagang utama pada tahun 2000-an. Jika ingin pengaruhnya semakin luas, maka China tidak hanya mengandalkan kekuatan ekonomi dan militernya saja, tetapi juga soft power. Bahasa Mandarin menjadi pilihan logis karena
+            selain sebagai bahasa ibu bagi lebih dari satu miliar orang, Bahasa Mandarin juga menjadi kunci untuk memahami akses ke literatur, teknologi, hingga jejaring bisnis. Hal ini pun dikemukakan oleh para pemimpin Tiongkok, seperti Jiang
+            Zemin dan Hu Jintao yang menyatakan bahwa budaya memiliki peran untuk meningkatkan kemampuan negara untuk bersaing di arena internasional (Joe Tin-yau dan Suyan Pan, 2016).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Struktur Sistem Pendidikan Tinggi di Tiongkok</span>
+            <br /> Struktur sistem pendidikan tinggi di Tiongkok disusun secara jelas dan sistematis. Pada tingkat paling atas, terdapat universitas riset unggulan yang tergabung dalam “Project 985”, yaitu inisiatif dari Presiden Jiang Zemin
+            pada tahun 1998 untuk menciptakan universitas kelas dunia. Di bawahnya, terdapat institusi dalam kelompok “Project 211” yang dibuat pada tahun 1995 untuk memperkuat sekitar 100 universitas dan program studi unggulan. Tingkat ketiga
+            mencakup universitas regional yang fokus pada pengajaran, serta tingkat paling bawah adalah perguruan tinggi vokasional dan politeknik. Untuk mencapai pendidikan yang berstandar global, pemerintah Tiongkok mengalokasikan dana yang
+            sangat besar untuk Project 985 dan Project 211 (Yuzhuo Cai & Fengqiao Yan, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam Project 985, terdapat 39 universitas, yang beberapa diantaranya adalah Tsinghua University, Peking University, Zhejiang University, Fudan University, Nanjing University, dan lainnya. Sementara itu, terdapat 112 universitas
+            yang termasuk dalam Project 211, yang diantaranya adalah Xinjiang University, Shaanxi Normal University, Guizhou University, serta 5 universitas yang sudah disebutkan dalam Project 985. Pemerintah Tiongkok mengalokasikan dana
+            sebesar 7,97 miliar USD untuk Project 985 dan 2,7 miliar USD untuk Project 211 (Yannan Cao & Rui Yang, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020)</span>
+            <br /> Untuk meningkatkan kualitas pendidikan tinggi, pemerintah Tiongkok meluncurkan China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020). Kebijakan ini menganut konsep Lifelong Learning atau
+            pembelajaran seumur hidup, yang artinya semua orang harus diajari apa yang ingin mereka pelajari unggul dalam apa yang mereka pelajari, dan menerapkan apa yang telah mereka pelajari (UNESCO, 2023). Rencana ini menekankan pada peningkatan
+            kualitas, pemerataan akses, dan inovasi dalam pendidikan. Salah satu aspek terpenting dalam rencana ini adalah proses internasionalisasi yang diupayakan melalui kolaborasi-kolaborasi internasional yang dilakukan oleh universitas lokal
+            di Tiongkok, baik dalam bentuk double degree, pertukaran dosen, hingga riset kolaboratif. Pemerintah Tiongkok juga melakukan pengembangan kurikulum internasional dan penggunaan bahasa Inggris sebagai bahasa pengantar dalam pengajaran
+            di berbagai program studi. Bahkan, dalam rencana ini, dinyatakan bahwa institusi pendidikan Tiongkok didorong untuk membuka cabang di luar negeri. Hal ini dilakukan untuk mendukung pengajaran bahasa Mandarin sebagai bahasa asing di
+            negara lain. Maka, tidak mengherankan bahwa saat ini terdapat beberapa universitas Tiongkok yang membuka cabang di negara lain, salah satunya adalah Xiamen University di Malaysia.
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">2011 Project</span>
+            <br /> Pada tahun 2011, ketika Tsinghua University merayakan hari ulang tahunnya ke-100, Presiden Hu Jintao memberikan pernyataan mengenai keberhasilan kegiatan inovasi universitas. Perayaan tersebut juga diikuti oleh peluncuran 2011
+            Project oleh Menteri Pendidikan Tiongkok yang bertujuan untuk mencapai inovasi dalam penelitian dan pengembangan dengan mensinergikan upaya kolaboratif antara universitas, lembaga penelitian, industri dan pemerintah. Kebijakan tersebut
+            mengubah struktur pendanaan dari investasi berbasis institusi menjadi investasi berbasis program (Yuzhuo Cai & Fengqiao Yan, 2017). Hal ini pun didukung dengan adanya the 12th Five-Year Plan (2011-2015) yang diajukan oleh Kongres
+            Rakyat Nasional ke-11 pada tahun 2011 yang menetapkan tujuan pembangunan Tiongkok untuk mempercepat reformasi pendidikan. Dalam rencana tersebut, salah satu pilar yang penting adalah memperkuat kerjasama internasional untuk meningkatkan
+            riset dan inovasi (Feng Zhuolin, Wang Qi, Liu Niancai. ed., 2025).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Internasionalisasi Pendidikan Menjadi Peluang Untuk Studi di Tiongkok </span>
+            <br /> Dengan adanya prinsip internasionalisasi yang selalu ditekankan oleh pemerintah Tiongkok, maka tidaklah mengherankan bahwa saat ini terdapat sekitar 35 juta mahasiswa asing yang menempuh studi sarjana dan 3,3 juta mahasiswa
+            asing di tingkat pascasarjana di Tiongkok. Mahasiswa asing di Tiongkok juga berasal dari berbagai macam benua, termasuk Asia, Eropa, Amerika, dan bahkan Afrika. Melalui inisiatif yang sangat besar dari pemerintah Tiongkok terhadap
+            pendidikan tinggi, tidak dapat dipungkiri bahwa peluang bagi mahasiswa asing untuk mengejar pendidikannya di negara tirai bambu semakin terbuka lebar (Timothy van Gardingen, 2024).
+          </p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              Lan, Thung Ju. (2017). Confucius Institute at Universitas Al Azhar, Jakarta; The unseen power of China. <em>Wacana, Journal of the Humanities of Indonesia</em>, Vol. 8, No. 1, Hlm. 149.
+            </p>
+            <p class="pl-6 -indent-6">
+              Lo, Joe Tin-yau Lo and Suyan Pan. (2016). Confucius Institutes and China's soft power: practices and paradoxes. <em>Compare</em>. Hlm. 512.
+            </p>
+            <p class="pl-6 -indent-6">
+              Lueck, Therese L., Val S. Pipps, and Yang Lin. (2014). China's Soft Power: A New York Times Introduction of the Confucius Institute. <em>Howard Journal of Communications</em>. Hlm. 324.
+            </p>
+            <p class="pl-6 -indent-6">
+              People's Republic of China. Confucius Institutes. <em>China: Academic Groups</em>.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
