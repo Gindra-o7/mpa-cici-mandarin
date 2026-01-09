@@ -1,0 +1,738 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+// --- Aset dari pola asli Anda ---
+const Background =
+    "/pages/landing-pages/hottest-news/article/article-background.webp";
+const CoverArticle =
+    "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-9.webp";
+
+// --- Objek artikel diperbarui untuk konten baru ---
+const article = {
+    topic: "CICIUNBOXCHINA #9",
+    title: "Ngomong Mandarin Kekinian: Slang yang Gak ada di Kamus!",
+    publishDate: "14 Januari 2026",
+    author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+    {/* --- MOBILE VERSION --- */}
+    <main
+        class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
+        style={`background-image: url(${Background})`}
+    >
+        {/* HERO SECTION MOBILE */}
+        <div class="px-4 mx-auto pt-6">
+            <div class="rounded-xl p-4">
+                <div class="mb-3">
+                    <span
+                        class="inline-block bg-red-700 text-white font-bold text-xs px-3 py-1 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* CONTENT MOBILE */}
+        <div class="mx-auto px-4 pt-4">
+            <article class="rounded-xl p-4">
+                {/* Cover Image */}
+                <div class="mb-6 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto rounded-lg"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-6">
+                    <p class="text-base font-semibold text-gray-800 italic">
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraf Pembuka */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Belajar Mandarin lewat buku teks memang penting, tapi
+                        pernah nggak kamu merasa kebingungan waktu nonton drama
+                        China, scrolling Xiaohongshu, atau ngobrol sama teman
+                        native? Tiba-tiba muncul kata-kata aneh yang gak pernah
+                        diajarin di kelas, apalagi nemu di kamus. Nah, selamat
+                        datang di dunia slang Mandarin kekinian, tempat di mana
+                        bahasa Mandarin terasa lebih hidup, nyantai, dan
+                        pastinya super gaul!
+                    </p>
+                </div>
+
+                {/* Apa itu Slang Mandarin? */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Apa itu Slang Mandarin?</span>
+                        <br /> Slang atau bahasa gaul dalam Mandarin disebut 俚语
+                        (Lǐyǔ). Kalau di Bahasa Indonesia, kita kenal dengan istilah
+                        "gabut", "mager", atau "bestie", nah dalam Bahasa Mandarin
+                        pun memiliki slang-slang yang trending di sosial media. Kalau
+                        kamu cuman mengandalkan HSK 6, belum tentu kami ngerti semua
+                        slang ini karena kebanyakan nggak resmi dan nggak diajarin
+                        di sekolah!
+                    </p>
+                </div>
+
+                {/* Slang Hits yang Wajib Kamu Tahu */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Slang Hits yang Wajib Kamu Tahu</span
+                        >
+                        <br /> Berikut beberapa slang Mandarin yang lagi ngetren dan
+                        sering muncul di percakapan sehari-hari:
+                    </p>
+                </div>
+
+                {/* List of Slangs */}
+                <div class="ml-4">
+                    {/* 1. 内卷 */}
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            1. 内卷 (nèi juǎn) – Overcompetitive
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify mb-3"
+                            >
+                                Kata ini berasal dari kata "involution", tetapi
+                                dalam konteks anak muda di China sekarang, kata
+                                ini dipakai untuk menggambarkan persaingan yang
+                                gak sehat.
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Contoh: "这家公司太内卷了，我受不了了!" <br />
+                                Zhè jiā gōngsī tài nèi juǎnle, wǒ shòu bùliǎole!
+                                <br />
+                                Perusahaan ini terlalu kompetitif, aku gak tahan lagi!
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 2. 摆烂 */}
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            2. 摆烂 (bǎi làn) – Let it rot / Pasrah aja
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify mb-3"
+                            >
+                                Kata ini biasanya dipakai ketika seseorang sudah
+                                menyerah dan memiliki untuk tidak melawan lagi
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Contoh: "考试我不学了，摆烂吧" <br />
+                                Kǎoshì wǒ bù xuéle, bǎi làn ba <br />
+                                Ujian ini aku gak belajar deh, pasrah aja!
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 3. YYDS */}
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            3. 永远的神 (yǒngyuǎn de shén) (YYDS) – Forever
+                            Godlike
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify mb-3"
+                            >
+                                YYDS merupakan singkatan dari "you're forever a
+                                legend". Kata ini sering dipakai untuk memuji
+                                seseorang atau sesuatu yang keren banget
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Contoh: "周杰伦YYDS!" <br />
+                                Zhōujiélún YYDS! <br />
+                                Jay Chou emang legend banget!
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 4. 躺平 */}
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            4. 躺平 (tǎngpíng) – Anti hustle culture
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify mb-3"
+                            >
+                                Kata ini menjadi simbol perlawanan terhadap
+                                budaya kerja keras terus-terusan dan memilih
+                                untuk hidup santai dan gak terlalu ambisius
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Contoh: "我不想奋斗了，我只想躺平。" <br />
+                                Wǒ bùxiǎng fèndòule, wǒ zhǐ xiǎng tǎng píng.
+                                <br />
+                                Aku gak mau ngoyo lagi, pengen hidup santai aja.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 5. 社恐/社牛 */}
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            5. 社恐(shèkǒng) / 社牛(shèniú) – Social Anxiety vs.
+                            Sociable
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify mb-3"
+                            >
+                                Kata ini biasanya digunakan untuk menggambarkan
+                                seseorang yang takut bersosialisasi dan orang
+                                yang super percaya diri
+                            </p>
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Contoh: "我是社恐，但我室友是社牛。" <br />
+                                Wǒ shì shè kǒng, dàn wǒ shìyǒu shì shè niú.
+                                <br />
+                                Aku takut bersosialisasi, tapi roommate aku super
+                                percaya diri
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Kenapa perlu adanya slang? */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Kenapa perlu adanya slang?</span
+                        >
+                        <br /> Kalau kamu punya rencana untuk belajar ataupun kerja
+                        di China, memahami slang-slang dalam Bahasa Mandarin akan
+                        membuat kamu lebih natural, dekat dengan budaya, dan tidak
+                        kaku. Perlu diingat juga kalau Bahasa Mandarin di dunia nyata
+                        itu berbeda dengan Mandarin yang ada di buku pelajaran!.
+                    </p>
+                </div>
+
+                {/* Tips Belajar Slang */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Tips Belajar Slang</span>
+                        <br /> Kalau kamu mau mengenai slang-slang Bahasa Mandarin,
+                        kamu bisa mendownload aplikasi sosial media China, seperti
+                        Xiaohongshu, Weibo, atau Douyin. Kamu juga bisa menonton drama
+                        dan variety show China. Tapi, jangan lupa untuk dicatat dan
+                        dipraktikkan ya supaya tidak gampang lupa!.
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Slang Mandarin itu dinamis, seru, dan bikin proses
+                        belajarmu tambah asik. Tapi ingat ya, gak semua slang
+                        cocok dipakai di situasi formal. Jadi, pintar-pintar
+                        pilih tempat dan waktunya. Yuk, mulai selipin satu dua
+                        slang dalam obrolan biar Mandarin kamu makin kekinian!.
+                    </p>
+                </div>
+
+                {/* Closing */}
+                <div
+                    class="mt-8 p-4 bg-red-50 border-l-4 border-red-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-sm font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-8 pt-6 border-t-2 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-3 text-gray-700 text-xs leading-relaxed"
+                    >
+                        <p class="pl-4 -indent-4">
+                            Bolong.id. (2020). "Lebih dari 70 Negara Masukan
+                            Bahasa Mandarin dalam Sistem Pendidikan Nasional."
+                            <a
+                                href="https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Day Translations. (2022). "Chinese Languages: How
+                            Many Languages are Spoken in China?"
+                            <a
+                                href="https://www.daytranslations.com/blog/chinese-languages/"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.daytranslations.com/blog/chinese-languages/
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            GoEast. (2025). "Will Chinese Dialect Disappear? The
+                            Uncertain Future of Chinese Dialects."
+                            <a
+                                href="https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Jiang, Bing Bing. (2023). "The Preservation and
+                            Inheritance of Chinese Dialects: Reflections on the
+                            Phenomenon of Chinese Dialect Loss in the New Era." <em
+                                >Athena Publishing</em
+                            >. Hlm. 14 & 16.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Ministry of Education of the People's Republic of
+                            China. (2023). "26th National Putonghua Promotion
+                            Week opens in Qinghai Province."
+                            <a
+                                href="http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            United Nations. "What are the official languages of
+                            the United Nations?"
+                            <a
+                                href="https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            WorldData.info. "Spread of the Chinese Language."
+                            <a
+                                href="https://www.worlddata.info/languages/chinese.php"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.worlddata.info/languages/chinese.php
+                            </a>.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Yang, Zhao. (2024). <em
+                                >The World Humanities Report: Promoting Mandarin
+                                for China's Economic and Social Development</em
+                            >. Hlm. 2.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    {/* --- DESKTOP VERSION --- */}
+    <main
+        class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]"
+        style={`background-image: url(${Background})`}
+    >
+        {/* HERO SECTION DESKTOP */}
+        <div class="px-15 mx-auto">
+            <div class="rounded-2xl p-5">
+                <div class="mb-4">
+                    <span
+                        class="inline-block bg-red-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1
+                    class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
+                >
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* CONTENT DESKTOP */}
+        <div class="mx-auto px-15">
+            <article class="rounded-2xl p-5">
+                {/* Cover Image */}
+                <div class="mb-10 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-8">
+                    <p
+                        class="text-lg md:text-xl font-semibold text-gray-800 italic"
+                    >
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraf Pembuka */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Belajar Mandarin lewat buku teks memang penting, tapi
+                        pernah nggak kamu merasa kebingungan waktu nonton drama
+                        China, scrolling Xiaohongshu, atau ngobrol sama teman
+                        native? Tiba-tiba muncul kata-kata aneh yang gak pernah
+                        diajarin di kelas, apalagi nemu di kamus. Nah, selamat
+                        datang di dunia slang Mandarin kekinian, tempat di mana
+                        bahasa Mandarin terasa lebih hidup, nyantai, dan
+                        pastinya super gaul!
+                    </p>
+                </div>
+
+                <!-- SUB judul  Mandarin: Bahasa Resmi yang Serbaguna -->
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Apa itu Slang Mandarin?</span>
+                        <br /> Slang atau bahasa gaul dalam Mandarin disebut 俚语
+                        (Lǐyǔ). Kalau di Bahasa Indonesia, kita kenal dengan istilah
+                        “gabut”, “mager”, atau “bestie”, nah dalam Bahasa Mandarin
+                        pun memiliki slang-slang yang trending di sosial media. Kalau
+                        kamu cuman mengandalkan HSK 6, belum tentu kami ngerti semua
+                        slang ini karena kebanyakan nggak resmi dan nggak diajarin
+                        di sekolah!
+                    </p>
+                </div>
+                <div class="mb-1">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Slang Hits yang Wajib Kamu Tahu</span
+                        >
+                        <br /> Berikut beberapa slang Mandarin yang lagi ngetren dan
+                        sering muncul di percakapan sehari-hari:
+                    </p>
+                    <br />
+                </div>
+
+                <div class="ml-10">
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            1. 内卷 (nèi juǎn) – Overcompetitive
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify mb-4"
+                            >
+                                Kata ini berasal dari kata “involution”, tetapi
+                                dalam konteks anak muda di China sekarang, kata
+                                ini dipakai untuk menggambarkan persaingan yang
+                                gak sehat.
+                            </p>
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Contoh: “这家公司太内卷了，我受不了了!” <br />
+                                Zhè jiā gōngsī tài nèi juǎnle, wǒ shòu bùliǎole!
+                                <br />
+                                Perusahaan ini terlalu kompetitif, aku gak tahan lagi!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            2. 摆烂 (bǎi làn) – Let it rot / Pasrah aja
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify mb-4"
+                            >
+                                Kata ini biasanya dipakai ketika seseorang sudah
+                                menyerah dan memiliki untuk tidak melawan lagi
+                            </p>
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Contoh: “考试我不学了，摆烂吧” <br />
+                                Kǎoshì wǒ bù xuéle, bǎi làn ba <br />
+                                Ujian ini aku gak belajar deh, pasrah aja!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            3. 永远的神 (yǒngyuǎn de shén) (YYDS) – Forever
+                            Godlike
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify mb-4"
+                            >
+                                YYDS merupakan singkatan dari "you're forever a
+                                legend". Kata ini sering dipakai untuk memuji
+                                seseorang atau sesuatu yang keren banget
+                            </p>
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Contoh: "周杰伦YYDS!" <br />
+                                Zhōujiélún YYDS! <br />
+                                Jay Chou emang legend banget!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            4. 躺平 (tǎngpíng) – Anti hustle culture
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify mb-4"
+                            >
+                                Kata ini menjadi simbol perlawanan terhadap
+                                budaya kerja keras terus-terusan dan memilih
+                                untuk hidup santai dan gak terlalu ambisius
+                            </p>
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Contoh: "我不想奋斗了，我只想躺平。" <br />
+                                Wǒ bùxiǎng fèndòule, wǒ zhǐ xiǎng tǎng píng. <br
+                                />
+                                Aku gak mau ngoyo lagi, pengen hidup santai aja.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            5. 社恐(shèkǒng) / 社牛(shèniú) – Social Anxiety vs.
+                            Sociable
+                        </h2>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify mb-4"
+                            >
+                                Kata ini biasanya digunakan untuk menggambarkan
+                                seseorang yang takut bersosialisasi dan orang
+                                yang super percaya diri
+                            </p>
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Contoh: "我是社恐，但我室友是社牛。" <br />
+                                Wǒ shì shè kǒng, dàn wǒ shìyǒu shì shè niú. <br
+                                />
+                                Aku takut bersosialisasi, tapi roommate aku super
+                                percaya diri
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kontestasi Eksistensi: Ancaman atau Adaptasi? -->
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Kenapa perlu adanya slang?</span
+                        >
+
+                        <br /> Kalau kamu punya rencana untuk belajar ataupun kerja
+                        di China, memahami slang-slang dalam Bahasa Mandarin akan
+                        membuat kamu lebih natural, dekat dengan budaya, dan tidak
+                        kaku. Perlu diingat juga kalau Bahasa Mandarin di dunia nyata
+                        itu berbeda dengan Mandarin yang ada di buku pelajaran!.
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold">Tips Belajar Slang </span>
+
+                        <br /> Kalau kamu mau mengenai slang-slang Bahasa Mandarin,
+                        kamu bisa mendownload aplikasi sosial media China, seperti
+                        Xiaohongshu, Weibo, atau Douyin. Kamu juga bisa menonton drama
+                        dan variety show China. Tapi, jangan lupa untuk dicatat dan
+                        dipraktikkan ya supaya tidak gampang lupa!.
+                    </p>
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <br /> Slang Mandarin itu dinamis, seru, dan bikin proses
+                        belajarmu tambah asik. Tapi ingat ya, gak semua slang cocok
+                        dipakai di situasi formal. Jadi, pintar-pintar pilih tempat
+                        dan waktunya. Yuk, mulai selipin satu dua slang dalam obrolan
+                        biar Mandarin kamu makin kekinian!.
+                    </p>
+                </div>
+
+                {/* Closing */}
+                <div
+                    class="mt-12 p-6 bg-red-50 border-l-4 border-red-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-base md:text-lg font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-12 pt-8 border-t-2 border-gray-200">
+                    <h3
+                        class="text-xl md:text-2xl font-bold text-gray-900 mb-6"
+                    >
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
+                    >
+                        <p class="pl-6 -indent-6">
+                            Bolong.id. (2020). "Lebih dari 70 Negara Masukan
+                            Bahasa Mandarin dalam Sistem Pendidikan Nasional."
+                            <a
+                                href="https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://bolong.id/lp/1220/lebih-dari-70-negara-masukan-bahasa-mandarin-dalam-sistem-pendidikan-nasional
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Day Translations. (2022). "Chinese Languages: How
+                            Many Languages are Spoken in China?"
+                            <a
+                                href="https://www.daytranslations.com/blog/chinese-languages/"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.daytranslations.com/blog/chinese-languages/
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            GoEast. (2025). "Will Chinese Dialect Disappear? The
+                            Uncertain Future of Chinese Dialects."
+                            <a
+                                href="https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://goeastmandarin.com/th/will-chinese-dialects-disappear-the-uncertain-future-of-chinese-dialects/
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Jiang, Bing Bing. (2023). "The Preservation and
+                            Inheritance of Chinese Dialects: Reflections on the
+                            Phenomenon of Chinese Dialect Loss in the New Era." <em
+                                >Athena Publishing</em
+                            >. Hlm. 14 & 16.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Ministry of Education of the People's Republic of
+                            China. (2023). "26th National Putonghua Promotion
+                            Week opens in Qinghai Province."
+                            <a
+                                href="http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                http://en.moe.gov.cn/news/press_releases/202309/t20230921_1081842.html
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            United Nations. "What are the official languages of
+                            the United Nations?"
+                            <a
+                                href="https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.ungeneva.org/en/faqs/what-are-official-languages-united-nations
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            WorldData.info. "Spread of the Chinese Language."
+                            <a
+                                href="https://www.worlddata.info/languages/chinese.php"
+                                class="text-red-700 hover:text-red-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.worlddata.info/languages/chinese.php
+                            </a>.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Yang, Zhao. (2024). <em
+                                >The World Humanities Report: Promoting Mandarin
+                                for China's Economic and Social Development</em
+                            >. Hlm. 2.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+</Layout>

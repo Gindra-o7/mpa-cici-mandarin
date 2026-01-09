@@ -7,47 +7,105 @@ const cardnews3 = "/pages/landing-pages/hottest-news/card-cici-news-3.webp";
 const cardnews4 = "/pages/landing-pages/hottest-news/card-cici-news-4.webp";
 const cardnews5 = "/pages/landing-pages/hottest-news/card-cici-news-5.webp";
 const cardnews6 = "/pages/landing-pages/hottest-news/card-cici-news-6.webp";
-
-const newsCards = [
+const cardnews7 = "/pages/landing-pages/hottest-news/card-cici-news-7.webp";
+const cardnews8 = "/pages/landing-pages/hottest-news/card-cici-news-8.webp";
+const cardnews9 = "/pages/landing-pages/hottest-news/card-cici-news-9.webp";
+// All news cards with publish dates (format: YYYY-MM-DD)
+const allNewsCards = [
+  {
+    image: cardnews9,
+    alt: "card9",
+    link: "/article/ngomong-mandarin-kekinian-slang-yang-gak-ada-di-kamus",
+    publishDate: "2026-01-14",
+  },
+  {
+    image: cardnews8,
+    alt: "card8",
+    link: "/article/seru-menimba-ilmu-dan-bela-diri-di-china",
+    publishDate: "2026-01-12",
+  },
+  {
+    image: cardnews7,
+    alt: "card7",
+    link: "/article/china-berinvestasi-dunia-bertransformasi",
+    publishDate: "2026-01-09",
+  },
   {
     image: cardnews6,
     alt: "card6",
     link: "/article/pesta-api-suku-yi",
-    isNew: true,
+    publishDate: "2026-01-05", // Artikel akan muncul mulai 5 Januari 2026
   },
   {
     image: cardnews5,
     alt: "card5",
     link: "/article/mandarin-naik-tahta-dialek-terancam-punah",
-    isNew: true,
+    publishDate: "2026-01-01", // Artikel akan muncul mulai 1 Januari 2026
   },
   {
     image: cardnews4,
     alt: "card4",
     link: "/article/jalan-jalan-ke-masa-depan",
-    isNew: false,
+    publishDate: "2025-12-20", // Artikel sudah publish
   },
   {
     image: cardnews3,
     alt: "card3",
     link: "/article/bukan-cuma-tren",
-    isNew: false,
+    publishDate: "2025-12-15", // Artikel sudah publish
   },
   {
     image: cardnews2,
     alt: "card2",
     link: "/article/di-balik-tembok-kampus-tiongkok",
-    isNew: false,
+    publishDate: "2025-12-10", // Artikel sudah publish
   },
   {
     image: cardnews1,
     alt: "card1",
     link: "/article/80-tahun-kemenangan-perang-dunia-II",
-    isNew: false,
+    publishDate: "2025-12-01", // Artikel sudah publish
   },
 ];
 
+// Helper function: check if article is new (published within last 2 days)
+const isArticleNew = (publishDateStr: string) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const publishDate = new Date(publishDateStr);
+  publishDate.setHours(0, 0, 0, 0);
+
+  // Calculate difference in days
+  const diffTime = today.getTime() - publishDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  // Show NEW badge if published within last 2 days (0, 1, or 2 days ago)
+  return diffDays >= 0 && diffDays <= 2;
+};
+
+// Filter function: only show articles where publish date has passed
+const getPublishedCards = () => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
+
+  return allNewsCards
+    .filter(card => {
+      const publishDate = new Date(card.publishDate);
+      publishDate.setHours(0, 0, 0, 0);
+      return publishDate <= today; // Show if publish date is today or in the past
+    })
+    .map(card => ({
+      ...card,
+      // Override isNew based on publish date (within 2 days)
+      isNew: isArticleNew(card.publishDate)
+    }));
+};
+
 export default function HottestNews() {
+  // Get only published cards (where publish date has passed)
+  const newsCards = getPublishedCards();
+
   const [activeCardMobile, setActiveCardMobile] = React.useState(0);
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);

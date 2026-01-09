@@ -1,0 +1,842 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+const Background =
+    "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle =
+    "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-7.webp";
+
+const WhooshImage = "/pages/landing-pages/hottest-news/article/whosh.png";
+const KeretaChinaImage =
+    "/pages/landing-pages/hottest-news/article/kereta-api-china.png";
+const KeretaApiLaosImage =
+    "/pages/landing-pages/hottest-news/article/kereta-api-laos.png";
+const KeretaApiEthiopiaImage =
+    "/pages/landing-pages/hottest-news/article/kereta-api-ethopia.png";
+
+const article = {
+    topic: "CICIUNBOXCHINA #7",
+    title: "CHINA BERINVESTASI, DUNIA BERTRANSFORMASI?",
+    publishDate: "9 Januari 2026",
+    author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title="CHINA BERINVESTASI, DUNIA BERTRANSFORMASI?">
+    <main
+        class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
+        style={`background-image: url(${Background})`}
+    >
+        {/* HERO SECTION MOBILE */}
+        <div class="px-4 mx-auto pt-6">
+            <div class="rounded-xl p-4">
+                <div class="mb-3">
+                    <span
+                        class="inline-block bg-green-700 text-white font-bold text-xs px-3 py-1 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* CONTENT MOBILE */}
+        <div class="mx-auto px-4 pt-4">
+            <article class="rounded-xl p-4">
+                {/* Cover Image */}
+                <div class="mb-6 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto rounded-lg"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-6">
+                    <p class="text-base font-semibold text-gray-800 italic">
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Dalam dua dekade terakhir, China telah menjelma menjadi
+                        salah satu aktor ekonomi global paling dominan. Melalui
+                        gelombang investasi internasional yang masif, China tak
+                        hanya memperluas pengaruh ekonominya, tetapi juga
+                        perlahan-lahan mengukuhkan dirinya sebagai kekuatan
+                        geopolitik baru. Pertanyaannya, apakah dunia tengah
+                        menyaksikan transformasi global yang didorong oleh
+                        ekspansi investasi China?
+                    </p>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Dari Domestik ke Global: Lompatan Investasi China</span
+                        >
+                        <br /> Perekonomian China berubah secara signifikan sejak
+                        adanya upaya reformasi ekonomi yang diinisiasi oleh Presiden
+                        Deng Xiaoping pada tahun 1978. Kebijakan reformasi ekonomi
+                        ini berubah dari yang semula bersifat ekonomi tertutup menjadi
+                        ekonomi yang berorientasi kepada pasar global. Hal ini pun
+                        merupakan program yang bertujuan untuk memperkenalkan dan
+                        memajukan bisnis-bisnis swasta dan insentif pasar kepada sistem
+                        komunis yang dipimpin pemerintah China (Konrad Punyaman Ndruru,
+                        2024).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Sepanjang tahun 1980an dan 1990an, China mulai
+                        menerapkan kebijakan ekonomi yang lebih berorientasi
+                        pasar. Bahkan, pada saat itu, investasi Amerika Serikat
+                        di China terus meningkat, dari yang sebelumnya nihil
+                        menjadi $28,2 miliar pada tahun 2000. Lonjakan angka
+                        tersebut mendorong China untuk membuka diri terhadap
+                        investasi asing dan bahkan bergabung dengan World Trade
+                        Organization (WTO) pada tahun 2001. Tidak hanya itu,
+                        pada tahun 2000, China untuk menerapkan kebijakan "Going
+                        Out Policy" yang semakin mendorong perusahaan China
+                        untuk berinvestasi di luar negeri, memperoleh sumber
+                        daya alam, serta teknologi dan keterampilan manajerial
+                        yang lebih modern (Faris Al-Fadhat, 2023).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Ambisi China tidak berhenti disitu saja karena faktanya
+                        China semakin berambisi dalam mengembangkan
+                        investasinya. Pada tahun 2013, President Xi Jinping
+                        meluncurkan proyek Belt and Road Initiative (BRI), yaitu
+                        kumpulan inisiatif pembangunan dan investasi yang luas
+                        untuk menghubungkan Asia Timur dan Eropa melalui
+                        infrastruktur fisik Proyek-proyek besar seperti Belt and
+                        Road Initiative (BRI) menjadi simbol dari ekspansi
+                        tersebut. Melalui skema pembangunan infrastruktur lintas
+                        negara, China membiayai pelabuhan, jalan raya, rel
+                        kereta api, dan kawasan industri di lebih dari 140
+                        negara (James McBride, Noah Berman, dan Andrew Chatzky,
+                        2023). Bahkan, menurut laporan yang dibuat oleh Griffith
+                        Asia Institute, tahun 2014 merupakan tahun dengan
+                        keterlibatan BRI tertinggi yang pernah ada, dengan
+                        kontrak konstruksi senilai USD 70,7 miliar dan sekitar
+                        USD 51 miliar dalam bentuk investasi (Christoph Nedopil,
+                        2025).
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Apa Saja Investasi China di Berbagai Negara?</span
+                        >
+                        <br /> Dalam banyak kasus, negara-negara berkembang menyambut
+                        baik kehadiran investasi ini sebagai solusi atas keterbatasan
+                        pembiayaan pembangunan, peningkatan lapangan pekerjaan dan
+                        transfer teknologi, akses pasar dan jaringan global, serta
+                        peningkatan daya saing ekonomi lokal. Hal ini dapat dilihat
+                        dari berbagai proyek masif yang dibangun oleh China sebagai
+                        berikut:
+                    </p>
+                </div>
+
+                <div class="ml-4">
+                    <!-- 1. Proyek Kereta Cepat Jakarta-Bandung (Whoosh) di Indonesia -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            1. Proyek Kereta Cepat Jakarta-Bandung (Whoosh) di
+                            Indonesia
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WhooshImage}
+                                alt="Kereta Cepat Whoosh"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Kereta Cepat Jakarta-Bandung atau WHOOSH
+                                merupakan salah satu hasil investasi China yang
+                                paling baru dan unggul. Investasi kereta cepat
+                                ini akan memberikan dampak terhadap pertumbuhan
+                                ekonomi Indonesia. Kereta WHOOSH telah menarik
+                                lebih dari 4 juta penumpang di tahun pertamanya
+                                dan berhasil memperoleh Rp8,7 miliar hingga
+                                Rp10,15 miliar setiap harinya. Selain itu,
+                                keuntungan lainnya yang diperoleh adalah
+                                penghematan waktu perjalanan Jakarta-Bandung
+                                yang biasanya membutuhkan 3-5 jam, namun saat
+                                ini dapat ditempuh hanya dengan 30-45 menit
+                                saja. Tidak hanya itu, penggunaan WHOOSH juga
+                                mampu mengurangi emisi karbon berkurangnya
+                                mobilisasi menggunakan mobil atau kendaraan
+                                pribadi (Kemenkeu Learning Center, 2024).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 2 China-Pakistan Economic Corridor (CPEC) di Pakistan.  -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            2. China-Pakistan Economic Corridor (CPEC) di
+                            Pakistan
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaChinaImage}
+                                alt="CPEC Pakistan"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                CPEC merupakan proyek bilateral yang bertujuan
+                                untuk meningkatkan infrastruktur Pakistan untuk
+                                melancarkan arus perdagangan dengan China, yang
+                                nantikan akan diintegrasikan juga dengan
+                                negara-negara Asia Tenggara. Proyek-proyek
+                                tersebut meliputi sistem transportasi jalan,
+                                kereta api, udara, dan energi untuk
+                                menghubungkan pelabuhan Pakistan di laut dalam,
+                                Gwadar dan Karachi, dengan Daerah Otonomi
+                                Xinjiang Uygur di China dan sekitarnya melalui
+                                jalur darat. Hal ini bertujuan untuk mengurangi
+                                waktu dan biaya pengangkutan barang dan energi
+                                seperti gas alam ke China (Shayan Rauf dan Adam
+                                Zeidan, 2025).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 3. Kereta Cepat Vientiane-Boten di Laos -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            3. Kereta Cepat Vientiane-Boten di Laos
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaApiLaosImage}
+                                alt="Kereta Api Laos"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Jalur kereta api Vientiane-Boten merupakan
+                                kereta api yang beraliran listrik sepanjang 422
+                                kilometer yang menghubungkan Vientiane, ibu kota
+                                Laos, dengan kota perbatasan utara Boten, yang
+                                diresmikan pada 3 Desember 2021. Mengingat
+                                lokasi geografis Laos yang berada di antara
+                                China dan daratan Asia Tenggara, jalur kereta
+                                api Vientiane-Boten merupakan bagian penting
+                                dari jaringan konektivitas regional, dengan
+                                potensi transformatif untuk kerja sama
+                                konektivitas lintas batas di daratan Asia
+                                (Cheng-Chwee Kuik dan Zikri Rosli, 2023).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 4. Rel Addis Ababa-Djibouti di Ethiopia -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            4. Rel Addis Ababa-Djibouti di Ethiopia
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaApiEthiopiaImage}
+                                alt="Kereta Api Ethiopia"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Jalur kereta api Addis Ababa-Djibouti merupakan
+                                jalur kereta api listrik lintas batas pertama di
+                                Afrika. Jalur kereta api ini merupakan jalur rel
+                                tunggal elektrifikasi sepanjang 753 km yang
+                                menghubungkan ibu kota Ethiopia, Addis Ababa,
+                                dan Pelabuhan Djibouti, dengan total 45 stasiun.
+                                Jalur ini berfungsi sebagai koridor transportasi
+                                utama bagi Ethiopia menuju pintu gerbangnya,
+                                Pelabuhan Djibouti, yang menangani lebih dari
+                                90% perdagangan internasional Ethiopia (Global
+                                Infrastructure Hub, 2020).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Keuntungan Investasi China bagi China sendiri</span
+                        >
+                        <br /> Dari sekian banyaknya proyek yang dibangun oleh China
+                        di berbagai negara, lantas pernahkah terlintas dipikiran kalian,
+                        apa keuntungannya untuk China sendiri? Dengan membangun jalur
+                        rel kereta api, jaringan pipa energi, jalan raya, dan penyeberangan
+                        perbatasan yang efisien di Asia Tenggara, Pakistan, India,
+                        dan lain sebagainya, akan memperluas penggunaan mata uang
+                        China, renminbi, secara internasional dan mampu meningkatkan
+                        konektivitas Asia. Selain itu, berinvestasi di luar negeri
+                        akan membantu China untuk meningkatkan hubungan perdagangan
+                        baru, mengembangkan pasar ekspor, meningkatkan pendapatan
+                        China, dan mengekspor kelebihan kapasitas produksi China.
+                        Di saat yang sama, China juga terdorong untuk melakukan restrukturisasi
+                        perekonomian agar terhindar dari jebakan negara berpenghasilan
+                        menengah (James McBride, Noah Berman, dan Andrew Chatzky,
+                        2023).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        China berinvestasi, dan dunia ikut bertransformasi.
+                        Transformasi ini bukanlah bentuk dominasi, tetapi hasil
+                        dari kolaborasi antarnegara dalam menghadapi tantangan
+                        bersama. Investasi internasional China membuktikan bahwa
+                        ketika negara-negara saling terhubung dan bekerja sama,
+                        pembangunan yang inklusif dan berkelanjutan bukanlah
+                        sekedar idealisme, melainkan kenyataan yang tengah
+                        dibangun bersama.
+                    </p>
+                </div>
+
+                {/* Closing */}
+                <div
+                    class="mt-8 p-4 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-sm font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-8 pt-6 border-t-2 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-3 text-gray-700 text-xs leading-relaxed"
+                    >
+                        <p class="pl-4 -indent-4">
+                            Al-Fadhat, Faris. (2023). Perang Dagang AS-Cina:
+                            Kekuasaan dan Paradoks Kapitalisme. Depok: Rajawali
+                            Pers. Hlm. 55.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Britannica. (2025). "China-Pakistan Economic
+                            Corridor."
+                            <a
+                                href="https://www.britannica.com/topic/China-Pakistan-Economic-Corridor"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.britannica.com/topic/China-Pakistan-Economic-Corridor
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Global Infrastructure Hub. (2020). "Addis Ababa –
+                            Djibouti Railway."
+                            <a
+                                href="https://www.gihub.org/connectivity-across-borders/case-studies/addis-ababa-djibouti-railway/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.gihub.org/connectivity-across-borders/case-studies/addis-ababa-djibouti-railway/
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Ignatius, Stephen. (2024). "Cost and Benefit
+                            Analysis Kereta Cepat Indonesia Cina
+                            (Jakarta-Bandung)."
+                            <a
+                                href="https://klc2.kemenkeu.go.id/kms/knowledge/cost-and-benefit-analysis-kereta-cepat-indonesia-cina-jakarta-bandung-4a95a3f9/detail/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://klc2.kemenkeu.go.id/kms/knowledge/cost-and-benefit-analysis-kereta-cepat-indonesia-cina-jakarta-bandung-4a95a3f9/detail/
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Kuik, Cheng-Chwee dan Zikri Rosli. Laos-China
+                            infrastructure cooperation: legitimation and the
+                            limits of host-country agency. Journal of
+                            Contemporary East Asia Studies, Vol. 12, No. 1. Hlm.
+                            33.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            McBride, James, Noah Berman, and Andrew Chatzky.
+                            (2023). "China's Massive Belt and Road Initiative."
+                            <a
+                                href="https://www.cfr.org/backgrounder/chinas-massive-belt-and-road-initiative"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.cfr.org/backgrounder/chinas-massive-belt-and-road-initiative
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Ndruru, Konrad Punyaman. (2024). Perspektif Sejarah
+                            Reformasi Ekonomi China. Jurnal Humaniora dan Sosial
+                            Sains, Vol. 1, No. 1. Hlm. 25.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Nedopil, Christoph. (2025). China Belt and Road
+                            Initiative (BRI) Investment Report 2024. Griffith
+                            University.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <main
+        class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block"
+        style={`background-image: url(${Background})`}
+    >
+        {/* --- HERO SECTION --- */}
+        <div class="px-15 mx-auto">
+            <div class="rounded-2xl p-5">
+                <div class="mb-4">
+                    <span
+                        class="inline-block bg-green-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1
+                    class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
+                >
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* --- CONTENT CONTAINER --- */}
+        <div class="mx-auto px-15">
+            {/* Main Article Content */}
+            <article class="rounded-2xl p-5">
+                {/* Cover Image */}
+                <div class="mb-10 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-8">
+                    <p
+                        class="text-lg md:text-xl font-semibold text-gray-800 italic"
+                    >
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Dalam dua dekade terakhir, China telah menjelma menjadi
+                        salah satu aktor ekonomi global paling dominan. Melalui
+                        gelombang investasi internasional yang masif, China tak
+                        hanya memperluas pengaruh ekonominya, tetapi juga
+                        perlahan-lahan mengukuhkan dirinya sebagai kekuatan
+                        geopolitik baru. Pertanyaannya, apakah dunia tengah
+                        menyaksikan transformasi global yang didorong oleh
+                        ekspansi investasi China?
+                    </p>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Dari Domestik ke Global: Lompatan Investasi China</span
+                        >
+                        <br /> Perekonomian China berubah secara signifikan sejak
+                        adanya upaya reformasi ekonomi yang diinisiasi oleh Presiden
+                        Deng Xiaoping pada tahun 1978. Kebijakan reformasi ekonomi
+                        ini berubah dari yang semula bersifat ekonomi tertutup menjadi
+                        ekonomi yang berorientasi kepada pasar global. Hal ini pun
+                        merupakan program yang bertujuan untuk memperkenalkan dan
+                        memajukan bisnis-bisnis swasta dan insentif pasar kepada sistem
+                        komunis yang dipimpin pemerintah China (Konrad Punyaman Ndruru,
+                        2024).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Sepanjang tahun 1980an dan 1990an, China mulai
+                        menerapkan kebijakan ekonomi yang lebih berorientasi
+                        pasar. Bahkan, pada saat itu, investasi Amerika Serikat
+                        di China terus meningkat, dari yang sebelumnya nihil
+                        menjadi $28,2 miliar pada tahun 2000. Lonjakan angka
+                        tersebut mendorong China untuk membuka diri terhadap
+                        investasi asing dan bahkan bergabung dengan World Trade
+                        Organization (WTO) pada tahun 2001. Tidak hanya itu,
+                        pada tahun 2000, China untuk menerapkan kebijakan “Going
+                        Out Policy” yang semakin mendorong perusahaan China
+                        untuk berinvestasi di luar negeri, memperoleh sumber
+                        daya alam, serta teknologi dan keterampilan manajerial
+                        yang lebih modern (Faris Al-Fadhat, 2023).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Ambisi China tidak berhenti disitu saja karena faktanya
+                        China semakin berambisi dalam mengembangkan
+                        investasinya. Pada tahun 2013, President Xi Jinping
+                        meluncurkan proyek Belt and Road Initiative (BRI), yaitu
+                        kumpulan inisiatif pembangunan dan investasi yang luas
+                        untuk menghubungkan Asia Timur dan Eropa melalui
+                        infrastruktur fisik Proyek-proyek besar seperti Belt and
+                        Road Initiative (BRI) menjadi simbol dari ekspansi
+                        tersebut. Melalui skema pembangunan infrastruktur lintas
+                        negara, China membiayai pelabuhan, jalan raya, rel
+                        kereta api, dan kawasan industri di lebih dari 140
+                        negara (James McBride, Noah Berman, dan Andrew Chatzky,
+                        2023). Bahkan, menurut laporan yang dibuat oleh Griffith
+                        Asia Institute, tahun 2014 merupakan tahun dengan
+                        keterlibatan BRI tertinggi yang pernah ada, dengan
+                        kontrak konstruksi senilai USD 70,7 miliar dan sekitar
+                        USD 51 miliar dalam bentuk investasi (Christoph Nedopil,
+                        2025).
+                    </p>
+                </div>
+
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Apa Saja Investasi China di Berbagai Negara?</span
+                        >
+                        <br /> Dalam banyak kasus, negara-negara berkembang menyambut
+                        baik kehadiran investasi ini sebagai solusi atas keterbatasan
+                        pembiayaan pembangunan, peningkatan lapangan pekerjaan dan
+                        transfer teknologi, akses pasar dan jaringan global, serta
+                        peningkatan daya saing ekonomi lokal. Hal ini dapat dilihat
+                        dari berbagai proyek masif yang dibangun oleh China sebagai
+                        berikut:
+                    </p>
+                </div>
+
+                <div class="ml-10">
+                    <!-- 1. Proyek Kereta Cepat Jakarta-Bandung (Whoosh) di Indonesia -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            1. Proyek Kereta Cepat Jakarta-Bandung (Whoosh) di
+                            Indonesia
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WhooshImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Kereta Cepat Jakarta-Bandung atau WHOOSH
+                                merupakan salah satu hasil investasi China yang
+                                paling baru dan unggul. Investasi kereta cepat
+                                ini akan memberikan dampak terhadap pertumbuhan
+                                ekonomi Indonesia. Kereta WHOOSH telah menarik
+                                lebih dari 4 juta penumpang di tahun pertamanya
+                                dan berhasil memperoleh Rp8,7 miliar hingga
+                                Rp10,15 miliar setiap harinya. Selain itu,
+                                keuntungan lainnya yang diperoleh adalah
+                                penghematan waktu perjalanan Jakarta-Bandung
+                                yang biasanya membutuhkan 3-5 jam, namun saat
+                                ini dapat ditempuh hanya dengan 30-45 menit
+                                saja. Tidak hanya itu, penggunaan WHOOSH juga
+                                mampu mengurangi emisi karbon berkurangnya
+                                mobilisasi menggunakan mobil atau kendaraan
+                                pribadi (Kemenkeu Learning Center, 2024).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 2 China-Pakistan Economic Corridor (CPEC) di Pakistan.  -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            2. China-Pakistan Economic Corridor (CPEC) di
+                            Pakistan
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaChinaImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                CPEC merupakan proyek bilateral yang bertujuan
+                                untuk meningkatkan infrastruktur Pakistan untuk
+                                melancarkan arus perdagangan dengan China, yang
+                                nantikan akan diintegrasikan juga dengan
+                                negara-negara Asia Tenggara. Proyek-proyek
+                                tersebut meliputi sistem transportasi jalan,
+                                kereta api, udara, dan energi untuk
+                                menghubungkan pelabuhan Pakistan di laut dalam,
+                                Gwadar dan Karachi, dengan Daerah Otonomi
+                                Xinjiang Uygur di China dan sekitarnya melalui
+                                jalur darat. Hal ini bertujuan untuk mengurangi
+                                waktu dan biaya pengangkutan barang dan energi
+                                seperti gas alam ke China (Shayan Rauf dan Adam
+                                Zeidan, 2025).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 3. Kereta Cepat Vientiane-Boten di Laos -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            3. Kereta Cepat Vientiane-Boten di Laos
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaApiLaosImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Jalur kereta api Vientiane-Boten merupakan
+                                kereta api yang beraliran listrik sepanjang 422
+                                kilometer yang menghubungkan Vientiane, ibu kota
+                                Laos, dengan kota perbatasan utara Boten, yang
+                                diresmikan pada 3 Desember 2021. Mengingat
+                                lokasi geografis Laos yang berada di antara
+                                China dan daratan Asia Tenggara, jalur kereta
+                                api Vientiane-Boten merupakan bagian penting
+                                dari jaringan konektivitas regional, dengan
+                                potensi transformatif untuk kerja sama
+                                konektivitas lintas batas di daratan Asia
+                                (Cheng-Chwee Kuik dan Zikri Rosli, 2023).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 4. Rel Addis Ababa-Djibouti di Ethiopia -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            4. Rel Addis Ababa-Djibouti di Ethiopia
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KeretaApiEthiopiaImage}
+                                alt="Kereta Api Ethiopia"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Jalur kereta api Addis Ababa-Djibouti merupakan
+                                jalur kereta api listrik lintas batas pertama di
+                                Afrika. Jalur kereta api ini merupakan jalur rel
+                                tunggal elektrifikasi sepanjang 753 km yang
+                                menghubungkan ibu kota Ethiopia, Addis Ababa,
+                                dan Pelabuhan Djibouti, dengan total 45 stasiun.
+                                Jalur ini berfungsi sebagai koridor transportasi
+                                utama bagi Ethiopia menuju pintu gerbangnya,
+                                Pelabuhan Djibouti, yang menangani lebih dari
+                                90% perdagangan internasional Ethiopia (Global
+                                Infrastructure Hub, 2020).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Keuntungan Investasi China bagi China sendiri</span
+                        >
+                        <br /> Dari sekian banyaknya proyek yang dibangun oleh China
+                        di berbagai negara, lantas pernahkah terlintas dipikiran kalian,
+                        apa keuntungannya untuk China sendiri? Dengan membangun jalur
+                        rel kereta api, jaringan pipa energi, jalan raya, dan penyeberangan
+                        perbatasan yang efisien di Asia Tenggara, Pakistan, India,
+                        dan lain sebagainya, akan memperluas penggunaan mata uang
+                        China, renminbi, secara internasional dan mampu meningkatkan
+                        konektivitas Asia. Selain itu, berinvestasi di luar negeri
+                        akan membantu China untuk meningkatkan hubungan perdagangan
+                        baru, mengembangkan pasar ekspor, meningkatkan pendapatan
+                        China, dan mengekspor kelebihan kapasitas produksi China.
+                        Di saat yang sama, China juga terdorong untuk melakukan restrukturisasi
+                        perekonomian agar terhindar dari jebakan negara berpenghasilan
+                        menengah (James McBride, Noah Berman, dan Andrew Chatzky,
+                        2023).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        China berinvestasi, dan dunia ikut bertransformasi.
+                        Transformasi ini bukanlah bentuk dominasi, tetapi hasil
+                        dari kolaborasi antarnegara dalam menghadapi tantangan
+                        bersama. Investasi internasional China membuktikan bahwa
+                        ketika negara-negara saling terhubung dan bekerja sama,
+                        pembangunan yang inklusif dan berkelanjutan bukanlah
+                        sekedar idealisme, melainkan kenyataan yang tengah
+                        dibangun bersama.
+                    </p>
+                </div>
+                {/* Closing */}
+                <div
+                    class="mt-12 p-6 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-base md:text-lg font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-12 pt-8 border-t-2 border-gray-200">
+                    <h3
+                        class="text-xl md:text-2xl font-bold text-gray-900 mb-6"
+                    >
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
+                    >
+                        <p class="pl-6 -indent-6">
+                            Al-Fadhat, Faris. (2023). Perang Dagang AS-Cina:
+                            Kekuasaan dan Paradoks Kapitalisme. Depok: Rajawali
+                            Pers. Hlm. 55.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Britannica. (2025). "China-Pakistan Economic
+                            Corridor."
+                            <a
+                                href="https://www.britannica.com/topic/China-Pakistan-Economic-Corridor"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.britannica.com/topic/China-Pakistan-Economic-Corridor
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Global Infrastructure Hub. (2020). "Addis Ababa –
+                            Djibouti Railway."
+                            <a
+                                href="https://www.gihub.org/connectivity-across-borders/case-studies/addis-ababa-djibouti-railway/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.gihub.org/connectivity-across-borders/case-studies/addis-ababa-djibouti-railway/
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Ignatius, Stephen. (2024). "Cost and Benefit
+                            Analysis Kereta Cepat Indonesia Cina
+                            (Jakarta-Bandung)."
+                            <a
+                                href="https://klc2.kemenkeu.go.id/kms/knowledge/cost-and-benefit-analysis-kereta-cepat-indonesia-cina-jakarta-bandung-4a95a3f9/detail/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://klc2.kemenkeu.go.id/kms/knowledge/cost-and-benefit-analysis-kereta-cepat-indonesia-cina-jakarta-bandung-4a95a3f9/detail/
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Kuik, Cheng-Chwee dan Zikri Rosli. Laos-China
+                            infrastructure cooperation: legitimation and the
+                            limits of host-country agency. Journal of
+                            Contemporary East Asia Studies, Vol. 12, No. 1. Hlm.
+                            33.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            McBride, James, Noah Berman, and Andrew Chatzky.
+                            (2023). "China's Massive Belt and Road Initiative."
+                            <a
+                                href="https://www.cfr.org/backgrounder/chinas-massive-belt-and-road-initiative"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.cfr.org/backgrounder/chinas-massive-belt-and-road-initiative
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Ndruru, Konrad Punyaman. (2024). Perspektif Sejarah
+                            Reformasi Ekonomi China. Jurnal Humaniora dan Sosial
+                            Sains, Vol. 1, No. 1. Hlm. 25.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Nedopil, Christoph. (2025). China Belt and Road
+                            Initiative (BRI) Investment Report 2024. Griffith
+                            University.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+</Layout>

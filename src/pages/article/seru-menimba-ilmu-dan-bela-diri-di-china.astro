@@ -1,0 +1,815 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+const Background =
+    "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle =
+    "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-8.webp";
+
+const KungfuImage = "/pages/landing-pages/hottest-news/article/kungfu.png";
+const WushuImage = "/pages/landing-pages/hottest-news/article/wushu.png";
+const TaichiImage = "/pages/landing-pages/hottest-news/article/taichi.png";
+const WingChunImage = "/pages/landing-pages/hottest-news/article/wingchun.png";
+
+const article = {
+    topic: "CICIUNBOXCHINA #8",
+    title: "KULIAH RASA SHAOLIN: SERUNYA MENIMBA ILMU DAN BELA DIRI DI CHINA",
+    publishDate: "12 Januari 2026",
+    author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title="Seru Menimba Ilmu dan Bela Diri di China">
+    <main
+        class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
+        style={`background-image: url(${Background})`}
+    >
+        {/* HERO SECTION MOBILE */}
+        <div class="px-4 mx-auto pt-6">
+            <div class="rounded-xl p-4">
+                <div class="mb-3">
+                    <span
+                        class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* CONTENT MOBILE */}
+        <div class="mx-auto px-4 pt-4">
+            <article class="rounded-xl p-4">
+                {/* Cover Image */}
+                <div class="mb-6 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto rounded-lg"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-6">
+                    <p class="text-base font-semibold text-gray-800 italic">
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Ketika berbicara mengenai China sebagai destinasi
+                        pendidikan, banyak orang langsung terbayang akan
+                        kemajuan teknologinya, universitas berstandar
+                        internasional, atau peluang belajar bahasa Mandarin.
+                        Namun, ada satu keuntungan unik yang sering luput dari
+                        sorotan, yaitu kesempatan untuk mempelajari berbagai
+                        jenis bela diri tradisional China, langsung dari tempat
+                        asalnya!
+                    </p>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Lebih dari Sekadar Pendidikan Formal</span
+                        >
+                        <br /> Studi di China tidak hanya menawarkan berbagai macam
+                        jurusan, tetapi mahasiswa juga bisa mengakses kekayaan budaya
+                        China yang mendalam melalui seni bela diri yang sudah diwariskan
+                        turun-temurun atau dalam bahasa Inggris disebut sebagai 'Chinese
+                        Martial Arts'. Terdapat berbagai macam jenis seni bela diri
+                        China, yaitu Kungfu, Wushu, Tai Chi, dan Wing Chun.
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Pada dasarnya, seni bela diri China merupakan bagian
+                        dari budaya kuno China, yang awalnya merupakan
+                        keterampilan militer dasar yang digunakan dalam
+                        pertempuran tangan kosong, seperti shoubo (搏手). Pada
+                        saat era Dinasti Han, seni ini dianggap sebagai
+                        pelatihan dasar untuk mempersiapkan penggunaan senjata,
+                        meningkatkan kemampuan fisik, dan ketangkasan. Namun,
+                        dalam perkembangannya, seni bela diri China kerap
+                        diasosiasikan dengan praktik spiritual Taoisme dan
+                        Buddhisme. Memang benar bahwa beberapa sekte keagamaan
+                        seperti White Lotus dan Triad mempraktikkan seni bela
+                        diri, namun hal ini tidak berarti seni bela diri
+                        Tiongkok selalu bersifat religius (Stanley E. Hening,
+                        1999).
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Mari Kita Mengenal Lebih Lanjut Jenis Bela Diri
+                            China</span
+                        >
+                        <br /> Seperti yang sudah disebutkan sebelumnya, terdapat
+                        lima jenis bela diri yang bisa kamu pelajari kalau sekolah
+                        di China!
+                    </p>
+                </div>
+
+                <div class="ml-4">
+                    <!-- 1. KUNGFU -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            1. Kungfu
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KungfuImage}
+                                alt="Kungfu"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Kungfu merupakan bentuk latihan dengan dimensi
+                                spiritual yang berasal dari konsentrasi dan
+                                disiplin diri, serta cara bertarung tanpa
+                                senjata yang sering disamakan dengan karate atau
+                                taekwondo. Istilah kungfu juga dapat diartikan
+                                sebagai persiapan yang matang untuk melakukan
+                                suatu keterampilan tanpa campur tangan dari akal
+                                atau emosi. Selain itu, kungfu juga dapat
+                                diartikan sebagai "keterampilan yang dicapai
+                                melalui kerja keras dan latihan". Dengan kata
+                                lain, esensi dari kungfu menekankan kesabaran,
+                                daya tahan, dan peningkatan berkelanjutan
+                                (Maling Shaolin Kungfu Academy, 2024). Kungfu
+                                dalam ditelusuri dari sejak dinasti Zhou
+                                (1111-255 SM) yang dianggap sebagai olahraga
+                                oleh para Taois yang mempraktekkannya. Jurus dan
+                                gerakannya didasarkan pada pengamatan yang tajam
+                                terhadap anatomi dan fisiologi kerangka dan otot
+                                manusia, dan menggunakan koordinasi otot yang
+                                baik. Berbagai gerakan dalam kungfu sebagian
+                                besar merupakan tiruan dari gaya bertarung hewan
+                                (Britannica, 2025).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 2 Wushu -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            2. Wushu
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WushuImage}
+                                alt="Wushu"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Istilah Wushu adalah bahasa Mandarin yang
+                                berarti 'seni bela diri' (武 'wu' = militer atau
+                                bela diri, 术 "shu" = seni) yang mencakup
+                                seluruh seni bela diri China secara umum.
+                                Istilah Wushu digunakan oleh pemerintah China
+                                untuk merepresentasikan bela diri China dalam
+                                konteks modern dan kompetitif. Sejak tahun
+                                1990an, pemerintah China kerap mempromosikan
+                                Wushu sebagai bagian dari soft power nasional
+                                melalui General Administration of Sport of China
+                                atau International Wushu Federation. Wushu juga
+                                pernah ditampilkan dalam berbagai ajang
+                                internasional, seperti Olimpiade Beijing 2008,
+                                Asian Games, dan festival budaya (Qing-song Han,
+                                et.al., 2023). Pada dasarnya, Wushu
+                                menggabungkan unsur-unsur kungfu tradisional
+                                yang fokus pada estetika, atletis, dan
+                                standarisasi. Dalam praktiknya, Wushu mencakup
+                                kompetisi jurus (taolu) dan sparring (sanda)
+                                yang memiliki gerakan yang lebih luwes dan
+                                dinamis, sehingga penampilannya cocok untuk
+                                olahraga dan hiburan (Maling Shaolin Kungfu
+                                Academy, 2024).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 3. Tai Chi -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            3. Tai Chi
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={TaichiImage}
+                                alt="Tai Chi"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Tai Chi juga dikenal dengan sebutan 'shadow
+                                boxing' atau 'tinju bayangan' merupakan seni
+                                bela diri China dengan tradisi yang panjang,
+                                yang dikembangkan di biara-biara Tiongkok dan di
+                                medan perang. Asal muasal Tai Chi adalah dari
+                                legendaris Taois, Master Zhang Sanfeng, yang
+                                menggabungkan seni bela diri dengan prinsip yin
+                                dan yang, serta Taoisme. Tai chi lebih dari
+                                hanya sekedar latihan fisik, tetapi jalan menuju
+                                keharmonisan tubuh, pikiran dan jiwa untuk
+                                menemukan keseimbangan antara gerakan berulang
+                                dan relaksasi. Secara filosofis, Tai Chi percaya
+                                bahwa tubuh terhubung dengan alam dan alam
+                                semesta, sehingga postur tubuh yang benar,
+                                pernapasan dan aliran energi dalam tubuh sangat
+                                penting. Pada dasarnya, Tai Chi menggabungkan
+                                gerakan yang mengalir dan lambar dengan kekuatan
+                                dan stabilitas, yang meliputi pemindahan berat
+                                badan secara bertahap, pinggang yang fleksibel
+                                (berputar dari pinggang), melonggarkan
+                                sendi-sendi utama, dan postur tubuh yang tegak
+                                tanpa kekakuan (Outfit Events). Pada tahun 2020,
+                                seni bela diri Tai Chi sudah diakui sebagai
+                                warisan dunia UNESCO (UNESCO, 2020).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 4. Wing Chun -->
+                    <div class="mb-6">
+                        <h2 class="text-base font-bold text-gray-900 mb-3">
+                            4. Wing Chun
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WingChunImage}
+                                alt="Wing Chun"
+                                class="w-full h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-sm leading-relaxed text-justify"
+                            >
+                                Pernahkah kalian menonton film Ip Man? Yap,
+                                beliaulah sang legenda Wing Chun yang
+                                mempopulerkan seni bela diri ini di China dan
+                                Hong Kong. Wing Chun merupakan seni bela diri
+                                China yang dimulai pada Dinasti Qing sekitar 300
+                                tahun yang lalu. Seni bela diri Wing Chun
+                                diciptakan boleh seorang biarawati Buddha
+                                bernama Ng Mui untuk melindungi dirinya sendiri
+                                dan orang-orang sekitarnya. Wing Chun didasarkan
+                                pada taktik yang menggunakan tinju untuk
+                                mempertahankan diri, yang melibatkan
+                                teknik-teknik seperti neijia dan jinda, yang
+                                sesuai dengan teknik pertarungan jarak dekat.
+                                Berbeda dengan seni bela diri China lainnya,
+                                Wing Chun lebih fokus pada gerakan cepat untuk
+                                mengalahkan lawan dan meminimalkan bahaya (Wing
+                                Chun Concepts).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Belajar di China bukan hanya tentang prestasi akademik,
+                        tetapi kalian juga mempunyai kesempatan untuk
+                        mempelajari berbagai jenis bela diri untuk mengembangkan
+                        fisik, mental, dan kultural. Jadi, apakah kamu semakin
+                        tertarik untuk studi di China?
+                    </p>
+                </div>
+
+                {/* Closing */}
+                <div
+                    class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-sm font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-8 pt-6 border-t-2 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-3 text-gray-700 text-xs leading-relaxed"
+                    >
+                        <p class="pl-4 -indent-4">
+                            Britannica. (2025). "Kung Fu."
+                            <a
+                                href="https://www.britannica.com/sports/kung-fu"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.britannica.com/sports/kung-fu
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Han, Qing-song, et.al. (2023). "Wushu as China's
+                            Soft Power: History, Development, and Governmental
+                            Discourses."
+                            <a
+                                href="https://journals.sagepub.com/doi/epub/10.1177/10126902221117973"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://journals.sagepub.com/doi/epub/10.1177/10126902221117973
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Henning, Stanley E. (1999). "Academia Encounters the
+                            Chinese Martial Arts."
+                            <a
+                                href="https://www.jstor.org/stable/pdf/23732172.pdf?refreqid=fastly-default%3A59f02918b7c0d7e88d8fdc6548e01149&ab_segments=&initiator=&acceptTC=1"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.jstor.org/stable/pdf/23732172.pdf
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Maling Shaolin Kungfu Academy. (2024). "Kung Fu vs
+                            Wushu: What's the Difference?"
+                            <a
+                                href="https://shaolin-kungfu.com/kung-fu-vs-wushu-whats-the-difference/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://shaolin-kungfu.com/kung-fu-vs-wushu-whats-the-difference/
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Outfit Events. "Tai Chi: The Art of Mastering
+                            Mind-Body Balance."
+                            <a
+                                href="https://www.outfit4events.com/eur/articles/samurai-swords/tai-chi-the-art-of-mastering-mind-body-balance/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.outfit4events.com/eur/articles/samurai-swords/tai-chi-the-art-of-mastering-mind-body-balance/
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            UNESCO. (2020). "Taijiquan."
+                            <a
+                                href="https://ich.unesco.org/en/RL/taijiquan-00424"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://ich.unesco.org/en/RL/taijiquan-00424
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Wing Chun Concepts. "About Wing Chun Kung Fu."
+                            <a
+                                href="https://wingchunconcepts.com/about-wing-chun-kung-fu/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://wingchunconcepts.com/about-wing-chun-kung-fu/
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <main
+        class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block"
+        style={`background-image: url(${Background})`}
+    >
+        {/* --- HERO SECTION --- */}
+        <div class="px-15 mx-auto">
+            <div class="rounded-2xl p-5">
+                <div class="mb-4">
+                    <span
+                        class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1
+                    class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
+                >
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* --- CONTENT CONTAINER --- */}
+        <div class="mx-auto px-15">
+            {/* Main Article Content */}
+            <article class="rounded-2xl p-5">
+                {/* Cover Image */}
+                <div class="mb-10 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-8">
+                    <p
+                        class="text-lg md:text-xl font-semibold text-gray-800 italic"
+                    >
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Ketika berbicara mengenai China sebagai destinasi
+                        pendidikan, banyak orang langsung terbayang akan
+                        kemajuan teknologinya, universitas berstandar
+                        internasional, atau peluang belajar bahasa Mandarin.
+                        Namun, ada satu keuntungan unik yang sering luput dari
+                        sorotan, yaitu kesempatan untuk mempelajari berbagai
+                        jenis bela diri tradisional China, langsung dari tempat
+                        asalnya!
+                    </p>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Lebih dari Sekadar Pendidikan Formal</span
+                        >
+                        <br /> Studi di China tidak hanya menawarkan berbagai macam
+                        jurusan, tetapi mahasiswa juga bisa mengakses kekayaan budaya
+                        China yang mendalam melalui seni bela diri yang sudah diwariskan
+                        turun-temurun atau dalam bahasa Inggris disebut sebagai ‘Chinese
+                        Martial Arts’. Terdapat berbagai macam jenis seni bela diri
+                        China, yaitu Kungfu, Wushu, Tai Chi, dan Wing Chun.
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Pada dasarnya, seni bela diri China merupakan bagian
+                        dari budaya kuno China, yang awalnya merupakan
+                        keterampilan militer dasar yang digunakan dalam
+                        pertempuran tangan kosong, seperti shoubo (搏手). Pada
+                        saat era Dinasti Han, seni ini dianggap sebagai
+                        pelatihan dasar untuk mempersiapkan penggunaan senjata,
+                        meningkatkan kemampuan fisik, dan ketangkasan. Namun,
+                        dalam perkembangannya, seni bela diri China kerap
+                        diasosiasikan dengan praktik spiritual Taoisme dan
+                        Buddhisme. Memang benar bahwa beberapa sekte keagamaan
+                        seperti White Lotus dan Triad mempraktikkan seni bela
+                        diri, namun hal ini tidak berarti seni bela diri
+                        Tiongkok selalu bersifat religius (Stanley E. Hening,
+                        1999).
+                    </p>
+                </div>
+
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        <span class="font-bold"
+                            >Mari Kita Mengenal Lebih Lanjut Jenis Bela Diri
+                            China</span
+                        >
+                        <br /> Seperti yang sudah disebutkan sebelumnya, terdapat
+                        lima jenis bela diri yang bisa kamu pelajari kalau sekolah
+                        di China!
+                    </p>
+                </div>
+
+                <div class="ml-10">
+                    <!-- 1. KUNGFU -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            1. Kungfu
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={KungfuImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Kungfu merupakan bentuk latihan dengan dimensi
+                                spiritual yang berasal dari konsentrasi dan
+                                disiplin diri, serta cara bertarung tanpa
+                                senjata yang sering disamakan dengan karate atau
+                                taekwondo. Istilah kungfu juga dapat diartikan
+                                sebagai persiapan yang matang untuk melakukan
+                                suatu keterampilan tanpa campur tangan dari akal
+                                atau emosi. Selain itu, kungfu juga dapat
+                                diartikan sebagai “keterampilan yang dicapai
+                                melalui kerja keras dan latihan”. Dengan kata
+                                lain, esensi dari kungfu menekankan kesabaran,
+                                daya tahan, dan peningkatan berkelanjutan
+                                (Maling Shaolin Kungfu Academy, 2024). Kungfu
+                                dalam ditelusuri dari sejak dinasti Zhou
+                                (1111-255 SM) yang dianggap sebagai olahraga
+                                oleh para Taois yang mempraktekkannya. Jurus dan
+                                gerakannya didasarkan pada pengamatan yang tajam
+                                terhadap anatomi dan fisiologi kerangka dan otot
+                                manusia, dan menggunakan koordinasi otot yang
+                                baik. Berbagai gerakan dalam kungfu sebagian
+                                besar merupakan tiruan dari gaya bertarung hewan
+                                (Britannica, 2025).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 2 Wushu -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            2. Wushu
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WushuImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Istilah Wushu adalah bahasa Mandarin yang
+                                berarti ‘seni bela diri’ (武 ‘wu’ = militer atau
+                                bela diri, 术 “shu” = seni) yang mencakup
+                                seluruh seni bela diri China secara umum.
+                                Istilah Wushu digunakan oleh pemerintah China
+                                untuk merepresentasikan bela diri China dalam
+                                konteks modern dan kompetitif. Sejak tahun
+                                1990an, pemerintah China kerap mempromosikan
+                                Wushu sebagai bagian dari soft power nasional
+                                melalui General Administration of Sport of China
+                                atau International Wushu Federation. Wushu juga
+                                pernah ditampilkan dalam berbagai ajang
+                                internasional, seperti Olimpiade Beijing 2008,
+                                Asian Games, dan festival budaya (Qing-song Han,
+                                et.al., 2023). Pada dasarnya, Wushu
+                                menggabungkan unsur-unsur kungfu tradisional
+                                yang fokus pada estetika, atletis, dan
+                                standarisasi. Dalam praktiknya, Wushu mencakup
+                                kompetisi jurus (taolu) dan sparring (sanda)
+                                yang memiliki gerakan yang lebih luwes dan
+                                dinamis, sehingga penampilannya cocok untuk
+                                olahraga dan hiburan (Maling Shaolin Kungfu
+                                Academy, 2024).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 3. Tai Chi -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            3. Tai Chi
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={TaichiImage}
+                                alt="Pemandangan kota Shenzhen"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Tai Chi juga dikenal dengan sebutan ‘shadow
+                                boxing’ atau ‘tinju bayangan’ merupakan seni
+                                bela diri China dengan tradisi yang panjang,
+                                yang dikembangkan di biara-biara Tiongkok dan di
+                                medan perang. Asal muasal Tai Chi adalah dari
+                                legendaris Taois, Master Zhang Sanfeng, yang
+                                menggabungkan seni bela diri dengan prinsip yin
+                                dan yang, serta Taoisme. Tai chi lebih dari
+                                hanya sekedar latihan fisik, tetapi jalan menuju
+                                keharmonisan tubuh, pikiran dan jiwa untuk
+                                menemukan keseimbangan antara gerakan berulang
+                                dan relaksasi. Secara filosofis, Tai Chi percaya
+                                bahwa tubuh terhubung dengan alam dan alam
+                                semesta, sehingga postur tubuh yang benar,
+                                pernapasan dan aliran energi dalam tubuh sangat
+                                penting. Pada dasarnya, Tai Chi menggabungkan
+                                gerakan yang mengalir dan lambar dengan kekuatan
+                                dan stabilitas, yang meliputi pemindahan berat
+                                badan secara bertahap, pinggang yang fleksibel
+                                (berputar dari pinggang), melonggarkan
+                                sendi-sendi utama, dan postur tubuh yang tegak
+                                tanpa kekakuan (Outfit Events). Pada tahun 2020,
+                                seni bela diri Tai Chi sudah diakui sebagai
+                                warisan dunia UNESCO (UNESCO, 2020).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 4. Wing Chun -->
+                    <div class="mb-6">
+                        <h2 class="text-lg font-bold text-gray-900 mb-3">
+                            4. Wing Chun
+                        </h2>
+                        <div class="my-4 flex justify-center">
+                            <img
+                                src={WingChunImage}
+                                alt="Kereta Api Ethiopia"
+                                class="w-[500px] h-auto rounded-lg shadow-md"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <p
+                                class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                            >
+                                Pernahkah kalian menonton film Ip Man? Yap,
+                                beliaulah sang legenda Wing Chun yang
+                                mempopulerkan seni bela diri ini di China dan
+                                Hong Kong. Wing Chun merupakan seni bela diri
+                                China yang dimulai pada Dinasti Qing sekitar 300
+                                tahun yang lalu. Seni bela diri Wing Chun
+                                diciptakan boleh seorang biarawati Buddha
+                                bernama Ng Mui untuk melindungi dirinya sendiri
+                                dan orang-orang sekitarnya. Wing Chun didasarkan
+                                pada taktik yang menggunakan tinju untuk
+                                mempertahankan diri, yang melibatkan
+                                teknik-teknik seperti neijia dan jinda, yang
+                                sesuai dengan teknik pertarungan jarak dekat.
+                                Berbeda dengan seni bela diri China lainnya,
+                                Wing Chun lebih fokus pada gerakan cepat untuk
+                                mengalahkan lawan dan meminimalkan bahaya (Wing
+                                Chun Concepts).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Belajar di China bukan hanya tentang prestasi akademik,
+                        tetapi kalian juga mempunyai kesempatan untuk
+                        mempelajari berbagai jenis bela diri untuk mengembangkan
+                        fisik, mental, dan kultural. Jadi, apakah kamu semakin
+                        tertarik untuk studi di China?
+                    </p>
+                </div>
+                {/* Closing */}
+                <div
+                    class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-base md:text-lg font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-12 pt-8 border-t-2 border-gray-200">
+                    <h3
+                        class="text-xl md:text-2xl font-bold text-gray-900 mb-6"
+                    >
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
+                    >
+                        <p class="pl-6 -indent-6">
+                            Britannica. (2025). "Kung Fu."
+                            <a
+                                href="https://www.britannica.com/sports/kung-fu"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.britannica.com/sports/kung-fu
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Han, Qing-song, et.al. (2023). "Wushu as China's
+                            Soft Power: History, Development, and Governmental
+                            Discourses."
+                            <a
+                                href="https://journals.sagepub.com/doi/epub/10.1177/10126902221117973"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://journals.sagepub.com/doi/epub/10.1177/10126902221117973
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Henning, Stanley E. (1999). "Academia Encounters the
+                            Chinese Martial Arts."
+                            <a
+                                href="https://www.jstor.org/stable/pdf/23732172.pdf?refreqid=fastly-default%3A59f02918b7c0d7e88d8fdc6548e01149&ab_segments=&initiator=&acceptTC=1"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.jstor.org/stable/pdf/23732172.pdf
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Maling Shaolin Kungfu Academy. (2024). "Kung Fu vs
+                            Wushu: What's the Difference?"
+                            <a
+                                href="https://shaolin-kungfu.com/kung-fu-vs-wushu-whats-the-difference/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://shaolin-kungfu.com/kung-fu-vs-wushu-whats-the-difference/
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Outfit Events. "Tai Chi: The Art of Mastering
+                            Mind-Body Balance."
+                            <a
+                                href="https://www.outfit4events.com/eur/articles/samurai-swords/tai-chi-the-art-of-mastering-mind-body-balance/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.outfit4events.com/eur/articles/samurai-swords/tai-chi-the-art-of-mastering-mind-body-balance/
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            UNESCO. (2020). "Taijiquan."
+                            <a
+                                href="https://ich.unesco.org/en/RL/taijiquan-00424"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://ich.unesco.org/en/RL/taijiquan-00424
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Wing Chun Concepts. "About Wing Chun Kung Fu."
+                            <a
+                                href="https://wingchunconcepts.com/about-wing-chun-kung-fu/"
+                                class="text-blue-700 hover:text-blue-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://wingchunconcepts.com/about-wing-chun-kung-fu/
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+</Layout>
