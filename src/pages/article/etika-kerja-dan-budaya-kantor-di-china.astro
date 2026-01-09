@@ -1,0 +1,271 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-13.webp";
+
+const gambar = "/pages/landing-pages/hottest-news/article/kerja.png";
+
+const article = {
+  topic: "CICIUNBOXCHINA #13",
+  title: "BUDAYA BEKERJA '996' DI CHINA",
+  publishDate: "23 Jan 2026",
+  author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title={article.title}>
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Belakangan ini, memang sedang ramai suatu istilah "996" di China. 996 adalah istilah slang di China yang merepresentasikan pola kerja dari pukul 9 pagi sampai pukul 9 malam dan berlangsung selama 6 hari seminggu. Jika
+            dijumlahkan, maka total waktu yang dihabiskan karyawan di China dalam sebulan adalah sekitar 288 jam, menjadikan 72 jam dalam seminggu. Budaya bekerja seperti ini banyak diterapkan di beberapa kota besar seperti Beijing,
+            Shanghai, dan Shenzhen (Bloomberg, 2024).
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            996 bukan aturan resmi, tetapi praktik tidak tertulis yang muncul di sebagian perusahaan, terutama startup teknologi, e-commerce, dan manufaktur berteknologi tinggi. Penerapan budaya kerja "996" dilakukan karena pertumbuhan
+            perusahaan teknologi yang pesat, sehingga memunculkan sifat kompetitif di antara perusahaan teknologi yang ada di China. Budaya kerja seperti ini sudah berlangsung sejak tahun 2018 (Nur Fatimah Sutomo, 2023).
+          </p>
+        </div>
+
+        <div class="mb-6 mx-auto max-w-md">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Menurut Wang Zhibo, seorang profesor dari South China Normal University, alasan atas mengapa budaya 996 diterapkan adalah karena tekanan sosial. Di China, kelas sosial dalam masyarakat dapat dibagi menjadi dua, yaitu mereka yang
+            berasal dari ekonomi rata-rata ke atas dan rata-rata ke bawah. Orang yang berada di status ekonomi ke atas memilih untuk bekerja lebih jam kerja normal agar dapat memperoleh gaji yang lebih tinggi dan tidak kehilangan
+            pekerjaannya. Tidak hanya untuk mempertahankan status sosial, tetapi budaya 996 juga didorong oleh faktor globalisasi karena pesatnya perkembangan teknologi, sehingga setiap perusahaan teknologi di China berlomba-lomba untuk
+            mendapatkan peringkat terbaik (Nur Fatimah Sutomo, 2023).
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Sebenarnya, dalam hukum ketenagakerjaan China, telah diatur bahwasannya setiap pekerja harus bekerja 8 jam sehari dan menjadikan 44 jam per minggu. Jika suatu perusahaan membutuhkan pekerjanya untuk bekerja melebihi jam normal,
+            maka penambahan jam kerja dapat dilakukan maksimal 3 jam per hari dan dalam satu bulan tidak boleh melebihi waktu 36 jam. Namun, dengan ambisi-ambisi yang dimiliki perusahaan, budaya 996 sepertinya melupakan peraturan
+            perundang-undangan. Hal ini pun membuat pemerintah China memberikan peringatan keras yang mengimbau kepada perusahaan teknologi China untuk mematuhi peraturan perundang-undangan (Intan Rakhmayanti Dewi, 2025).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Praktik dari budaya 996 menimbulkan dua pendapat yang berbeda. Pertama, banyak orang yang tidak mendukung budaya 996 karena dapat mengancam kesehatan fisik dan mental para pekerja. Pada pekerja di China merasa ngeluh karena
+            mereka menghabiskan sebagian besar hidup mereka hanya untuk bekerja dan tidak mendapatkan waktu istirahat yang cukup. Namun, di sisi yang lain, banyak orang berpendapat bahwa budaya 996 justru menguntungkan karena gaji dan
+            tunjangan yang mereka peroleh sangatlah sepadan (Nur Fatimah Sutomo, 2023).
+          </p>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">Dengan adanya budaya 996 ini, apakah kamu tertarik untuk bekerja di China?</p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              Bloomberg News. (2024). "China's 996 Work Culture is Driving Young People Out of Megacities." <a
+                href="https://www.bloomberg.com/news/newsletters/2024-06-11/china-s-996-work-culture-is-driving-young-people-out-of-megacities"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.bloomberg.com/news/newsletters/2024-06-11/china-s-996-work-culture-is-driving-young-people-out-of-megacities</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Dewi, Intan Rakhmayanti. (2025), "China Mulai Hapus Kerja 996 dan 007, Berkah Jack Ma Dianggap Bencana." <a
+                href="https://www.cnbcindonesia.com/tech/20250415074134-37-625994/china-mulai-hapus-kerja-996-dan-007-berkah-jack-ma-dianggap-bencana"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.cnbcindonesia.com/tech/20250415074134-37-625994/china-mulai-hapus-kerja-996-dan-007-berkah-jack-ma-dianggap-bencana</a
+              >
+            </p>
+            <p class="pl-4 -indent-4">
+              Paramesti, Amira. (2021). "Sempat Dibanggakan di China, Budaya Kerja '996' Sekarang Illegal?" <a
+                href="https://ussfeed.com/sempat-dibanggakan-di-china-budaya-kerja-996-sekarang-ilegal/pop-culture/"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://ussfeed.com/sempat-dibanggakan-di-china-budaya-kerja-996-sekarang-ilegal/pop-culture/</a
+              >.
+            </p>
+            <p class="pl-4 -indent-4">
+              Sutomo, Nur Fatimah. (2023). Fenomena dan Dampak Budaya Kerja '996' di Cina-Pemahaman Lintas Budaya. <em>CALAKAN: Jurnal, Sastra, Bahasa, dan Budaya</em>. Hlm. 154.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <main class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block" style={`background-image: url(${Background})`}>
+    {/* --- HERO SECTION --- */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-blue-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* --- CONTENT CONTAINER --- */}
+    <div class="mx-auto px-15">
+      {/* Main Article Content */}
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Belakangan ini, memang sedang ramai suatu istilah "996" di China. 996 adalah istilah slang di China yang merepresentasikan pola kerja dari pukul 9 pagi sampai pukul 9 malam dan berlangsung selama 6 hari seminggu. Jika
+            dijumlahkan, maka total waktu yang dihabiskan karyawan di China dalam sebulan adalah sekitar 288 jam, menjadikan 72 jam dalam seminggu. Budaya bekerja seperti ini banyak diterapkan di beberapa kota besar seperti Beijing,
+            Shanghai, dan Shenzhen (Bloomberg, 2024).
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            996 bukan aturan resmi, tetapi praktik tidak tertulis yang muncul di sebagian perusahaan, terutama startup teknologi, e-commerce, dan manufaktur berteknologi tinggi. Penerapan budaya kerja "996" dilakukan karena pertumbuhan
+            perusahaan teknologi yang pesat, sehingga memunculkan sifat kompetitif di antara perusahaan teknologi yang ada di China. Budaya kerja seperti ini sudah berlangsung sejak tahun 2018 (Nur Fatimah Sutomo, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8 mx-auto max-w-3xl">
+          <img src={gambar} alt={gambar} class="w-full h-auto rounded-lg" />
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">Struktur Sistem Pendidikan Tinggi di Tiongkok</span>
+            <br /> Struktur sistem pendidikan tinggi di Tiongkok disusun secara jelas dan sistematis. Pada tingkat paling atas, terdapat universitas riset unggulan yang tergabung dalam “Project 985”, yaitu inisiatif dari Presiden Jiang Zemin
+            pada tahun 1998 untuk menciptakan universitas kelas dunia. Di bawahnya, terdapat institusi dalam kelompok “Project 211” yang dibuat pada tahun 1995 untuk memperkuat sekitar 100 universitas dan program studi unggulan. Tingkat ketiga
+            mencakup universitas regional yang fokus pada pengajaran, serta tingkat paling bawah adalah perguruan tinggi vokasional dan politeknik. Untuk mencapai pendidikan yang berstandar global, pemerintah Tiongkok mengalokasikan dana yang
+            sangat besar untuk Project 985 dan Project 211 (Yuzhuo Cai & Fengqiao Yan, 2017).
+          </p>
+          <br />
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Dalam Project 985, terdapat 39 universitas, yang beberapa diantaranya adalah Tsinghua University, Peking University, Zhejiang University, Fudan University, Nanjing University, dan lainnya. Sementara itu, terdapat 112 universitas
+            yang termasuk dalam Project 211, yang diantaranya adalah Xinjiang University, Shaanxi Normal University, Guizhou University, serta 5 universitas yang sudah disebutkan dalam Project 985. Pemerintah Tiongkok mengalokasikan dana
+            sebesar 7,97 miliar USD untuk Project 985 dan 2,7 miliar USD untuk Project 211 (Yannan Cao & Rui Yang, 2023).
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            <span class="font-bold">China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020)</span>
+            <br /> Untuk meningkatkan kualitas pendidikan tinggi, pemerintah Tiongkok meluncurkan China’s National Plan for Medium and Long-term Education Reform and Development (2010-2020). Kebijakan ini menganut konsep Lifelong Learning atau
+            pembelajaran seumur hidup, yang artinya semua orang harus diajari apa yang ingin mereka pelajari unggul dalam apa yang mereka pelajari, dan menerapkan apa yang telah mereka pelajari (UNESCO, 2023). Rencana ini menekankan pada peningkatan
+            kualitas, pemerataan akses, dan inovasi dalam pendidikan. Salah satu aspek terpenting dalam rencana ini adalah proses internasionalisasi yang diupayakan melalui kolaborasi-kolaborasi internasional yang dilakukan oleh universitas lokal
+            di Tiongkok, baik dalam bentuk double degree, pertukaran dosen, hingga riset kolaboratif. Pemerintah Tiongkok juga melakukan pengembangan kurikulum internasional dan penggunaan bahasa Inggris sebagai bahasa pengantar dalam pengajaran
+            di berbagai program studi. Bahkan, dalam rencana ini, dinyatakan bahwa institusi pendidikan Tiongkok didorong untuk membuka cabang di luar negeri. Hal ini dilakukan untuk mendukung pengajaran bahasa Mandarin sebagai bahasa asing di
+            negara lain. Maka, tidak mengherankan bahwa saat ini terdapat beberapa universitas Tiongkok yang membuka cabang di negara lain, salah satunya adalah Xiamen University di Malaysia.
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Praktik dari budaya 996 menimbulkan dua pendapat yang berbeda. Pertama, banyak orang yang tidak mendukung budaya 996 karena dapat mengancam kesehatan fisik dan mental para pekerja. Pada pekerja di China merasa ngeluh karena
+            mereka menghabiskan sebagian besar hidup mereka hanya untuk bekerja dan tidak mendapatkan waktu istirahat yang cukup. Namun, di sisi yang lain, banyak orang berpendapat bahwa budaya 996 justru menguntungkan karena gaji dan
+            tunjangan yang mereka peroleh sangatlah sepadan (Nur Fatimah Sutomo, 2023).
+          </p>
+        </div>
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">Dengan adanya budaya 996 ini, apakah kamu tertarik untuk bekerja di China?</p>
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-blue-50 border-l-4 border-blue-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              Bloomberg News. (2024). "China's 996 Work Culture is Driving Young People Out of Megacities." <a
+                href="https://www.bloomberg.com/news/newsletters/2024-06-11/china-s-996-work-culture-is-driving-young-people-out-of-megacities"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.bloomberg.com/news/newsletters/2024-06-11/china-s-996-work-culture-is-driving-young-people-out-of-megacities</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Dewi, Intan Rakhmayanti. (2025), "China Mulai Hapus Kerja 996 dan 007, Berkah Jack Ma Dianggap Bencana." <a
+                href="https://www.cnbcindonesia.com/tech/20250415074134-37-625994/china-mulai-hapus-kerja-996-dan-007-berkah-jack-ma-dianggap-bencana"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://www.cnbcindonesia.com/tech/20250415074134-37-625994/china-mulai-hapus-kerja-996-dan-007-berkah-jack-ma-dianggap-bencana</a
+              >
+            </p>
+            <p class="pl-6 -indent-6">
+              Paramesti, Amira. (2021). "Sempat Dibanggakan di China, Budaya Kerja '996' Sekarang Illegal?" <a
+                href="https://ussfeed.com/sempat-dibanggakan-di-china-budaya-kerja-996-sekarang-ilegal/pop-culture/"
+                class="text-blue-700 hover:text-blue-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer">https://ussfeed.com/sempat-dibanggakan-di-china-budaya-kerja-996-sekarang-ilegal/pop-culture/</a
+              >.
+            </p>
+            <p class="pl-6 -indent-6">
+              Sutomo, Nur Fatimah. (2023). Fenomena dan Dampak Budaya Kerja '996' di Cina-Pemahaman Lintas Budaya. <em>CALAKAN: Jurnal, Sastra, Bahasa, dan Budaya</em>. Hlm. 154.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
