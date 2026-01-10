@@ -11,11 +11,13 @@ const cardnews7 = "/pages/landing-pages/hottest-news/card-cici-news-7.webp";
 const cardnews8 = "/pages/landing-pages/hottest-news/card-cici-news-8.webp";
 const cardnews9 = "/pages/landing-pages/hottest-news/card-cici-news-9.webp";
 const cardnews10 = "/pages/landing-pages/hottest-news/card-cici-news-10.webp";
+const cardnews11 = "/pages/landing-pages/hottest-news/card-cici-news-11.webp";
 const cardnews12 = "/pages/landing-pages/hottest-news/card-cici-news-12.webp";
 const cardnews13 = "/pages/landing-pages/hottest-news/card-cici-news-13.webp";
 const cardnews14 = "/pages/landing-pages/hottest-news/card-cici-news-14.webp";
 const cardnews15 = "/pages/landing-pages/hottest-news/card-cici-news-15.webp";
 const cardnews16 = "/pages/landing-pages/hottest-news/card-cici-news-16.webp";
+
 // All news cards with publish dates (format: YYYY-MM-DD)
 const allNewsCards = [
   {
@@ -47,6 +49,12 @@ const allNewsCards = [
     alt: "card12",
     link: "/article/bahasa-mandarin-sebagai-soft-power",
     publishDate: "2026-01-21", // Artikel akan muncul mulai 21 Januari 2026
+  },
+  {
+    image: cardnews11,
+    alt: "card11",
+    link: "/article/yuan-digital-senjata-baru-china-untuk-tantang-dolar",
+    publishDate: "2026-01-19",
   },
   {
     image: cardnews10,

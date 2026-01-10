@@ -1,0 +1,461 @@
+---
+import { ArrowRight, Briefcase, Globe, GraduationCap } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+
+const Background =
+    "/pages/landing-pages/hottest-news/article/article-background.webp";
+
+const CoverArticle =
+    "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-11.webp";
+
+const KungfuImage = "/pages/landing-pages/hottest-news/article/kungfu.png";
+const WushuImage = "/pages/landing-pages/hottest-news/article/wushu.png";
+const TaichiImage = "/pages/landing-pages/hottest-news/article/taichi.png";
+const WingChunImage = "/pages/landing-pages/hottest-news/article/wingchun.png";
+const PimpinanBankChinaImage =
+    "/pages/landing-pages/hottest-news/article/pimpinan-bank-china.png";
+const LembagaYuanDigitalImage =
+    "/pages/landing-pages/hottest-news/article/lembaga-bank-china.png";
+
+const article = {
+    topic: "CICIUNBOXCHINA #11",
+    title: "YUAN DIGITAL: SENJATA BARU CHINA UNTUK TANTANG DOLAR?",
+    publishDate: "19 Januari 2026",
+    author: "Celia Vanessa Hakim",
+};
+---
+
+<Layout title="Yuan Digital: Senjata Baru China untuk Tantang Dollar?">
+    <main
+        class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
+        style={`background-image: url(${Background})`}
+    >
+        {/* HERO SECTION MOBILE */}
+        <div class="px-4 mx-auto pt-6">
+            <div class="rounded-xl p-4">
+                <div class="mb-3">
+                    <span
+                        class="inline-block bg-green-700 text-white font-bold text-xs px-3 py-1 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* CONTENT MOBILE */}
+        <div class="mx-auto px-4 pt-4">
+            <article class="rounded-xl p-4">
+                {/* Cover Image */}
+                <div class="mb-6 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto rounded-lg"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-6">
+                    <p class="text-base font-semibold text-gray-800 italic">
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Yuan digital, atau yang dikenal sebagai e-CNY atau
+                        Digital Renminbi, merupakan bentuk uang elektronik yang
+                        dikembangkan oleh Bank Sentral Tiongkok (PBoC) yang
+                        pusat operasinya berada di Shanghai. Yuan digital
+                        pertama kali diperkenalkan pada tahun 2020 dan sudah
+                        diuji coba di puluhan kota di Tiongkok, seperti
+                        Shenzhen, Suzhou, Xiongan, Chengdu, Shanghai, Hainan,
+                        Changsha, Xian, Qingdao, Dalian, dan Beijing (Nir
+                        Kshetri, 2023). Pada tahun 2020, total transaksi dari
+                        Yuan digital telah mencapai 7 triliun Yuan (USD 997
+                        miliar) (Alice Li, 2025).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Wakil Gubernur PBoC Fan Yifei menekankan pentingnya
+                        digitalisasi mata uang, mengingat adanya kelemahan
+                        seperti biaya produksi dan penyimpanan yang tinggi,
+                        kurangnya kemudahan penggunaan, rentan terhadap
+                        pemalsuan, dan kemungkinan digunakan untuk tujuan
+                        ilegal. Dengan demikian, Yuan Digital diharapkan dapat
+                        memberikan data transaksi yang akurat kepada bank
+                        komersial untuk memprofilkan jumlah konsumen yang lebih
+                        besar dan menganalisis perilaku online para pengguna
+                        (Nir Kshetri, 2023).
+                    </p>
+                    <br />
+                    <div class="my-4 flex justify-center">
+                        <img
+                            src={PimpinanBankChinaImage}
+                            alt="Pemandangan kota Shenzhen"
+                            class="w-full h-auto rounded-lg shadow-md"
+                        />
+                    </div>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Pimpinan Bank Sentral China memiliki ambisi untuk
+                        menjadikan Yuan Digital sebagai sistem mata uang global
+                        multipolar atau menjadi Renminbi sebagai mata uang yang
+                        mendominasi perekonomian dunia. Hal ini pun
+                        dilatarbelakangi oleh adanya perubahan pola perdagangan
+                        dan pergeseran geopolitik yang membentuk kembali lanskap
+                        ekonomi global, sehingga membuat China berupaya untuk
+                        mengembangkan sistem keuangan yang independen dari
+                        lembaga-lembaga Barat (Reuters, 2025).
+                    </p>
+                    <br />
+                    <div class="my-4 flex justify-center">
+                        <img
+                            src={LembagaYuanDigitalImage}
+                            alt="LembagaYuanDigital"
+                            class="w-full h-auto rounded-lg shadow-md"
+                        />
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Kesuksesan China dalam mengembangkan Yuan digital telah
+                        menarik perhatian negara-negara lain yang berupaya
+                        memodernisasi infrastruktur keuangan mereka. Bahkan,
+                        Yuan digital telah diuji lebih dari 20 negara mitra,
+                        termasuk Rusia, Uni Emirat Arab, dan beberapa negara
+                        Afrika serta Asia Tenggara. Bagi negara-negara lain,
+                        penggunaan Yuan digital dapat mengurangi ketergantungan
+                        terhadap sistem SWIFT pada jaringan clearing dolar yang
+                        dikontrol oleh Amerika Serikat, sehingga jalur
+                        perdagangan akan terhindar dari pengaruh geopolitik Yuan
+                        digital juga dapat menjadi alternatif dari dolar Amerika
+                        Serikat dalam hal transaksi yang berkaitan dengan proyek
+                        Belt and Road Initiative (BRI) agar lebih efisien dan
+                        efektif (Monique Taylor, 2023).
+                    </p>
+
+                    <br />
+                    <p
+                        class="text-gray-700 text-sm leading-relaxed text-justify"
+                    >
+                        Lantas, apakah Yuan digital dapat menjadi 'senjata baru'
+                        untuk menantang dolar sebagai salah satu mata uang
+                        paling berpengaruh di dunia saat ini? Tentu saja, Yuan
+                        digital dapat menempati posisi yang kuat dalam sistem
+                        moneter global dan diversifikasi sistem multi-polar.
+                        Namun, daripada menggantikan dominasi dolar secara
+                        mendadak, penggunaan Yuan digital lebih dimungkinkan
+                        untuk mendukung internasionalisasi dan memperluas
+                        alternatif sistem pembayaran.
+                    </p>
+                </div>
+
+                {/* Closing */}
+                <div
+                    class="mt-8 p-4 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-sm font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-8 pt-6 border-t-2 border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-3 text-gray-700 text-xs leading-relaxed"
+                    >
+                        <p class="pl-4 -indent-4">
+                            Kshetri, Nir. (2022). China's Digital Yuan:
+                            Motivations of the Chinese Government and Potential
+                            Global Effects. Journal of Contemporary China, Vol.
+                            32, No. 139. Hlm. 87.
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Reuters. (2025). "China talks up digital yuan in
+                            push for multi-polar currency system."
+                            <a
+                                href="https://www.reuters.com/markets/currencies/chinas-central-bank-says-promote-digital-yuan-multi-polar-currency-system-2025-06-18/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.reuters.com/markets/currencies/chinas-central-bank-says-promote-digital-yuan-multi-polar-currency-system-2025-06-18/
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            South China Morning Post. (2025). "The world is
+                            going all in on stablecoins. Is China's digital yuan
+                            any different?"
+                            <a
+                                href="https://www.scmp.com/economy/china-economy/article/3316651/world-going-all-stablecoins-chinas-digital-yuan-any-different"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.scmp.com/economy/china-economy/article/3316651/world-going-all-stablecoins-chinas-digital-yuan-any-different
+                            </a>
+                        </p>
+                        <p class="pl-4 -indent-4">
+                            Taylor, Monique. (2023). "The Digital Yuan: Purpose,
+                            Progress, and Politics."
+                            <a
+                                href="https://madeinchinajournal.com/2023/11/27/the-digital-yuan-purpose-progress-and-politics/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://madeinchinajournal.com/2023/11/27/the-digital-yuan-purpose-progress-and-politics/
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <main
+        class="min-h-screen bg-cover bg-center pb-16 pt-[8%] hidden md:block"
+        style={`background-image: url(${Background})`}
+    >
+        {/* --- HERO SECTION --- */}
+        <div class="px-15 mx-auto">
+            <div class="rounded-2xl p-5">
+                <div class="mb-4">
+                    <span
+                        class="inline-block bg-green-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
+                    >
+                        {article.topic}
+                    </span>
+                </div>
+                <h1
+                    class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
+                >
+                    {article.title}
+                </h1>
+                <div
+                    class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
+                >
+                    <span class="font-medium">By {article.author}</span>
+                </div>
+            </div>
+        </div>
+
+        {/* --- CONTENT CONTAINER --- */}
+        <div class="mx-auto px-15">
+            {/* Main Article Content */}
+            <article class="rounded-2xl p-5">
+                {/* Cover Image */}
+                <div class="mb-10 mx-auto">
+                    <img
+                        src={CoverArticle}
+                        alt="Cover Article"
+                        class="w-full h-auto"
+                    />
+                </div>
+
+                {/* Opening */}
+                <div class="mb-8">
+                    <p
+                        class="text-lg md:text-xl font-semibold text-gray-800 italic"
+                    >
+                        "你好! We're back with more China updates from Cici!"
+                    </p>
+                </div>
+
+                {/* Paragraph 1 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Yuan digital, atau yang dikenal sebagai e-CNY atau
+                        Digital Renminbi, merupakan bentuk uang elektronik yang
+                        dikembangkan oleh Bank Sentral Tiongkok (PBoC) yang
+                        pusat operasinya berada di Shanghai. Yuan digital
+                        pertama kali diperkenalkan pada tahun 2020 dan sudah
+                        diuji coba di puluhan kota di Tiongkok, seperti
+                        Shenzhen, Suzhou, Xiongan, Chengdu, Shanghai, Hainan,
+                        Changsha, Xian, Qingdao, Dalian, dan Beijing (Nir
+                        Kshetri, 2023). Pada tahun 2020, total transaksi dari
+                        Yuan digital telah mencapai 7 triliun Yuan (USD 997
+                        miliar) (Alice Li, 2025).
+                    </p>
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Wakil Gubernur PBoC Fan Yifei menekankan pentingnya
+                        digitalisasi mata uang, mengingat adanya kelemahan
+                        seperti biaya produksi dan penyimpanan yang tinggi,
+                        kurangnya kemudahan penggunaan, rentan terhadap
+                        pemalsuan, dan kemungkinan digunakan untuk tujuan
+                        ilegal. Dengan demikian, Yuan Digital diharapkan dapat
+                        memberikan data transaksi yang akurat kepada bank
+                        komersial untuk memprofilkan jumlah konsumen yang lebih
+                        besar dan menganalisis perilaku online para pengguna
+                        (Nir Kshetri, 2023).
+                    </p>
+                    <br />
+                    <div class="my-4 flex justify-center">
+                        <img
+                            src={PimpinanBankChinaImage}
+                            alt="Pemandangan kota Shenzhen"
+                            class="w-[800px] h-auto rounded-lg shadow-md"
+                        />
+                    </div>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Pimpinan Bank Sentral China memiliki ambisi untuk
+                        menjadikan Yuan Digital sebagai sistem mata uang global
+                        multipolar atau menjadi Renminbi sebagai mata uang yang
+                        mendominasi perekonomian dunia. Hal ini pun
+                        dilatarbelakangi oleh adanya perubahan pola perdagangan
+                        dan pergeseran geopolitik yang membentuk kembali lanskap
+                        ekonomi global, sehingga membuat China berupaya untuk
+                        mengembangkan sistem keuangan yang independen dari
+                        lembaga-lembaga Barat (Reuters, 2025).
+                    </p>
+                    <br />
+                    <div class="my-4 flex justify-center">
+                        <img
+                            src={LembagaYuanDigitalImage}
+                            alt="LembagaYuanDigital"
+                            class="w-[800px] h-auto rounded-lg shadow-md"
+                        />
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Kesuksesan China dalam mengembangkan Yuan digital telah
+                        menarik perhatian negara-negara lain yang berupaya
+                        memodernisasi infrastruktur keuangan mereka. Bahkan,
+                        Yuan digital telah diuji lebih dari 20 negara mitra,
+                        termasuk Rusia, Uni Emirat Arab, dan beberapa negara
+                        Afrika serta Asia Tenggara. Bagi negara-negara lain,
+                        penggunaan Yuan digital dapat mengurangi ketergantungan
+                        terhadap sistem SWIFT pada jaringan clearing dolar yang
+                        dikontrol oleh Amerika Serikat, sehingga jalur
+                        perdagangan akan terhindar dari pengaruh geopolitik Yuan
+                        digital juga dapat menjadi alternatif dari dolar Amerika
+                        Serikat dalam hal transaksi yang berkaitan dengan proyek
+                        Belt and Road Initiative (BRI) agar lebih efisien dan
+                        efektif (Monique Taylor, 2023).
+                    </p>
+
+                    <br />
+                    <p
+                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
+                    >
+                        Lantas, apakah Yuan digital dapat menjadi ‘senjata baru’
+                        untuk menantang dolar sebagai salah satu mata uang
+                        paling berpengaruh di dunia saat ini? Tentu saja, Yuan
+                        digital dapat menempati posisi yang kuat dalam sistem
+                        moneter global dan diversifikasi sistem multi-polar.
+                        Namun, daripada menggantikan dominasi dolar secara
+                        mendadak, penggunaan Yuan digital lebih dimungkinkan
+                        untuk mendukung internasionalisasi dan memperluas
+                        alternatif sistem pembayaran.
+                    </p>
+                </div>
+                {/* Closing */}
+                <div
+                    class="mt-12 p-6 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
+                >
+                    <p class="text-gray-800 text-base md:text-lg font-medium">
+                        Stay curious, stay kind, and see you in the next chapter
+                        of #CiciUnboxChina!
+                    </p>
+                </div>
+
+                {/* References */}
+                <div class="mt-12 pt-8 border-t-2 border-gray-200">
+                    <h3
+                        class="text-xl md:text-2xl font-bold text-gray-900 mb-6"
+                    >
+                        Referensi
+                    </h3>
+                    <div
+                        class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
+                    >
+                        <p class="pl-6 -indent-6">
+                            Kshetri, Nir. (2022). China's Digital Yuan:
+                            Motivations of the Chinese Government and Potential
+                            Global Effects. Journal of Contemporary China, Vol.
+                            32, No. 139. Hlm. 87.
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Reuters. (2025). "China talks up digital yuan in
+                            push for multi-polar currency system."
+                            <a
+                                href="https://www.reuters.com/markets/currencies/chinas-central-bank-says-promote-digital-yuan-multi-polar-currency-system-2025-06-18/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.reuters.com/markets/currencies/chinas-central-bank-says-promote-digital-yuan-multi-polar-currency-system-2025-06-18/
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            South China Morning Post. (2025). "The world is
+                            going all in on stablecoins. Is China's digital yuan
+                            any different?"
+                            <a
+                                href="https://www.scmp.com/economy/china-economy/article/3316651/world-going-all-stablecoins-chinas-digital-yuan-any-different"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://www.scmp.com/economy/china-economy/article/3316651/world-going-all-stablecoins-chinas-digital-yuan-any-different
+                            </a>
+                        </p>
+                        <p class="pl-6 -indent-6">
+                            Taylor, Monique. (2023). "The Digital Yuan: Purpose,
+                            Progress, and Politics."
+                            <a
+                                href="https://madeinchinajournal.com/2023/11/27/the-digital-yuan-purpose-progress-and-politics/"
+                                class="text-green-700 hover:text-green-900 underline break-all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://madeinchinajournal.com/2023/11/27/the-digital-yuan-purpose-progress-and-politics/
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+</Layout>
