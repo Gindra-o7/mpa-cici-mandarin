@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import articles from "../../../data/articles.json";
 
 const Background = "/pages/landing-pages/hottest-news/BG.webp";
 const cardnews1 = "/pages/landing-pages/hottest-news/card-cici-news-1.webp";
@@ -19,115 +18,6 @@ const cardnews14 = "/pages/landing-pages/hottest-news/card-cici-news-14.webp";
 const cardnews15 = "/pages/landing-pages/hottest-news/card-cici-news-15.webp";
 const cardnews16 = "/pages/landing-pages/hottest-news/card-cici-news-16.webp";
 
-// Map JSON articles to card format
-const jsonCards = articles.map((article) => ({
-  image: article.coverImage || cardnews1, // Fallback if empty
-  alt: article.title,
-  link: `/article/${article.slug}`,
-  publishDate: article.publishDate, // Format: "dd MMM yyyy" works in Date constructor
-}));
-
-// All news cards with publish dates (format: YYYY-MM-DD or readable string)
-const allNewsCards = [
-  ...jsonCards,
-  {
-    image: cardnews16,
-    alt: "card16",
-    link: "/article/pasar-pernikahan-di-china",
-    publishDate: "2026-01-30", // Artikel akan muncul mulai 30 Januari 2026
-  },
-  {
-    image: cardnews15,
-    alt: "card15",
-    link: "/article/ujian-csca",
-    publishDate: "2026-01-28", // Artikel akan muncul mulai 28 Januari 2026
-  },
-  {
-    image: cardnews14,
-    alt: "card14",
-    link: "/article/fifteenth-five-year-plan-china",
-    publishDate: "2026-01-26", // Artikel akan muncul mulai 26 Januari 2026
-  },
-  {
-    image: cardnews13,
-    alt: "card13",
-    link: "/article/etika-kerja-dan-budaya-kantor-di-china",
-    publishDate: "2026-01-23", // Artikel akan muncul mulai 23 Januari 2026
-  },
-  {
-    image: cardnews12,
-    alt: "card12",
-    link: "/article/bahasa-mandarin-sebagai-soft-power",
-    publishDate: "2026-01-21", // Artikel akan muncul mulai 21 Januari 2026
-  },
-  {
-    image: cardnews11,
-    alt: "card11",
-    link: "/article/yuan-digital-senjata-baru-china-untuk-tantang-dolar",
-    publishDate: "2026-01-19",
-  },
-  {
-    image: cardnews10,
-    alt: "card10",
-    link: "/article/cara-apply-chinese-government-scholarship",
-    publishDate: "2026-01-16", // Artikel akan muncul mulai 16 Januari 2026
-  },
-  {
-    image: cardnews9,
-    alt: "card9",
-    link: "/article/ngomong-mandarin-kekinian-slang-yang-gak-ada-di-kamus",
-    publishDate: "2026-01-14", // Artikel akan muncul mulai 14 Januari 2026
-  },
-  {
-    image: cardnews8,
-    alt: "card8",
-    link: "/article/seru-menimba-ilmu-dan-bela-diri-di-china",
-    publishDate: "2026-01-12", // Artikel akan muncul mulai 12 Januari 2026
-  },
-  {
-    image: cardnews7,
-    alt: "card7",
-    link: "/article/china-berinvestasi-dunia-bertransformasi",
-    publishDate: "2026-01-09", // Artikel akan muncul mulai 9 Januari 2026
-  },
-  {
-    image: cardnews6,
-    alt: "card6",
-    link: "/article/pesta-api-suku-yi",
-    publishDate: "2026-01-07", // Artikel akan muncul mulai 5 Januari 2026
-  },
-  {
-    image: cardnews5,
-    alt: "card5",
-    link: "/article/mandarin-naik-tahta-dialek-terancam-punah",
-    publishDate: "2026-01-05", // Artikel akan muncul mulai 1 Januari 2026
-  },
-  {
-    image: cardnews4,
-    alt: "card4",
-    link: "/article/jalan-jalan-ke-masa-depan",
-    publishDate: "2025-12-20", // Artikel sudah publish
-  },
-  {
-    image: cardnews3,
-    alt: "card3",
-    link: "/article/bukan-cuma-tren",
-    publishDate: "2025-12-15", // Artikel sudah publish
-  },
-  {
-    image: cardnews2,
-    alt: "card2",
-    link: "/article/di-balik-tembok-kampus-tiongkok",
-    publishDate: "2025-12-10", // Artikel sudah publish
-  },
-  {
-    image: cardnews1,
-    alt: "card1",
-    link: "/article/80-tahun-kemenangan-perang-dunia-II",
-    publishDate: "2025-12-01", // Artikel sudah publish
-  },
-];
-
 // Helper function: check if article is new (published within last 2 days)
 const isArticleNew = (publishDateStr: string) => {
   const today = new Date();
@@ -144,26 +34,139 @@ const isArticleNew = (publishDateStr: string) => {
   return diffDays >= 0 && diffDays <= 1;
 };
 
-// Filter function: only show articles where publish date has passed
-const getPublishedCards = () => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
+const STATIC_NEWS_CARDS = [
+  {
+    image: cardnews16,
+    alt: "card16",
+    link: "/article/pasar-pernikahan-di-china",
+    publishDate: "2026-01-30",
+  },
+  {
+    image: cardnews15,
+    alt: "card15",
+    link: "/article/ujian-csca",
+    publishDate: "2026-01-28",
+  },
+  {
+    image: cardnews14,
+    alt: "card14",
+    link: "/article/fifteenth-five-year-plan-china",
+    publishDate: "2026-01-26",
+  },
+  {
+    image: cardnews13,
+    alt: "card13",
+    link: "/article/etika-kerja-dan-budaya-kantor-di-china",
+    publishDate: "2026-01-23",
+  },
+  {
+    image: cardnews12,
+    alt: "card12",
+    link: "/article/bahasa-mandarin-sebagai-soft-power",
+    publishDate: "2026-01-21",
+  },
+  {
+    image: cardnews11,
+    alt: "card11",
+    link: "/article/yuan-digital-senjata-baru-china-untuk-tantang-dolar",
+    publishDate: "2026-01-19",
+  },
+  {
+    image: cardnews10,
+    alt: "card10",
+    link: "/article/cara-apply-chinese-government-scholarship",
+    publishDate: "2026-01-16",
+  },
+  {
+    image: cardnews9,
+    alt: "card9",
+    link: "/article/ngomong-mandarin-kekinian-slang-yang-gak-ada-di-kamus",
+    publishDate: "2026-01-14",
+  },
+  {
+    image: cardnews8,
+    alt: "card8",
+    link: "/article/seru-menimba-ilmu-dan-bela-diri-di-china",
+    publishDate: "2026-01-12",
+  },
+  {
+    image: cardnews7,
+    alt: "card7",
+    link: "/article/china-berinvestasi-dunia-bertransformasi",
+    publishDate: "2026-01-09",
+  },
+  {
+    image: cardnews6,
+    alt: "card6",
+    link: "/article/pesta-api-suku-yi",
+    publishDate: "2026-01-07",
+  },
+  {
+    image: cardnews5,
+    alt: "card5",
+    link: "/article/mandarin-naik-tahta-dialek-terancam-punah",
+    publishDate: "2026-01-05",
+  },
+  {
+    image: cardnews4,
+    alt: "card4",
+    link: "/article/jalan-jalan-ke-masa-depan",
+    publishDate: "2025-12-20",
+  },
+  {
+    image: cardnews3,
+    alt: "card3",
+    link: "/article/bukan-cuma-tren",
+    publishDate: "2025-12-15",
+  },
+  {
+    image: cardnews2,
+    alt: "card2",
+    link: "/article/di-balik-tembok-kampus-tiongkok",
+    publishDate: "2025-12-10",
+  },
+  {
+    image: cardnews1,
+    alt: "card1",
+    link: "/article/80-tahun-kemenangan-perang-dunia-II",
+    publishDate: "2025-12-01",
+  },
+];
 
-  return allNewsCards
-    .filter((card) => {
-      const publishDate = new Date(card.publishDate);
-      publishDate.setHours(0, 0, 0, 0);
-      return publishDate <= today; // Show if publish date is today or in the past
-    })
-    .map((card) => ({
-      ...card,
-      // Override isNew based on publish date (within 2 days)
-      isNew: isArticleNew(card.publishDate),
-    }));
-};
+interface HottestNewsProps {
+  articles: any[];
+}
 
-export default function HottestNews() {
-  // Get only published cards (where publish date has passed)
+export default function HottestNews({ articles = [] }: HottestNewsProps) {
+  // Map parsed articles to card format
+  const jsonCards = articles.map((article) => ({
+    image: article.coverImage || cardnews1, // Fallback if empty
+    alt: article.title,
+    link: `/article/${article.slug}`,
+    publishDate: article.publishDate,
+    // Format: "dd MMM yyyy" works in Date constructor
+    // Assuming article.publishDate is YYYY-MM-DD or readable
+  }));
+
+  const allNewsCards = [...jsonCards, ...STATIC_NEWS_CARDS];
+
+  // Filter function: only show articles where publish date has passed
+  const getPublishedCards = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to midnight
+
+    return allNewsCards
+      .filter((card) => {
+        const publishDate = new Date(card.publishDate);
+        publishDate.setHours(0, 0, 0, 0);
+        return publishDate <= today;
+      })
+      .map((card) => ({
+        ...card,
+        isNew: isArticleNew(card.publishDate),
+      }));
+  };
+
   const newsCards = getPublishedCards();
 
   const [activeCardMobile, setActiveCardMobile] = React.useState(0);

@@ -1,10 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import articlesRaw from "../../data/articles.json";
+import Layout from "../../layouts/Layout.astro";
+import { getArticles } from "../../utils/data";
 
-// In a real app we might fetch this from an API, but for now we import JSON directly
-// since this is a static/server hybrid site.
-const articles = articlesRaw;
+const articles = getArticles();
 ---
 
 <Layout title="Admin Dashboard">

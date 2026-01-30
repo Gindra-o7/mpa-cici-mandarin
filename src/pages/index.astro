@@ -6,17 +6,20 @@ import AddItionalProServices from "../components/pages/landing-pages/AdditionalP
 import WhyUs from "../components/pages/landing-pages/WhyUs.astro.tsx";
 import SuccesStories from "../components/pages/landing-pages/SuccesStories.astro.tsx";
 import LearnCulture from "../components/pages/landing-pages/LearnCulture.astro.tsx";
+import { getArticles } from "../utils/data";
 import HottestNews from "../components/pages/landing-pages/HottestNews.astro.tsx";
 import ModalPopUp from "../components/pages/pop-up/ModalPopUp.tsx";
+
+const articles = getArticles();
 ---
 
 <Layout title="Home">
-  <ModalPopUp client:load/>
+  <ModalPopUp client:load />
   <Welcome />
   <OurService />
   <AddItionalProServices />
   <WhyUs client:load />
   <SuccesStories client:load />
-  <LearnCulture client:load/>
-  <HottestNews client:load/>
+  <LearnCulture client:load />
+  <HottestNews client:load articles={articles} />
 </Layout>

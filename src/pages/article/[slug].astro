@@ -1,16 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import articlesRaw from "../../data/articles.json";
+import { getArticles, type Article } from "../../utils/data";
 
-export async function getStaticPaths() {
-  const articles = articlesRaw;
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
+export const prerender = false;
+
+const { slug } = Astro.params;
+const articles = getArticles();
+const article = articles.find((a) => a.slug === slug);
+
+if (!article) {
+  return Astro.redirect("/404");
 }
-
-const { article } = Astro.props as { article: any };
 
 // Convert "29 Jan 2026" to "2026-01-29" for input[type="date"]
 function formatDateForInput(dateStr: string) {

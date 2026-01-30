@@ -1,16 +1,24 @@
-export const prerender = false;
-
 import type { APIRoute } from "astro";
 import fs from "node:fs";
 import path from "node:path";
+import { getArticles, saveArticles, getUploadDir } from "../../utils/data";
 
-const DATA_FILE = path.join(process.cwd(), "src/data/articles.json");
-const UPLOAD_DIR = path.join(process.cwd(), "public/uploads/articles");
+export const prerender = false;
+
+const UPLOAD_DIR = getUploadDir();
 
 // Ensure upload directory exists
 if (!fs.existsSync(UPLOAD_DIR)) {
   fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 }
+
+export const GET: APIRoute = async () => {
+  const articles = getArticles();
+  return new Response(JSON.stringify(articles), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+};
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -22,16 +30,14 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Process form data
     for (const [key, value] of formData.entries()) {
-      console.log(`Processing key: ${key}`);
       if (value instanceof File) {
-        console.log(`File: ${key}, Size: ${value.size}, Name: ${value.name}`);
         // Handle file upload
         if (value.size > 0) {
           const buffer = Buffer.from(await value.arrayBuffer());
           // Sanitize filename and add timestamp to avoid collisions
           const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
           const ext = path.extname(value.name);
-          // Simple sanitize: replace spaces/special chars with underscores
+          // Simple sanitize
           const safeName = path.basename(value.name, ext).replace(/[^a-z0-9]/gi, "_");
           const filename = `${safeName}-${uniqueSuffix}${ext}`;
 
@@ -49,7 +55,6 @@ export const POST: APIRoute = async ({ request }) => {
           const publicUrl = slug ? `/uploads/articles/${slug}/${filename}` : `/uploads/articles/${filename}`;
 
           // If key starts with 'block_img_', it belongs to a content block
-          // We just store it in data map for now, logic below will re-map it to blocks
           data[key] = publicUrl;
         }
       } else {
@@ -78,44 +83,30 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Validate required fields
     if (!data.slug || !data.title || (!data.content && !data.contentBlocks)) {
-      return new Response("Missing required fields (slug, title, content or contentBlocks)", { status: 400 });
+      return new Response("Missing required fields", { status: 400 });
     }
 
-    let articles = [];
-    if (fs.existsSync(DATA_FILE)) {
-      const fileContent = fs.readFileSync(DATA_FILE, "utf-8");
-      try {
-        articles = JSON.parse(fileContent);
-      } catch (e) {
-        // Ignore JSON parse errors
-      }
-    }
+    const articles = getArticles();
 
     // Check if slug exists
     const existingIndex = articles.findIndex((a: any) => a.slug === data.slug);
     if (existingIndex >= 0) {
       // Update existing.
-      // NOTE: Logic here doesn't handle "keeping old image if no new one uploaded" perfectly
-      // unless the client sends the old URL back. For a simple CREATE flow, this is fine.
-      // If updating, we might overwrite with undefined if we aren't careful.
-      // But since this is primarily "Create", let's assume valid data.
       articles[existingIndex] = { ...articles[existingIndex], ...data };
     } else {
-      articles.push(data);
+      articles.push(data as any);
     }
 
-    const dataDir = path.dirname(DATA_FILE);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    if (saveArticles(articles)) {
+      return new Response(JSON.stringify({ success: true, slug: data.slug }), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+      return new Response("Failed to save data file", { status: 500 });
     }
-    fs.writeFileSync(DATA_FILE, JSON.stringify(articles, null, 2));
-
-    return new Response(JSON.stringify({ success: true, slug: data.slug }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
   } catch (error) {
     console.error("Error saving article:", error);
     return new Response("Internal Server Error: " + error, { status: 500 });
@@ -131,23 +122,14 @@ export const DELETE: APIRoute = async ({ request }) => {
       return new Response("Missing slug parameter", { status: 400 });
     }
 
-    if (fs.existsSync(DATA_FILE)) {
-      const fileContent = fs.readFileSync(DATA_FILE, "utf-8");
-      let articles = [];
-      try {
-        articles = JSON.parse(fileContent);
-      } catch (e) {
-        return new Response("Corrupt data file", { status: 500 });
-      }
+    const articles = getArticles();
+    const newArticles = articles.filter((a: any) => a.slug !== slug);
 
-      const newArticles = articles.filter((a: any) => a.slug !== slug);
+    if (articles.length === newArticles.length) {
+      return new Response("Article not found", { status: 404 });
+    }
 
-      if (articles.length === newArticles.length) {
-        return new Response("Article not found", { status: 404 });
-      }
-
-      fs.writeFileSync(DATA_FILE, JSON.stringify(newArticles, null, 2));
-
+    if (saveArticles(newArticles)) {
       // Optional: Delete article directory if exists
       const articleDir = path.join(UPLOAD_DIR, slug);
       if (fs.existsSync(articleDir)) {
@@ -160,7 +142,7 @@ export const DELETE: APIRoute = async ({ request }) => {
       });
     }
 
-    return new Response("Database file not found", { status: 404 });
+    return new Response("Failed to save database file", { status: 500 });
   } catch (error) {
     console.error("Error deleting article:", error);
     return new Response("Internal Server Error: " + error, { status: 500 });
