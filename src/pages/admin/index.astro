@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import articlesRaw from "../../data/articles.json";
+
+// In a real app we might fetch this from an API, but for now we import JSON directly
+// since this is a static/server hybrid site.
+const articles = articlesRaw;
+---
+
+<Layout title="Admin Dashboard">
+  <main class="min-h-screen bg-gray-50 py-32 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">Article Dashboard</h1>
+        <a
+          href="/admin/create"
+          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+        >
+          Create New Article
+        </a>
+      </div>
+
+      <div class="bg-white shadow overflow-hidden sm:rounded-md">
+        <ul role="list" class="divide-y divide-gray-200">
+          {
+            articles.length > 0 ? (
+              articles.map((article: any) => (
+                <li>
+                  <div class="px-4 py-4 sm:px-6">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center">
+                        {article.coverImage && <img class="h-12 w-16 object-cover rounded mr-4" src={article.coverImage} alt="" />}
+                        <p class="text-sm font-medium text-red-600 truncate">{article.title}</p>
+                      </div>
+                      <div class="ml-2 shrink-0 flex">
+                        <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{article.topic}</p>
+                      </div>
+                    </div>
+                    <div class="mt-2 sm:flex sm:justify-between">
+                      <div class="sm:flex">
+                        <p class="flex items-center text-sm text-gray-500">
+                          <svg class="shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                          </svg>
+                          {article.author}
+                        </p>
+                        <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                          <svg class="shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                          </svg>
+                          Published on {article.publishDate}
+                        </p>
+                      </div>
+                      <div class="mt-2 flex items-center text-sm sm:mt-0 gap-3">
+                        <a href={`/article/${article.slug}`} target="_blank" class="font-medium text-gray-600 hover:text-gray-500">
+                          View
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <a href={`/admin/edit/${article.slug}`} class="font-medium text-indigo-600 hover:text-indigo-500">
+                          Edit
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <button data-slug={article.slug} class="delete-btn font-medium text-red-600 hover:text-red-500">
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <div class="p-8 text-center text-gray-500">No articles found. Create one to get started!</div>
+            )
+          }
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const deleteBtns = document.querySelectorAll(".delete-btn");
+  deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      if (!confirm("Are you sure you want to delete this article? This action cannot be undone.")) return;
+
+      const slug = (e.target as HTMLElement).dataset.slug;
+      try {
+        const res = await fetch(`/api/articles?slug=${slug}`, {
+          method: "DELETE",
+        });
+
+        if (res.ok) {
+          alert("Article deleted successfully");
+          window.location.reload();
+        } else {
+          alert("Failed to delete article");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error deleting article");
+      }
+    });
+  });
+</script>

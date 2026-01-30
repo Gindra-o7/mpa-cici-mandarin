@@ -1,0 +1,227 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import articlesRaw from "../../data/articles.json";
+
+export async function getStaticPaths() {
+  const articles = articlesRaw;
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props as { article: any };
+
+// Convert "29 Jan 2026" to "2026-01-29" for input[type="date"]
+function formatDateForInput(dateStr: string) {
+  if (!dateStr) return "";
+  const date = new Date(dateStr);
+  return date.toISOString().split("T")[0];
+}
+
+function formatText(text: string) {
+  if (!text) return "";
+  const urlRegex = /(?<!href="|src="|">)(https?:\/\/[^\s<]+)/g;
+  return text.replace(urlRegex, '<a href="$1" target="_blank" class="text-red-700 hover:text-red-900 underline break-all">$1</a>');
+}
+// but we expect HTML from the CMS, so we'll use set:html
+const DefaultBackground = "/pages/landing-pages/hottest-news/article/article-background.webp";
+const HeroArticle = article.heroImage || "";
+const CoverArticle = article.coverImage || "";
+---
+
+<Layout title={article.title}>
+  {/* --- MOBILE VERSION --- */}
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url('${DefaultBackground}')`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-red-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+          <span class="font-medium">• {article.publishDate}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="pt-4">
+      <article class="rounded-xl p-4">
+        {/* Hero Image inside Content */}
+        {
+          HeroArticle && (
+            <div class="mb-6 mx-auto">
+              <img src={HeroArticle} alt="Hero Article" class="w-full h-auto rounded-lg" />
+            </div>
+          )
+        }
+
+        {/* Opening */}
+        {
+          article.openingText && (
+            <div class="mb-6">
+              <p class="text-base font-semibold text-gray-800 italic">"{article.openingText}"</p>
+            </div>
+          )
+        }
+
+        {/* Main Content - Block Based */}
+        <div class="mb-6 text-gray-700 leading-relaxed text-justify">
+          {
+            article.contentBlocks ? (
+              article.contentBlocks.map((block: any) => {
+                if (block.type === "paragraph") {
+                  return (
+                    <div class="mb-6">
+                      <p class="text-sm" set:html={formatText(block.value)} />
+                    </div>
+                  );
+                } else if (block.type === "image") {
+                  return (
+                    <div class="my-6 flex justify-center">
+                      <img src={block.value} class="w-[85%] mx-auto h-auto rounded-lg shadow-sm" alt="Article Image" />
+                    </div>
+                  );
+                } else if (block.type === "subheading") {
+                  return <h2 class="text-lg font-bold text-gray-900 mb-3 mt-6">{block.value}</h2>;
+                }
+              })
+            ) : (
+              /* Fallback to legacy HTML content */
+              <div set:html={article.content} />
+            )
+          }
+        </div>
+
+        {/* Closing */}
+        {
+          article.closingText && (
+            <div class="mt-8 p-4 bg-red-50 border-l-4 border-red-700 rounded-r-lg">
+              <p class="text-gray-800 text-sm font-medium">{article.closingText}</p>
+            </div>
+          )
+        }
+
+        {/* References */}
+        {
+          article.references && (
+            <div class="mt-8 pt-6 border-t-2 border-gray-200">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+              <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+                {article.references &&
+                  article.references
+                    .split("\n")
+                    .filter((ref: string) => ref.trim() !== "")
+                    .map((ref: string) => <div class="pl-4 -indent-4" set:html={formatText(ref)} />)}
+              </div>
+            </div>
+          )
+        }
+      </article>
+    </div>
+  </main>
+
+  {/* --- DESKTOP VERSION --- */}
+  <main class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]" style={`background-image: url('${DefaultBackground}')`}>
+    {/* DESKTOP HERO SECTION */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-red-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+          <span class="font-medium">• {article.publishDate}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* DESKTOP CONTENT */}
+    <div class="mx-auto px-15">
+      <article class="rounded-2xl p-5">
+        {/* Hero Image inside Content */}
+        {
+          HeroArticle && (
+            <div class="mb-10 mx-auto">
+              <img src={HeroArticle} alt="Hero Article" class="w-full h-auto" />
+            </div>
+          )
+        }
+
+        {/* Opening */}
+        {
+          article.openingText && (
+            <div class="mb-8">
+              <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"{article.openingText}"</p>
+            </div>
+          )
+        }
+
+        {/* Main Content - Block Based */}
+        <div class="mb-8 text-gray-700 leading-relaxed text-justify">
+          {
+            article.contentBlocks ? (
+              article.contentBlocks.map((block: any) => {
+                if (block.type === "paragraph") {
+                  return (
+                    <div class="mb-8">
+                      <p class="text-base md:text-lg" set:html={formatText(block.value)} />
+                    </div>
+                  );
+                } else if (block.type === "image") {
+                  return (
+                    <div class="my-12 flex justify-center">
+                      <img src={block.value} class="w-1/2 mx-auto h-auto rounded-lg shadow-md" alt="Article Image" />
+                    </div>
+                  );
+                } else if (block.type === "subheading") {
+                  return <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 mt-8">{block.value}</h2>;
+                }
+              })
+            ) : (
+              /* Fallback to legacy HTML content */
+              <div set:html={article.content} />
+            )
+          }
+        </div>
+
+        {/* Closing */}
+        {
+          article.closingText && (
+            <div class="mt-12 p-6 bg-red-50 border-l-4 border-red-700 rounded-r-lg">
+              <p class="text-gray-800 text-base md:text-lg font-medium">{article.closingText}</p>
+            </div>
+          )
+        }
+
+        {/* References */}
+        {
+          article.references && (
+            <div class="mt-12 pt-8 border-t-2 border-gray-200">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+              <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+                {article.references &&
+                  article.references
+                    .split("\n")
+                    .filter((ref: string) => ref.trim() !== "")
+                    .map((ref: string) => <div class="pl-6 -indent-6" set:html={formatText(ref)} />)}
+              </div>
+            </div>
+          )
+        }
+      </article>
+    </div>
+  </main>
+</Layout>

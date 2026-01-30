@@ -1,0 +1,399 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Create New Article">
+  <main class="min-h-screen bg-gray-50 py-32 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-4">Create New Article</h1>
+
+      <form id="articleForm" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="topic" class="block text-sm font-medium text-gray-700">Topic (e.g., CICIUNBOXCHINA #3)</label>
+            <input type="text" id="topic" name="topic" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+          </div>
+
+          <div>
+            <label for="publishDate" class="block text-sm font-medium text-gray-700">Publish Date</label>
+            <input type="date" id="publishDateInput" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+          </div>
+        </div>
+
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700">Article Title</label>
+          <input type="text" id="title" name="title" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+        </div>
+
+        <div>
+          <label for="slug" class="block text-sm font-medium text-gray-700">Slug (URL Path)</label>
+          <div class="flex gap-2">
+            <input type="text" id="slug" name="slug" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+            <button type="button" id="generateSlug" class="mt-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 text-sm">Generate</button>
+          </div>
+          <p class="text-xs text-gray-500 mt-1">Will be accessed at /article/your-slug</p>
+        </div>
+
+        <div>
+          <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+          <input type="text" id="author" name="author" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+        </div>
+
+        <!-- Image Uploads -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Hero Image (Inside Article)</label>
+            <div class="drop-zone border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-red-500 transition-colors cursor-pointer" id="heroDropZone">
+              <div class="space-y-1 text-center">
+                <!-- Icon SVG -->
+                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                  <path
+                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <div class="flex text-sm text-gray-600 justify-center">
+                  <span class="relative cursor-pointer bg-white rounded-md font-medium text-red-600 hover:text-red-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-red-500">
+                    <span>Upload a file</span>
+                  </span>
+                  <p class="pl-1">or drag and drop</p>
+                </div>
+                <p class="text-xs text-gray-500">PNG, JPG, WEBP up to 5MB</p>
+              </div>
+              <p id="heroFileName" class="mt-2 text-sm text-gray-900 font-medium"></p>
+            </div>
+            <input type="file" id="heroImage" name="heroImage" accept="image/*" class="hidden" />
+          </div>
+
+          <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Cover / Thumbnail Image (Outside)</label>
+            <div class="drop-zone border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-red-500 transition-colors cursor-pointer" id="coverDropZone">
+              <div class="space-y-1 text-center">
+                <!-- Icon SVG -->
+                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                  <path
+                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <div class="flex text-sm text-gray-600 justify-center">
+                  <span class="relative cursor-pointer bg-white rounded-md font-medium text-red-600 hover:text-red-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-red-500">
+                    <span>Upload a file</span>
+                  </span>
+                  <p class="pl-1">or drag and drop</p>
+                </div>
+                <p class="text-xs text-gray-500">PNG, JPG, WEBP up to 5MB</p>
+              </div>
+              <p id="coverFileName" class="mt-2 text-sm text-gray-900 font-medium"></p>
+            </div>
+            <input type="file" id="coverImage" name="coverImage" accept="image/*" class="hidden" />
+          </div>
+        </div>
+
+        <div>
+          <label for="openingText" class="block text-sm font-medium text-gray-700">Opening Text (Italic Quote)</label>
+          <textarea id="openingText" name="openingText" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2"></textarea>
+        </div>
+
+        <!-- Block Editor Container -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Content Blocks</label>
+          <div id="blocks-container" class="space-y-4 mb-4">
+            <!-- Dynamic Blocks will appear here -->
+          </div>
+
+          <div class="flex gap-2">
+            <button type="button" id="addParagraphBtn" class="flex items-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+              Add Paragraph
+            </button>
+            <button type="button" id="addSubheadingBtn" class="flex items-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20h10M7 4h10M4 12h16"></path>
+              </svg>
+              Add Subheading
+            </button>
+            <button type="button" id="addImageBtn" class="flex items-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              Add Image
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="closingText" class="block text-sm font-medium text-gray-700">Closing Text (Red Box)</label>
+          <textarea id="closingText" name="closingText" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2"></textarea>
+        </div>
+
+        <div>
+          <label for="references" class="block text-sm font-medium text-gray-700">References (HTML Supported)</label>
+          <textarea id="references" name="references" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2 font-mono"></textarea>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button
+            type="submit"
+            class="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+          >
+            Save Article
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Slug Generator
+  const titleInput = document.getElementById("title") as HTMLInputElement;
+  const slugInput = document.getElementById("slug") as HTMLInputElement;
+  const generateBtn = document.getElementById("generateSlug");
+
+  generateBtn?.addEventListener("click", () => {
+    if (titleInput?.value) {
+      slugInput.value = titleInput.value
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "");
+    }
+  });
+
+  // Basic Drag and Drop (Keep helper for Cover Image)
+  function setupDragDrop(zoneId: string, inputId: string, nameId: string) {
+    const zone = document.getElementById(zoneId);
+    const input = document.getElementById(inputId) as HTMLInputElement;
+    const nameDisplay = document.getElementById(nameId);
+
+    if (!zone || !input || !nameDisplay) return;
+
+    zone.addEventListener("click", () => input.click());
+
+    input.addEventListener("change", () => {
+      if (input.files && input.files[0]) {
+        nameDisplay.textContent = input.files[0].name;
+        zone.classList.add("border-red-500", "bg-red-50");
+      }
+    });
+    // Drag events omitted for brevity in this helper, could be added back
+  }
+  setupDragDrop("heroDropZone", "heroImage", "heroFileName");
+  setupDragDrop("coverDropZone", "coverImage", "coverFileName");
+
+  // --- BLOCK EDITOR LOGIC ---
+  const blocksContainer = document.getElementById("blocks-container");
+  const addParagraphBtn = document.getElementById("addParagraphBtn");
+  const addSubheadingBtn = document.getElementById("addSubheadingBtn");
+  const addImageBtn = document.getElementById("addImageBtn");
+
+  let blockCounter = 0;
+
+  function createDeleteButton(blockDiv: HTMLElement) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hover:text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>`;
+    btn.className = "absolute top-2 right-2 p-1 rounded-full hover:bg-gray-100";
+    btn.title = "Delete Block";
+    btn.onclick = () => blockDiv.remove();
+    return btn;
+  }
+
+  addParagraphBtn?.addEventListener("click", () => {
+    blockCounter++;
+    const div = document.createElement("div");
+    div.className = "relative p-4 border rounded-md bg-gray-50 group block-item";
+    div.dataset.type = "paragraph";
+
+    div.innerHTML = `
+        <div class="flex justify-between items-center mb-1">
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Paragraph</label>
+            <div class="flex gap-2">
+                <button type="button" class="bold-btn p-1 text-gray-500 hover:text-gray-900 rounded hover:bg-gray-200" title="Bold (Ctrl+B)" onmousedown="event.preventDefault()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path></svg>
+                </button>
+                <div class="w-px bg-gray-300 h-4 self-center"></div>
+            </div>
+        </div>
+        <div class="block-content w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2 bg-white min-h-[100px]" contenteditable="true"></div>
+      `;
+
+    div.appendChild(createDeleteButton(div));
+    blocksContainer?.appendChild(div);
+
+    // Add formatting logic
+    // Add formatting logic
+    const contentDiv = div.querySelector(".block-content") as HTMLElement;
+    const boldBtn = div.querySelector(".bold-btn") as HTMLButtonElement;
+
+    boldBtn.addEventListener("click", () => {
+      document.execCommand("bold", false, undefined);
+      contentDiv.focus();
+    });
+
+    contentDiv.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "b") {
+        e.preventDefault();
+        document.execCommand("bold", false, undefined);
+      }
+    });
+
+    // Handle Paste to strip formatting
+    contentDiv.addEventListener("paste", (e) => {
+      e.preventDefault();
+      const text = e.clipboardData?.getData("text/plain");
+      if (text) {
+        document.execCommand("insertText", false, text);
+      }
+    });
+  });
+
+  addSubheadingBtn?.addEventListener("click", () => {
+    blockCounter++;
+    const div = document.createElement("div");
+    div.className = "relative p-4 border rounded-md bg-gray-50 group block-item";
+    div.dataset.type = "subheading";
+
+    div.innerHTML = `
+        <div class="flex justify-between items-center mb-1">
+            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Subheading</label>
+        </div>
+        <div class="block-content w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2 bg-white font-bold" contenteditable="true"></div>
+      `;
+
+    div.appendChild(createDeleteButton(div));
+    blocksContainer?.appendChild(div);
+
+    const contentDiv = div.querySelector(".block-content") as HTMLElement;
+
+    // Handle Paste to strip formatting
+    contentDiv.addEventListener("paste", (e) => {
+      e.preventDefault();
+      const text = e.clipboardData?.getData("text/plain");
+      if (text) {
+        document.execCommand("insertText", false, text);
+      }
+    });
+
+    // Disable enter key (no multiline subheadings)
+    contentDiv.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+      }
+    });
+  });
+
+  addImageBtn?.addEventListener("click", () => {
+    blockCounter++;
+    const div = document.createElement("div");
+    div.className = "relative p-4 border rounded-md bg-gray-50 group block-item";
+    div.dataset.type = "image";
+    // Temporary unique ID for file mapping
+    const fileId = `block_img_${blockCounter}_${Date.now()}`;
+    div.dataset.fileKey = fileId;
+
+    div.innerHTML = `
+        <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Image</label>
+        <div class="flex items-center gap-4">
+            <div class="shrink-0 h-20 w-20 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center border text-gray-400">
+                <span class="text-xs">Preview</span>
+            </div>
+            <div class="flex-1">
+                <input type="file" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100 curser-pointer" />
+                <p class="text-xs text-gray-400 mt-1">Select an image to display between paragraphs.</p>
+            </div>
+        </div>
+      `;
+    div.appendChild(createDeleteButton(div));
+
+    // Simple preview logic
+    const input = div.querySelector("input[type='file']") as HTMLInputElement;
+    const previewBox = div.querySelector(".shrink-0") as HTMLElement;
+
+    input.addEventListener("change", () => {
+      if (input.files && input.files[0]) {
+        const url = URL.createObjectURL(input.files[0]);
+        previewBox.innerHTML = `<img src="${url}" class="w-full h-full object-cover" />`;
+      }
+    });
+
+    blocksContainer?.appendChild(div);
+  });
+
+  // Form Submit
+  const form = document.getElementById("articleForm") as HTMLFormElement;
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    // Format Date
+    const dateInput = document.getElementById("publishDateInput") as HTMLInputElement;
+    if (dateInput.value) {
+      const dateObj = new Date(dateInput.value);
+      const day = dateObj.getDate();
+      const month = dateObj.toLocaleString("en-US", { month: "short" });
+      const year = dateObj.getFullYear();
+      formData.append("publishDate", `${day} ${month} ${year}`);
+    }
+
+    // Process Blocks
+    const blocks: any[] = [];
+    const blockItems = document.querySelectorAll(".block-item");
+
+    blockItems.forEach((item) => {
+      const type = (item as HTMLElement).dataset.type;
+
+      if (type === "paragraph" || type === "subheading") {
+        const contentDiv = item.querySelector(".block-content") as HTMLElement;
+        if (contentDiv.innerHTML.trim()) {
+          blocks.push({ type: type, value: contentDiv.innerHTML });
+        }
+      } else if (type === "image") {
+        const fileKey = (item as HTMLElement).dataset.fileKey;
+        const input = item.querySelector("input[type='file']") as HTMLInputElement;
+
+        if (input.files && input.files[0] && fileKey) {
+          // Add file to FormData with the unique key
+          formData.append(fileKey, input.files[0]);
+          // Add block metadata (value will be filled by server via key)
+          blocks.push({ type: "image", fileKey: fileKey });
+        }
+      }
+    });
+
+    // Append JSON string of blocks
+    formData.append("contentBlocksJSON", JSON.stringify(blocks));
+
+    try {
+      const response = await fetch("/api/articles", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert("Article saved successfully!");
+        window.location.href = `/article/${result.slug}`;
+      } else {
+        const error = await response.text();
+        alert("Failed to save article: " + error);
+      }
+    } catch (err) {
+      alert("Error saving article: " + err);
+    }
+  });
+</script>

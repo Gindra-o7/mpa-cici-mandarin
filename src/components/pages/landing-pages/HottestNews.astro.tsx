@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import articles from "../../../data/articles.json";
 
 const Background = "/pages/landing-pages/hottest-news/BG.webp";
 const cardnews1 = "/pages/landing-pages/hottest-news/card-cici-news-1.webp";
@@ -18,8 +19,17 @@ const cardnews14 = "/pages/landing-pages/hottest-news/card-cici-news-14.webp";
 const cardnews15 = "/pages/landing-pages/hottest-news/card-cici-news-15.webp";
 const cardnews16 = "/pages/landing-pages/hottest-news/card-cici-news-16.webp";
 
-// All news cards with publish dates (format: YYYY-MM-DD)
+// Map JSON articles to card format
+const jsonCards = articles.map((article) => ({
+  image: article.coverImage || cardnews1, // Fallback if empty
+  alt: article.title,
+  link: `/article/${article.slug}`,
+  publishDate: article.publishDate, // Format: "dd MMM yyyy" works in Date constructor
+}));
+
+// All news cards with publish dates (format: YYYY-MM-DD or readable string)
 const allNewsCards = [
+  ...jsonCards,
   {
     image: cardnews16,
     alt: "card16",
@@ -140,15 +150,15 @@ const getPublishedCards = () => {
   today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
 
   return allNewsCards
-    .filter(card => {
+    .filter((card) => {
       const publishDate = new Date(card.publishDate);
       publishDate.setHours(0, 0, 0, 0);
       return publishDate <= today; // Show if publish date is today or in the past
     })
-    .map(card => ({
+    .map((card) => ({
       ...card,
       // Override isNew based on publish date (within 2 days)
-      isNew: isArticleNew(card.publishDate)
+      isNew: isArticleNew(card.publishDate),
     }));
 };
 
@@ -286,18 +296,11 @@ export default function HottestNews() {
                     }}
                   >
                     <img src={card.image} alt={card.alt} className="w-full h-auto rounded-lg shadow-lg" />
-                    {card.isNew && (
-                      <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">
-                        NEW
-                      </div>
-                    )}
+                    {card.isNew && <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">NEW</div>}
                   </div>
                 ))}
                 {/* Spacer for the last item to center */}
-                <div
-                  className="shrink-0"
-                  style={{ width: "calc(50vw - 140px - 1rem)" }}
-                />
+                <div className="shrink-0" style={{ width: "calc(50vw - 140px - 1rem)" }} />
               </div>
             </div>
 
@@ -305,8 +308,9 @@ export default function HottestNews() {
             <button
               onClick={handleMobileNext}
               disabled={activeCardMobile === newsCards.length - 1}
-              className={`hidden absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg transition-all ${activeCardMobile === newsCards.length - 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-400 hover:scale-110"
-                }`}
+              className={`hidden absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg transition-all ${
+                activeCardMobile === newsCards.length - 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-400 hover:scale-110"
+              }`}
               aria-label="Next"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="black" className="w-5 h-5">
@@ -352,11 +356,7 @@ export default function HottestNews() {
                         window.location.href = card.link;
                       }}
                     />
-                    {card.isNew && (
-                      <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">
-                        NEW
-                      </div>
-                    )}
+                    {card.isNew && <div className="absolute top-2 right-2 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow-lg animate-pulse hover:scale-110 transition-transform duration-300">NEW</div>}
                   </div>
                 ))}
               </div>
@@ -366,8 +366,7 @@ export default function HottestNews() {
             <button
               onClick={handleNext}
               disabled={currentIndex === maxIndex}
-              className={`absolute -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#FFBC2D] rounded-full p-3 shadow-lg transition-all ${currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-500 hover:scale-110"
-                }`}
+              className={`absolute -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#FFBC2D] rounded-full p-3 shadow-lg transition-all ${currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-500 hover:scale-110"}`}
               aria-label="Next"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="black" className="w-6 h-6">
