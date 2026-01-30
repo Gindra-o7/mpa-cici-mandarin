@@ -104,6 +104,10 @@ export const POST: APIRoute = async ({ request }) => {
       articles.push(data);
     }
 
+    const dataDir = path.dirname(DATA_FILE);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
     fs.writeFileSync(DATA_FILE, JSON.stringify(articles, null, 2));
 
     return new Response(JSON.stringify({ success: true, slug: data.slug }), {
