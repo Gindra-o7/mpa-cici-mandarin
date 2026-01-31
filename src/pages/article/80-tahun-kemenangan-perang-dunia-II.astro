@@ -1,453 +1,273 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const Background =
-    "/pages/landing-pages/hottest-news/article/article-background.webp";
+const Background = "/pages/landing-pages/hottest-news/article/article-background.webp";
 
-const CoverArticle =
-    "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-1.webp";
+const CoverArticle = "/pages/landing-pages/hottest-news/article/cover-artikel-dalam-1.webp";
 
-const PasukanMiliter =
-    "/pages/landing-pages/hottest-news/article/pasukan-militer.png";
-const PresidenChina =
-    "/pages/landing-pages/hottest-news/article/presiden-china.png";
+const PasukanMiliter = "/pages/landing-pages/hottest-news/article/pasukan-militer.png";
+const PresidenChina = "/pages/landing-pages/hottest-news/article/presiden-china.png";
 
 const article = {
-    topic: "CICIUNBOXCHINA #1",
-    title: "80 TAHUN KEMENANGAN PERANG DUNIA II: BEIJING TUNJUKKAN TARING MILITER",
-    publishDate: "10 Nov 2025",
-    author: "Celia Vanessa Hakim",
+  topic: "CICIUNBOXCHINA #1",
+  title: "80 TAHUN KEMENANGAN PERANG DUNIA II: BEIJING TUNJUKKAN TARING MILITER",
+  publishDate: "10 Nov 2025",
+  author: "Celia Vanessa Hakim",
 };
 ---
 
-<Layout
-    title="80 TAHUN KEMENANGAN PERANG DUNIA II: BEIJING TUNJUKKAN TARING MILITER"
->
-    {/* --- MOBILE VERSION --- */}
-    <main
-        class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]"
-        style={`background-image: url(${Background})`}
-    >
-        {/* HERO SECTION MOBILE */}
-        <div class="px-4 mx-auto pt-6">
-            <div class="rounded-xl p-4">
-                <div class="mb-3">
-                    <span
-                        class="inline-block bg-green-700 text-white font-bold text-xs px-3 py-1 rounded-full"
-                    >
-                        {article.topic}
-                    </span>
-                </div>
-                <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
-                    {article.title}
-                </h1>
-                <div
-                    class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3"
-                >
-                    <span class="font-medium">By {article.author}</span>
-                </div>
-            </div>
+<Layout title="80 TAHUN KEMENANGAN PERANG DUNIA II: BEIJING TUNJUKKAN TARING MILITER">
+  {/* --- MOBILE VERSION --- */}
+  <main class="md:hidden min-h-screen bg-cover bg-center pb-8 pt-[4%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION MOBILE */}
+    <div class="px-4 mx-auto pt-6">
+      <div class="rounded-xl p-4">
+        <div class="mb-3">
+          <span class="inline-block bg-green-700 text-white font-bold text-xs px-3 py-1 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-xl leading-snug mb-3">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-xs border-t pt-3">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT MOBILE */}
+    <div class="mx-auto px-4 pt-4">
+      <article class="rounded-xl p-4">
+        {/* Cover Image */}
+        <div class="mb-6 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto rounded-lg" />
         </div>
 
-        {/* CONTENT MOBILE */}
-        <div class="mx-auto px-4 pt-4">
-            <article class="rounded-xl p-4">
-                {/* Cover Image */}
-                <div class="mb-6 mx-auto">
-                    <img
-                        src={CoverArticle}
-                        alt="Cover Article"
-                        class="w-full h-auto rounded-lg"
-                    />
-                </div>
-
-                {/* Opening */}
-                <div class="mb-6">
-                    <p class="text-base font-semibold text-gray-800 italic">
-                        "你好! We're back with more China updates from Cici!"
-                    </p>
-                </div>
-
-                {/* Paragraph 1 */}
-                <div class="mb-6">
-                    <p
-                        class="text-gray-700 text-sm leading-relaxed text-justify"
-                    >
-                        Pada tanggal 3 September 2025, China menggelar parade
-                        militer megah di Lapangan Tiananmen, Beijing, untuk
-                        memperingati 80 tahun berakhirnya Perang Dunia Kedua.
-                        Acara ini merupakan parade terbesar China dalam sejarah
-                        modernnya, dengan simbol-simbol seperti struktur
-                        berbentuk Tembok Besar dan angka besar "1945-2025"
-                        terpampang di tengah lapangan.
-                    </p>
-                </div>
-
-                {/* Paragraph 2 */}
-                <div class="mb-6">
-                    <p
-                        class="text-gray-700 text-sm leading-relaxed text-justify"
-                    >
-                        Presiden Xi Jinping memimpin upacara dan menjadi
-                        pembicara utama, menegaskan militer Tiongkok sebagai
-                        penjaga kedaulatan dan simbol kebangkitan bangsa. Dalam
-                        pidatonya, Presiden Xi Jinping mengatakan
-                        <span class="font-semibold italic"
-                            >"The Chinese people are … not afraid of violence
-                            and are self-reliant and strong."</span
-                        > Di dalam parade militer ini, terlihat terdapat beberapa
-                        persenjataan yang dipamerkan, seperti misil balistik nuklir
-                        yang dapat menjangkau seluruh dunia, misil hipersonik pembunuh
-                        kapal yang tidak bisa dicegat, drone bawah laut raksasa yang
-                        bisa beroperasi sendiri, senjata laser pertahanan udara yang
-                        membutakan musuh, serta drone serang siluman yang menjadi
-                        pendamping dari jet tempur (Khomsurijal W, 2025)
-                    </p>
-                </div>
-
-                {/* Image 1 */}
-                <div class="my-6 flex justify-center">
-                    <img
-                        src={PasukanMiliter}
-                        alt="Pasukan Militer"
-                        class="w-full h-auto rounded-lg shadow-md"
-                    />
-                </div>
-
-                {/* Paragraph 3 */}
-                <div class="mb-6">
-                    <p
-                        class="text-gray-700 text-sm leading-relaxed text-justify"
-                    >
-                        Melalui pidato dan pameran persenjataan tersebut,
-                        sejumlah akademisi berpendapat bahwa hal tersebut
-                        menjadi sinyal bagi negara-negara seperti Amerika
-                        Serikat, Eropa, dan negara-negara tetangga lainnya untuk
-                        berpikir dua kali jika mereka mempertimbangkan untuk
-                        menantang kepentingan nasional China (Helen Davidson,
-                        2025).
-                    </p>
-                </div>
-
-                {/* Paragraph 4 */}
-                <div class="mb-6">
-                    <p
-                        class="text-gray-700 text-sm leading-relaxed text-justify"
-                    >
-                        Lebih dari 25 kepala negara dan pemerintahan hadir dalam
-                        parade ini, termasuk Presiden Rusia Vladimir Putin dan
-                        Pemimpin Korea Utara Kim Jong Un. Kehadiran tokoh-tokoh
-                        penting ini menunjukkan sebuah dimensi diplomatik di
-                        acara ini. Lebih dari 50,000 orang yang hadir untuk
-                        menyaksikan secara langsung parade militer tersebut
-                        (Nectar Gan, 2025).
-                    </p>
-                </div>
-
-                {/* Paragraph 5 */}
-                <div class="mb-6">
-                    <p
-                        class="text-gray-700 text-sm leading-relaxed text-justify"
-                    >
-                        Acara tersebut ditutup dengan sebuah gala musik yang
-                        megah berdurasi sekitar satu setengah jam yang berjudul
-                        "Justice will Prevail". Kemudian, yang tidak kalah
-                        menariknya lagi adalah ketika Presiden Xi Jinping
-                        bertemu dengan para veteran Perang Dunia Kedua sebelum
-                        pertunjukkan tersebut. Hal ini menunjukkan rasa
-                        apresiatif yang tinggi President Xi Jinping terhadap
-                        pejuang kemerdekaan China (Nectar Gan, 2025).
-                    </p>
-                </div>
-
-                {/* Image 2 */}
-                <div class="my-6 flex justify-center">
-                    <img
-                        src={PresidenChina}
-                        alt="Presiden China"
-                        class="w-full h-auto rounded-lg shadow-md"
-                    />
-                </div>
-
-                {/* Closing */}
-                <div
-                    class="mt-8 p-4 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
-                >
-                    <p class="text-gray-800 text-sm font-medium">
-                        Stay curious, stay kind, and see you in the next chapter
-                        of #CiciUnboxChina!
-                    </p>
-                </div>
-
-                {/* References */}
-                <div class="mt-8 pt-6 border-t-2 border-gray-200">
-                    <h3 class="text-lg font-bold text-gray-900 mb-4">
-                        Referensi
-                    </h3>
-                    <div
-                        class="space-y-3 text-gray-700 text-xs leading-relaxed"
-                    >
-                        <p class="pl-4 -indent-4">
-                            Davidson, Helen. (2025). "Xi Jinping says world
-                            faces 'peace or war', as Putin and Kim join him for
-                            military parade." <em>The Guardian</em>.
-                            <a
-                                href="https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un
-                            </a>.
-                        </p>
-                        <p class="pl-4 -indent-4">
-                            Gan, Nectar. (2025). "China showcases military
-                            strength at parade as Xi stands alongside Putin and
-                            Kim." <em>CNN World</em>.
-                            <a
-                                href="https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk
-                            </a>.
-                        </p>
-                        <p class="pl-4 -indent-4">
-                            W, Khomsurjial. (2025). "5 Senjata Berbahaya China
-                            yang Bikin AS dan Sekutunya Gemetar! Nomor 3 Bisa
-                            Menyelam Tanpa Awak dan Hancurkan Musuh." <em
-                                >Disway.id</em
-                            >.
-                            <a
-                                href="https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#
-                            </a>.
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </main>
-
-    {/* --- DESKTOP VERSION --- */}
-    <main
-        class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]"
-        style={`background-image: url(${Background})`}
-    >
-        {/* HERO SECTION DESKTOP */}
-        <div class="px-15 mx-auto">
-            <div class="rounded-2xl p-5">
-                <div class="mb-4">
-                    <span
-                        class="inline-block bg-green-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full"
-                    >
-                        {article.topic}
-                    </span>
-                </div>
-                <h1
-                    class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
-                >
-                    {article.title}
-                </h1>
-                <div
-                    class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4"
-                >
-                    <span class="font-medium">By {article.author}</span>
-                </div>
-            </div>
+        {/* Opening */}
+        <div class="mb-6">
+          <p class="text-base font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
         </div>
 
-        {/* CONTENT DESKTOP */}
-        <div class="mx-auto px-15">
-            <article class="rounded-2xl p-5">
-                {/* Cover Image */}
-                <div class="mb-10 mx-auto">
-                    <img
-                        src={CoverArticle}
-                        alt="Cover Article"
-                        class="w-full h-auto"
-                    />
-                </div>
-
-                {/* Opening */}
-                <div class="mb-8">
-                    <p
-                        class="text-lg md:text-xl font-semibold text-gray-800 italic"
-                    >
-                        "你好! We're back with more China updates from Cici!"
-                    </p>
-                </div>
-
-                {/* Paragraph 1 */}
-                <div class="mb-8">
-                    <p
-                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
-                    >
-                        Pada tanggal 3 September 2025, China menggelar parade
-                        militer megah di Lapangan Tiananmen, Beijing, untuk
-                        memperingati 80 tahun berakhirnya Perang Dunia Kedua.
-                        Acara ini merupakan parade terbesar China dalam sejarah
-                        modernnya, dengan simbol-simbol seperti struktur
-                        berbentuk Tembok Besar dan angka besar "1945-2025"
-                        terpampang di tengah lapangan.
-                    </p>
-                </div>
-
-                {/* Paragraph 2 */}
-                <div class="mb-8">
-                    <p
-                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
-                    >
-                        Presiden Xi Jinping memimpin upacara dan menjadi
-                        pembicara utama, menegaskan militer Tiongkok sebagai
-                        penjaga kedaulatan dan simbol kebangkitan bangsa. Dalam
-                        pidatonya, Presiden Xi Jinping mengatakan
-                        <span class="font-semibold italic"
-                            >"The Chinese people are … not afraid of violence
-                            and are self-reliant and strong."</span
-                        > Di dalam parade militer ini, terlihat terdapat beberapa
-                        persenjataan yang dipamerkan, seperti misil balistik nuklir
-                        yang dapat menjangkau seluruh dunia, misil hipersonik pembunuh
-                        kapal yang tidak bisa dicegat, drone bawah laut raksasa yang
-                        bisa beroperasi sendiri, senjata laser pertahanan udara yang
-                        membutakan musuh, serta drone serang siluman yang menjadi
-                        pendamping dari jet tempur (Khomsurijal W, 2025)
-                    </p>
-                </div>
-
-                {/* Image 1 */}
-                <div class="my-12 flex justify-center">
-                    <img
-                        src={PasukanMiliter}
-                        alt="Pasukan Militer"
-                        class="max-w-full h-auto rounded-lg shadow-lg"
-                    />
-                </div>
-
-                {/* Paragraph 3 */}
-                <div class="mb-8">
-                    <p
-                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
-                    >
-                        Melalui pidato dan pameran persenjataan tersebut,
-                        sejumlah akademisi berpendapat bahwa hal tersebut
-                        menjadi sinyal bagi negara-negara seperti Amerika
-                        Serikat, Eropa, dan negara-negara tetangga lainnya untuk
-                        berpikir dua kali jika mereka mempertimbangkan untuk
-                        menantang kepentingan nasional China (Helen Davidson,
-                        2025).
-                    </p>
-                </div>
-
-                {/* Paragraph 4 */}
-                <div class="mb-8">
-                    <p
-                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
-                    >
-                        Lebih dari 25 kepala negara dan pemerintahan hadir dalam
-                        parade ini, termasuk Presiden Rusia Vladimir Putin dan
-                        Pemimpin Korea Utara Kim Jong Un. Kehadiran tokoh-tokoh
-                        penting ini menunjukkan sebuah dimensi diplomatik di
-                        acara ini. Lebih dari 50,000 orang yang hadir untuk
-                        menyaksikan secara langsung parade militer tersebut
-                        (Nectar Gan, 2025).
-                    </p>
-                </div>
-
-                {/* Paragraph 5 */}
-                <div class="mb-8">
-                    <p
-                        class="text-gray-700 text-base md:text-lg leading-relaxed text-justify"
-                    >
-                        Acara tersebut ditutup dengan sebuah gala musik yang
-                        megah berdurasi sekitar satu setengah jam yang berjudul
-                        "Justice will Prevail". Kemudian, yang tidak kalah
-                        menariknya lagi adalah ketika Presiden Xi Jinping
-                        bertemu dengan para veteran Perang Dunia Kedua sebelum
-                        pertunjukkan tersebut. Hal ini menunjukkan rasa
-                        apresiatif yang tinggi President Xi Jinping terhadap
-                        pejuang kemerdekaan China (Nectar Gan, 2025).
-                    </p>
-                </div>
-
-                {/* Image 2 */}
-                <div class="my-12 flex justify-center">
-                    <img
-                        src={PresidenChina}
-                        alt="Presiden China"
-                        class="max-w-full h-auto rounded-lg shadow-lg"
-                    />
-                </div>
-
-                {/* Closing */}
-                <div
-                    class="mt-12 p-6 bg-green-50 border-l-4 border-green-700 rounded-r-lg"
-                >
-                    <p class="text-gray-800 text-base md:text-lg font-medium">
-                        Stay curious, stay kind, and see you in the next chapter
-                        of #CiciUnboxChina!
-                    </p>
-                </div>
-
-                {/* References */}
-                <div class="mt-12 pt-8 border-t-2 border-gray-200">
-                    <h3
-                        class="text-xl md:text-2xl font-bold text-gray-900 mb-6"
-                    >
-                        Referensi
-                    </h3>
-                    <div
-                        class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed"
-                    >
-                        <p class="pl-6 -indent-6">
-                            Davidson, Helen. (2025). "Xi Jinping says world
-                            faces 'peace or war', as Putin and Kim join him for
-                            military parade." <em>The Guardian</em>.
-                            <a
-                                href="https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un
-                            </a>.
-                        </p>
-                        <p class="pl-6 -indent-6">
-                            Gan, Nectar. (2025). "China showcases military
-                            strength at parade as Xi stands alongside Putin and
-                            Kim." <em>CNN World</em>.
-                            <a
-                                href="https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk
-                            </a>.
-                        </p>
-                        <p class="pl-6 -indent-6">
-                            W, Khomsurjial. (2025). "5 Senjata Berbahaya China
-                            yang Bikin AS dan Sekutunya Gemetar! Nomor 3 Bisa
-                            Menyelam Tanpa Awak dan Hancurkan Musuh." <em
-                                >Disway.id</em
-                            >.
-                            <a
-                                href="https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#"
-                                class="text-green-700 hover:text-green-900 underline break-all"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#
-                            </a>.
-                        </p>
-                    </div>
-                </div>
-            </article>
+        {/* Paragraph 1 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Pada tanggal 3 September 2025, China menggelar parade militer megah di Lapangan Tiananmen, Beijing, untuk memperingati 80 tahun berakhirnya Perang Dunia Kedua. Acara ini merupakan parade terbesar China dalam sejarah modernnya,
+            dengan simbol-simbol seperti struktur berbentuk Tembok Besar dan angka besar "1945-2025" terpampang di tengah lapangan.
+          </p>
         </div>
-    </main>
+
+        {/* Paragraph 2 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Presiden Xi Jinping memimpin upacara dan menjadi pembicara utama, menegaskan militer Tiongkok sebagai penjaga kedaulatan dan simbol kebangkitan bangsa. Dalam pidatonya, Presiden Xi Jinping mengatakan
+            <span class="font-semibold italic">"The Chinese people are … not afraid of violence and are self-reliant and strong."</span> Di dalam parade militer ini, terlihat terdapat beberapa persenjataan yang dipamerkan, seperti misil balistik
+            nuklir yang dapat menjangkau seluruh dunia, misil hipersonik pembunuh kapal yang tidak bisa dicegat, drone bawah laut raksasa yang bisa beroperasi sendiri, senjata laser pertahanan udara yang membutakan musuh, serta drone serang siluman
+            yang menjadi pendamping dari jet tempur (Khomsurijal W, 2025)
+          </p>
+        </div>
+
+        {/* Image 1 */}
+        <div class="my-6 flex justify-center">
+          <img src={PasukanMiliter} alt="Pasukan Militer" class="w-full h-auto rounded-lg shadow-md" />
+        </div>
+
+        {/* Paragraph 3 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Melalui pidato dan pameran persenjataan tersebut, sejumlah akademisi berpendapat bahwa hal tersebut menjadi sinyal bagi negara-negara seperti Amerika Serikat, Eropa, dan negara-negara tetangga lainnya untuk berpikir dua kali
+            jika mereka mempertimbangkan untuk menantang kepentingan nasional China (Helen Davidson, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 4 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Lebih dari 25 kepala negara dan pemerintahan hadir dalam parade ini, termasuk Presiden Rusia Vladimir Putin dan Pemimpin Korea Utara Kim Jong Un. Kehadiran tokoh-tokoh penting ini menunjukkan sebuah dimensi diplomatik di acara
+            ini. Lebih dari 50,000 orang yang hadir untuk menyaksikan secara langsung parade militer tersebut (Nectar Gan, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 5 */}
+        <div class="mb-6">
+          <p class="text-gray-700 text-sm leading-relaxed text-justify">
+            Acara tersebut ditutup dengan sebuah gala musik yang megah berdurasi sekitar satu setengah jam yang berjudul "Justice will Prevail". Kemudian, yang tidak kalah menariknya lagi adalah ketika Presiden Xi Jinping bertemu dengan
+            para veteran Perang Dunia Kedua sebelum pertunjukkan tersebut. Hal ini menunjukkan rasa apresiatif yang tinggi President Xi Jinping terhadap pejuang kemerdekaan China (Nectar Gan, 2025).
+          </p>
+        </div>
+
+        {/* Image 2 */}
+        <div class="my-6 flex justify-center">
+          <img src={PresidenChina} alt="Presiden China" class="w-full h-auto rounded-lg shadow-md" />
+        </div>
+
+        {/* Closing */}
+        <div class="mt-8 p-4 bg-green-50 border-l-4 border-green-700 rounded-r-lg">
+          <p class="text-gray-800 text-sm font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-8 pt-6 border-t-2 border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Referensi</h3>
+          <div class="space-y-3 text-gray-700 text-xs leading-relaxed">
+            <p class="pl-4 -indent-4">
+              Davidson, Helen. (2025). "Xi Jinping says world faces 'peace or war', as Putin and Kim join him for military parade." <em>The Guardian</em>.
+              <a
+                href="https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un"
+                class="text-green-700 hover:text-green-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              Gan, Nectar. (2025). "China showcases military strength at parade as Xi stands alongside Putin and Kim." <em>CNN World</em>.
+              <a href="https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk" class="text-green-700 hover:text-green-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk
+              </a>.
+            </p>
+            <p class="pl-4 -indent-4">
+              W, Khomsurjial. (2025). "5 Senjata Berbahaya China yang Bikin AS dan Sekutunya Gemetar! Nomor 3 Bisa Menyelam Tanpa Awak dan Hancurkan Musuh." <em>Disway.id</em>.
+              <a
+                href="https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#"
+                class="text-green-700 hover:text-green-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#
+              </a>.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {/* --- DESKTOP VERSION --- */}
+  <main class="hidden md:block min-h-screen bg-cover bg-center pb-16 pt-[8%]" style={`background-image: url(${Background})`}>
+    {/* HERO SECTION DESKTOP */}
+    <div class="px-15 mx-auto">
+      <div class="rounded-2xl p-5">
+        <div class="mb-4">
+          <span class="inline-block bg-green-700 text-white font-bold text-sm md:text-base px-4 py-2 rounded-full">
+            {article.topic}
+          </span>
+        </div>
+        <h1 class="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+          {article.title}
+        </h1>
+        <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base border-t pt-4">
+          <span class="font-medium">By {article.author}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* CONTENT DESKTOP */}
+    <div class="mx-auto px-15">
+      <article class="rounded-2xl p-5">
+        {/* Cover Image */}
+        <div class="mb-10 mx-auto">
+          <img src={CoverArticle} alt="Cover Article" class="w-full h-auto" />
+        </div>
+
+        {/* Opening */}
+        <div class="mb-8">
+          <p class="text-lg md:text-xl font-semibold text-gray-800 italic">"你好! We're back with more China updates from Cici!"</p>
+        </div>
+
+        {/* Paragraph 1 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Pada tanggal 3 September 2025, China menggelar parade militer megah di Lapangan Tiananmen, Beijing, untuk memperingati 80 tahun berakhirnya Perang Dunia Kedua. Acara ini merupakan parade terbesar China dalam sejarah modernnya,
+            dengan simbol-simbol seperti struktur berbentuk Tembok Besar dan angka besar "1945-2025" terpampang di tengah lapangan.
+          </p>
+        </div>
+
+        {/* Paragraph 2 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Presiden Xi Jinping memimpin upacara dan menjadi pembicara utama, menegaskan militer Tiongkok sebagai penjaga kedaulatan dan simbol kebangkitan bangsa. Dalam pidatonya, Presiden Xi Jinping mengatakan
+            <span class="font-semibold italic">"The Chinese people are … not afraid of violence and are self-reliant and strong."</span> Di dalam parade militer ini, terlihat terdapat beberapa persenjataan yang dipamerkan, seperti misil balistik
+            nuklir yang dapat menjangkau seluruh dunia, misil hipersonik pembunuh kapal yang tidak bisa dicegat, drone bawah laut raksasa yang bisa beroperasi sendiri, senjata laser pertahanan udara yang membutakan musuh, serta drone serang siluman
+            yang menjadi pendamping dari jet tempur (Khomsurijal W, 2025)
+          </p>
+        </div>
+
+        {/* Image 1 */}
+        <div class="my-12 flex justify-center">
+          <img src={PasukanMiliter} alt="Pasukan Militer" class="max-w-full h-auto rounded-lg shadow-lg" />
+        </div>
+
+        {/* Paragraph 3 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Melalui pidato dan pameran persenjataan tersebut, sejumlah akademisi berpendapat bahwa hal tersebut menjadi sinyal bagi negara-negara seperti Amerika Serikat, Eropa, dan negara-negara tetangga lainnya untuk berpikir dua kali
+            jika mereka mempertimbangkan untuk menantang kepentingan nasional China (Helen Davidson, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 4 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Lebih dari 25 kepala negara dan pemerintahan hadir dalam parade ini, termasuk Presiden Rusia Vladimir Putin dan Pemimpin Korea Utara Kim Jong Un. Kehadiran tokoh-tokoh penting ini menunjukkan sebuah dimensi diplomatik di acara
+            ini. Lebih dari 50,000 orang yang hadir untuk menyaksikan secara langsung parade militer tersebut (Nectar Gan, 2025).
+          </p>
+        </div>
+
+        {/* Paragraph 5 */}
+        <div class="mb-8">
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+            Acara tersebut ditutup dengan sebuah gala musik yang megah berdurasi sekitar satu setengah jam yang berjudul "Justice will Prevail". Kemudian, yang tidak kalah menariknya lagi adalah ketika Presiden Xi Jinping bertemu dengan
+            para veteran Perang Dunia Kedua sebelum pertunjukkan tersebut. Hal ini menunjukkan rasa apresiatif yang tinggi President Xi Jinping terhadap pejuang kemerdekaan China (Nectar Gan, 2025).
+          </p>
+        </div>
+
+        {/* Image 2 */}
+        <div class="my-12 flex justify-center">
+          <img src={PresidenChina} alt="Presiden China" class="max-w-full h-auto rounded-lg shadow-lg" />
+        </div>
+
+        {/* Closing */}
+        <div class="mt-12 p-6 bg-green-50 border-l-4 border-green-700 rounded-r-lg">
+          <p class="text-gray-800 text-base md:text-lg font-medium">Stay curious, stay kind, and see you in the next chapter of #CiciUnboxChina!</p>
+        </div>
+
+        {/* References */}
+        <div class="mt-12 pt-8 border-t-2 border-gray-200">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Referensi</h3>
+          <div class="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p class="pl-6 -indent-6">
+              Davidson, Helen. (2025). "Xi Jinping says world faces 'peace or war', as Putin and Kim join him for military parade." <em>The Guardian</em>.
+              <a
+                href="https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un"
+                class="text-green-700 hover:text-green-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.theguardian.com/world/2025/sep/03/china-military-parade-xi-jinping-appears-with-vladimir-putin-kim-jong-un
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              Gan, Nectar. (2025). "China showcases military strength at parade as Xi stands alongside Putin and Kim." <em>CNN World</em>.
+              <a href="https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk" class="text-green-700 hover:text-green-900 underline break-all" target="_blank" rel="noopener noreferrer">
+                https://edition.cnn.com/world/live-news/china-military-parade-xi-jinping-09-03-25-intl-hnk
+              </a>.
+            </p>
+            <p class="pl-6 -indent-6">
+              W, Khomsurjial. (2025). "5 Senjata Berbahaya China yang Bikin AS dan Sekutunya Gemetar! Nomor 3 Bisa Menyelam Tanpa Awak dan Hancurkan Musuh." <em>Disway.id</em>.
+              <a
+                href="https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#"
+                class="text-green-700 hover:text-green-900 underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://disway.id/read/896361/5-senjata-berbahaya-china-yang-bikin-as-dan-sekutunya-gemetar-nomor-3-bisa-menyelam-tanpa-awak-dan-hancurkan-musuh/15#
+              </a>.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
 </Layout>

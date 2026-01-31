@@ -43,7 +43,17 @@ const defaultDate = formatDateForInput(article.publishDate);
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label for="topic" class="block text-sm font-medium text-gray-700">Topic (e.g., CICIUNBOXCHINA #3)</label>
-            <input type="text" id="topic" name="topic" value={article.topic} required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+            <div class="flex gap-2">
+              <input type="text" id="topic" name="topic" value={article.topic} required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2" />
+              <div class="flex flex-col gap-1 items-center justify-center">
+                <label for="topicBgColor" class="sr-only">Topic Background</label>
+                <input type="color" id="topicBgColor" name="topicBgColor" value={article.topicBgColor || "#B91C1C"} class="h-8 w-8 rounded cursor-pointer border p-0.5" title="Topic Background Color" />
+              </div>
+              <div class="flex flex-col gap-1 items-center justify-center">
+                <label for="topicTextColor" class="sr-only">Topic Text</label>
+                <input type="color" id="topicTextColor" name="topicTextColor" value={article.topicTextColor || "#FFFFFF"} class="h-8 w-8 rounded cursor-pointer border p-0.5" title="Topic Text Color" />
+              </div>
+            </div>
           </div>
 
           <div>
@@ -138,7 +148,19 @@ const defaultDate = formatDateForInput(article.publishDate);
         </div>
 
         <div>
-          <label for="closingText" class="block text-sm font-medium text-gray-700">Closing Text (Red Box)</label>
+          <div class="flex justify-between items-center mb-1">
+            <label for="closingText" class="block text-sm font-medium text-gray-700">Closing Text (Colored Box)</label>
+            <div class="flex gap-2">
+              <div class="flex items-center gap-1">
+                <label for="closingBgColor" class="text-xs text-gray-500">Bg:</label>
+                <input type="color" id="closingBgColor" name="closingBgColor" value={article.closingBgColor || "#FEF2F2"} class="h-6 w-6 rounded cursor-pointer border p-0.5" title="Background Color" />
+              </div>
+              <div class="flex items-center gap-1">
+                <label for="closingBorderColor" class="text-xs text-gray-500">Border:</label>
+                <input type="color" id="closingBorderColor" name="closingBorderColor" value={article.closingBorderColor || "#B91C1C"} class="h-6 w-6 rounded cursor-pointer border p-0.5" title="Border Color" />
+              </div>
+            </div>
+          </div>
           <textarea id="closingText" name="closingText" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2">{article.closingText}</textarea>
         </div>
 
@@ -208,10 +230,11 @@ const defaultDate = formatDateForInput(article.publishDate);
     div.innerHTML = `
         <div class="flex justify-between items-center mb-1">
             <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Paragraph</label>
-             <div class="flex gap-2">
+            <div class="flex gap-2 mr-8">
                 <button type="button" class="bold-btn p-1 text-gray-500 hover:text-gray-900 rounded hover:bg-gray-200" title="Bold (Ctrl+B)" onmousedown="event.preventDefault()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path></svg>
                 </button>
+                <div class="w-px bg-gray-300 h-4 self-center"></div>
             </div>
         </div>
         <div class="block-content w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 sm:text-sm border p-2 bg-white min-h-[100px]" contenteditable="true">${content}</div>
@@ -397,6 +420,32 @@ const defaultDate = formatDateForInput(article.publishDate);
       }
     });
 
+    // Color Sync Logic
+    const topicBgInput = document.getElementById("topicBgColor") as HTMLInputElement;
+    const closingBgInput = document.getElementById("closingBgColor") as HTMLInputElement;
+    const closingBorderInput = document.getElementById("closingBorderColor") as HTMLInputElement;
+
+    topicBgInput?.addEventListener("input", () => {
+      if (topicBgInput.value) {
+        // Set border to match topic
+        if (closingBorderInput) closingBorderInput.value = topicBgInput.value;
+
+        // Mix with white 90% for background
+        const hex = topicBgInput.value.replace(/^#/, "");
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+
+        const mix = (c: number) => Math.round(c + (255 - c) * 0.9);
+
+        const newR = mix(r).toString(16).padStart(2, "0");
+        const newG = mix(g).toString(16).padStart(2, "0");
+        const newB = mix(b).toString(16).padStart(2, "0");
+
+        if (closingBgInput) closingBgInput.value = `#${newR}${newG}${newB}`;
+      }
+    });
+
     // Append JSON string of blocks
     formData.append("contentBlocksJSON", JSON.stringify(blocks));
 
@@ -418,4 +467,32 @@ const defaultDate = formatDateForInput(article.publishDate);
       alert("Error updating article: " + err);
     }
   });
+
+  // Color Sync Logic (Correctly placed outside submit handler)
+  const topicBgInput = document.getElementById("topicBgColor") as HTMLInputElement;
+  const closingBgInput = document.getElementById("closingBgColor") as HTMLInputElement;
+  const closingBorderInput = document.getElementById("closingBorderColor") as HTMLInputElement;
+
+  if (topicBgInput) {
+    topicBgInput.addEventListener("input", () => {
+      if (topicBgInput.value) {
+        // Set border to match topic
+        if (closingBorderInput) closingBorderInput.value = topicBgInput.value;
+
+        // Manual mix with white 90%
+        const hex = topicBgInput.value.replace(/^#/, "");
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+
+        const mix = (c: number) => Math.round(c + (255 - c) * 0.9);
+
+        const newR = mix(r).toString(16).padStart(2, "0");
+        const newG = mix(g).toString(16).padStart(2, "0");
+        const newB = mix(b).toString(16).padStart(2, "0");
+
+        if (closingBgInput) closingBgInput.value = `#${newR}${newG}${newB}`;
+      }
+    });
+  }
 </script>
