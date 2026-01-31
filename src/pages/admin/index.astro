@@ -1,15 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Layout from "../../layouts/Layout.astro";
+
 import { getArticles } from "../../utils/data";
+import AdminAuthModal from "../../components/admin/AdminAuthModal.astro";
 
 const articles = getArticles();
 ---
 
 <Layout title="Admin Dashboard">
-  <main class="min-h-screen bg-gray-50 py-32 px-4 sm:px-6 lg:px-8">
+  <AdminAuthModal />
+  <main class="min-h-screen bg-gray-50 pt-24 pb-12 md:py-32 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <div class="flex justify-between items-center mb-8">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
         <h1 class="text-3xl font-bold text-gray-900">Article Dashboard</h1>
         <a
           href="/admin/create"

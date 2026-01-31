@@ -1,8 +1,8 @@
-version: '3.8'
+version: "3.8"
 
 services:
   astro-app:
-    image: ghcr.io/gindra-o7/cici-mandarin:1.0.2
+    image: ghcr.io/gindra-o7/cici-mandarin:1.0.5
     container_name: cici-mandarin
     restart: always
     ports:
@@ -16,6 +16,7 @@ services:
       - PORT=4321
       - DATA_DIR=/app/data
       - UPLOAD_DIR=/app/dist/client/uploads/articles
+      - ADMIN_SECRET_CODE=${ADMIN_SECRET_CODE}
     volumes:
       - ./data:/app/data
       - ./uploads:/app/dist/client/uploads/articles

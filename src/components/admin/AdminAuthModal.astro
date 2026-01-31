@@ -1,0 +1,155 @@
+---
+
+---
+
+<div id="admin-auth-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-90 transition-opacity duration-300">
+  <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-100">
+    <div class="text-center mb-6">
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg leading-6 font-medium text-gray-900">Admin Access Required</h3>
+      <p class="mt-2 text-sm text-gray-500">Please enter the secret code to continue.</p>
+    </div>
+
+    <form id="auth-form" class="space-y-4">
+      <div>
+        <label for="secret-code" class="sr-only">Secret Code</label>
+        <input
+          type="text"
+          id="secret-code"
+          name="code"
+          required
+          class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm uppercase tracking-widest text-center font-mono"
+          placeholder="ENTER CODE"
+          autocomplete="off"
+        />
+      </div>
+      <div id="error-message" class="text-red-600 text-xs text-center hidden font-bold">Invalid code. Please try again.</div>
+      <div>
+        <button
+          type="submit"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+        >
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <svg class="h-5 w-5 text-red-500 group-hover:text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+            </svg>
+          </span>
+          Unlocking...
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Auth Logic
+  const modal = document.getElementById("admin-auth-modal");
+  const form = document.getElementById("auth-form") as HTMLFormElement;
+  const input = document.getElementById("secret-code") as HTMLInputElement;
+  const errorMsg = document.getElementById("error-message");
+  const STORAGE_KEY = "admin_authenticated";
+
+  // Check if page was reloaded (Refresh)
+  const navigationEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming;
+  if (navigationEntry && navigationEntry.type === "reload") {
+    sessionStorage.removeItem(STORAGE_KEY);
+  }
+
+  // Check Immediately
+  function checkAuth() {
+    const isAuthenticated = sessionStorage.getItem(STORAGE_KEY) === "true";
+    if (isAuthenticated) {
+      if (modal) modal.style.display = "none";
+    } else {
+      if (modal) modal.style.display = "flex";
+      // Prevent interaction with background
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  // Run on load
+  checkAuth();
+  // Also run on view transitions if using them
+  document.addEventListener("astro:page-load", checkAuth);
+
+  // Handle Submit
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (errorMsg) errorMsg.classList.add("hidden");
+
+    // Auto-uppercase
+    const code = input.value.toUpperCase();
+
+    try {
+      const response = await fetch("/api/validate-admin", {
+        method: "POST",
+        body: JSON.stringify({ code }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Success
+        sessionStorage.setItem(STORAGE_KEY, "true");
+        if (modal) {
+          modal.style.opacity = "0";
+          setTimeout(() => {
+            modal.style.display = "none";
+            document.body.style.overflow = ""; // Restore scroll
+          }, 300);
+        }
+      } else {
+        // Fail
+        if (errorMsg) {
+          errorMsg.textContent = result.message || "Invalid code";
+          errorMsg.classList.remove("hidden");
+        }
+        input.value = "";
+        input.focus();
+        // Shake animation
+        form.classList.add("animate-shake");
+        setTimeout(() => form.classList.remove("animate-shake"), 500);
+      }
+    } catch (err) {
+      if (errorMsg) {
+        errorMsg.textContent = "Connection error. Try again.";
+        errorMsg.classList.remove("hidden");
+      }
+    }
+  });
+
+  // Force uppercase input
+  input?.addEventListener("input", (e) => {
+    input.value = input.value.toUpperCase();
+  });
+</script>
+
+<style>
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+  .animate-shake {
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+</style>
