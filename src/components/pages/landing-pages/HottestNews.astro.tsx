@@ -161,6 +161,12 @@ export default function HottestNews({ articles = [] }: HottestNewsProps) {
         publishDate.setHours(0, 0, 0, 0);
         return publishDate <= today;
       })
+      .sort((a, b) => {
+        // Sort by publishDate descending (newest first)
+        const dateA = new Date(a.publishDate);
+        const dateB = new Date(b.publishDate);
+        return dateB.getTime() - dateA.getTime();
+      })
       .map((card) => ({
         ...card,
         isNew: isArticleNew(card.publishDate),
