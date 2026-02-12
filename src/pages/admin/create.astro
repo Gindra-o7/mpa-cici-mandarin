@@ -7,7 +7,10 @@ import AdminAuthModal from "../../components/admin/AdminAuthModal.astro";
   <AdminAuthModal />
   <main class="min-h-screen bg-gray-50 pt-24 pb-12 md:py-32 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
-      <h1 class="text-3xl font-bold text-gray-900 mb-8 border-b pb-4">Create New Article</h1>
+      <div class="flex justify-between items-center mb-8 border-b pb-4">
+        <h1 class="text-3xl font-bold text-gray-900">Create New Article</h1>
+        <a href="/admin" class="text-sm text-gray-500 hover:text-gray-900">Back to Dashboard</a>
+      </div>
 
       <form id="articleForm" class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

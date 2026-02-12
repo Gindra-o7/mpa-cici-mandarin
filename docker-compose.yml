@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   astro-app:
-    image: ghcr.io/gindra-o7/cici-mandarin:1.0.5
+    image: ghcr.io/gindra-o7/cici-mandarin:1.0.8
     container_name: cici-mandarin
     restart: always
     ports:

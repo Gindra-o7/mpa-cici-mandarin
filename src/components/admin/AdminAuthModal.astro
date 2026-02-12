@@ -57,6 +57,7 @@
   const navigationEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming;
   if (navigationEntry && navigationEntry.type === "reload") {
     sessionStorage.removeItem(STORAGE_KEY);
+    sessionStorage.removeItem("admin_code");
   }
 
   // Check Immediately
@@ -96,6 +97,7 @@
       if (response.ok && result.success) {
         // Success
         sessionStorage.setItem(STORAGE_KEY, "true");
+        sessionStorage.setItem("admin_code", code);
         if (modal) {
           modal.style.opacity = "0";
           setTimeout(() => {

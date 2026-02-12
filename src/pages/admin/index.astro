@@ -13,12 +13,28 @@ const articles = getArticles();
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
         <h1 class="text-3xl font-bold text-gray-900">Article Dashboard</h1>
-        <a
-          href="/admin/create"
-          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-        >
-          Create New Article
-        </a>
+
+        <div class="flex gap-2">
+          <button
+            id="export-btn"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Export Backup
+          </button>
+          <button
+            id="import-btn-trigger"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Import Backup
+          </button>
+          <input type="file" id="import-file" class="hidden" accept=".zip" />
+          <a
+            href="/admin/create"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Create New Article
+          </a>
+        </div>
       </div>
 
       <div class="bg-white shadow overflow-hidden sm:rounded-md">
@@ -80,6 +96,79 @@ const articles = getArticles();
 </Layout>
 
 <script>
+  // Export Backup Logic
+  const exportBtn = document.getElementById("export-btn");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", () => {
+      const adminCode = sessionStorage.getItem("admin_code");
+      if (!adminCode) {
+        alert("Session expired. Please reload the page to authenticate.");
+        return;
+      }
+      window.location.href = `/api/backup-local?code=${adminCode}`;
+    });
+  }
+
+  // Import Backup Logic
+  const importBtnTrigger = document.getElementById("import-btn-trigger");
+  const importFileInput = document.getElementById("import-file") as HTMLInputElement;
+
+  if (importBtnTrigger && importFileInput) {
+    importBtnTrigger.addEventListener("click", () => {
+      importFileInput.click();
+    });
+
+    importFileInput.addEventListener("change", async (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (!file) return;
+
+      if (!confirm("Are you sure you want to restore this backup? This will overwrite existing data.")) {
+        importFileInput.value = ""; // Reset
+        return;
+      }
+
+      const adminCode = sessionStorage.getItem("admin_code");
+      if (!adminCode) {
+        alert("Session expired. Please reload the page to authenticate.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("backup", file);
+
+      const originalText = importBtnTrigger.innerText;
+      importBtnTrigger.innerText = "Restoring...";
+      (importBtnTrigger as HTMLButtonElement).disabled = true;
+
+      try {
+        const response = await fetch("/api/restore-local", {
+          method: "POST",
+          headers: {
+            "X-Admin-Code": adminCode,
+          },
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          alert("Backup restored successfully!");
+          window.location.reload();
+        } else {
+          console.error(result);
+          alert("Restore failed: " + (result.message || "Unknown error"));
+        }
+      } catch (error) {
+        console.error("Restore error:", error);
+        alert("An error occurred during restore.");
+      } finally {
+        importBtnTrigger.innerText = originalText;
+        (importBtnTrigger as HTMLButtonElement).disabled = false;
+        importFileInput.value = "";
+      }
+    });
+  }
+
   const deleteBtns = document.querySelectorAll(".delete-btn");
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
